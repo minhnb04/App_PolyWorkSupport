@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     FrameLayout frameLayout;
     BottomNavigationView bottomNavigationView;
     ViewPager viewPager;
+    //testPush
     //    Trangchu_Fragment trangchu_fragment = new Trangchu_Fragment();
 //    ChuDe_Fragment chuDe_fragment =new ChuDe_Fragment();
 //    YeuThich_Fragment yeuThich_fragment = new YeuThich_Fragment();
