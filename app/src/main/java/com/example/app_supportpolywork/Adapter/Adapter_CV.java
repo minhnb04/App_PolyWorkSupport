@@ -45,7 +45,7 @@ public class Adapter_CV extends RecyclerView.Adapter<Adapter_CV.ViewHolder_Chude
     }
 
     class ViewHolder_Chude extends RecyclerView.ViewHolder {
-//        View carview;
+        //        View carview;
 //        TextView chude  ;
         public ViewHolder_Chude(@NonNull View itemView) {
             super(itemView);

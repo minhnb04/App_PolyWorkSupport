@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 
-import com.example.app_supportpolywork.Adapter.Adapter_chude;
 import com.example.app_supportpolywork.R;
 import com.example.app_supportpolywork.model.ChuDe;
 
