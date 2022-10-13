@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">App_SupportPolyWork</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="GoogleApi">AIzaSyBMTozHjIwKC9Zs09nSYQ0v3T4vtz_njTY</string>
 </resources>

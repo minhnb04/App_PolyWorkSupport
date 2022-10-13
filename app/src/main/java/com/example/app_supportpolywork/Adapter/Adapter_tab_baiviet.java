@@ -1,13 +1,11 @@
 package com.example.app_supportpolywork.Adapter;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,6 +15,7 @@ import com.example.app_supportpolywork.R;
 import com.example.app_supportpolywork.model.Tab_BaiViet;
 
 import java.util.List;
+
 public class Adapter_tab_baiviet extends RecyclerView.Adapter<Adapter_tab_baiviet.ViewHolder_tap_baiviet> {
 
     //    Context context;

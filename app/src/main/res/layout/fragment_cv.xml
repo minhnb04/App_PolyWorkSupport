@@ -2,29 +2,61 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/bg6"
     android:layout_height="match_parent">
     <LinearLayout
         android:layout_margin="8dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <TextView
+            android:layout_margin="10dp"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/acme"
-            android:text="Tạo CV"
+            android:text="Quản lý CV"
+            android:textColor="@color/black"
             android:layout_marginLeft="10dp"
-            android:textSize="34sp"
+            android:textSize="26sp"
             android:textStyle="bold"></TextView>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginTop="30dp"
+                android:textAlignment="center"
+                android:textSize="24dp"
+                android:textColor="@color/black"
+                android:text="Bạn muốn công việc phù hợp với bản thận ?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </TextView>
+            <TextView
+                android:textSize="20dp"
+                android:layout_margin="10dp"
+                android:text="Hãy tạo CV chúng tôi sẽ gợi ý cho bạn những công việc phù hớp nhât. "
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content">
+            </TextView>
+            <android.widget.Button
+                android:layout_gravity="center"
+                android:background="@drawable/custom_btn"
+                android:id="@+id/btnTaoCV"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="Tạo CV"
+                android:textColor="@color/white"
+                />
+        </LinearLayout>
 
-      <androidx.recyclerview.widget.RecyclerView
-          android:layout_gravity="center"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:id="@+id/rclchude"/>
+
 
     </LinearLayout>
 
-    </LinearLayout>
+</LinearLayout>

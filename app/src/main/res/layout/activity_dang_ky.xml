@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="5dp"
     tools:context=".DangKyActivity">
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#FFFFFF"
+        android:background="@drawable/bg2"
         tools:layout_editor_absoluteX="160dp"
         tools:layout_editor_absoluteY="157dp">
 
 
 
         <ImageView
-           android:layout_margin="2dp"
+            android:layout_margin="3dp"
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_gravity="center"
@@ -50,7 +51,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-              android:textColorHint="@color/black"
+                android:textColorHint="@color/black"
                 app:endIconMode="clear_text"
                 >
 
@@ -73,11 +74,13 @@
             />
 
             <com.google.android.material.textfield.TextInputLayout
-                app:boxStrokeColor="#FFFFFF"
+
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Mat Khau"
+                android:textColorHint="@color/black"
+                app:boxStrokeColor="#000000"
                 app:endIconMode="password_toggle"
                 >
                 <com.google.android.material.textfield.TextInputEditText
@@ -85,6 +88,7 @@
                     android:layout_width="match_parent"
                     android:inputType="textPassword"
                     android:text="123"
+
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
@@ -100,7 +104,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint=" Nhap Lai Mat Khau"
-                app:boxStrokeColor="#FFFFFF"
+                android:textColorHint="@color/black"
+                app:boxStrokeColor="#000000"
                 app:endIconMode="password_toggle"
                 >
                 <com.google.android.material.textfield.TextInputEditText
@@ -120,12 +125,12 @@
             />
 
             <com.google.android.material.textfield.TextInputLayout
-
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Ho Ten"
-                app:boxStrokeColor="#FFFFFF"
+                android:textColorHint="@color/black"
+                app:boxStrokeColor="#000000"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -149,8 +154,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="So Dien Thoai"
-                android:textColorHint="#00000C"
-                app:boxStrokeColor="#FFFFFF"
+                android:textColorHint="@color/black"
+                app:boxStrokeColor="#000000"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -174,7 +179,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Gửi"
-                app:backgroundTint="#00B0FF" />
+                app:backgroundTint="#FF9100" />
 
         </LinearLayout>
 
