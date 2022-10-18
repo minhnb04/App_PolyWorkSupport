@@ -25,43 +25,43 @@ public class MainActivity extends AppCompatActivity {
     FrameLayout frameLayout;
     BottomNavigationView bottomNavigationView;
     ViewPager viewPager;
-    Trangchu_Fragment trangchu_fragment = new Trangchu_Fragment();
-    ViecLam_Fragment viecLam_fragment = new ViecLam_Fragment();
-    CV_Fragment cv_fragment = new CV_Fragment();
-    HoSo_Fragment hoSo_fragment = new HoSo_Fragment();
+//    Trangchu_Fragment trangchu_fragment = new Trangchu_Fragment();
+//    ViecLam_Fragment viecLam_fragment = new ViecLam_Fragment();
+//    CV_Fragment cv_fragment = new CV_Fragment();
+//    HoSo_Fragment hoSo_fragment = new HoSo_Fragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bottomNavigationView = findViewById(R.id.bottomNaVi);
-//        viewPager= findViewById(R.id.viewPa);
-        frameLayout = findViewById(R.id.frame);
+        viewPager= findViewById(R.id.viewPa);
+//        frameLayout = findViewById(R.id.frame);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.bot_home:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frame, trangchu_fragment).commit();
-//                        viewPager.setCurrentItem(0);
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.frame, trangchu_fragment).commit();
+                        viewPager.setCurrentItem(0);
                         return true;
                     case R.id.bot_viec_lam:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frame, viecLam_fragment).commit();
-//                        viewPager.setCurrentItem(1);
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.frame, viecLam_fragment).commit();
+                        viewPager.setCurrentItem(1);
                         return true;
                     case R.id.bot_CV:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frame, cv_fragment).commit();
-//                        viewPager.setCurrentItem(2);
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.frame, cv_fragment).commit();
+                        viewPager.setCurrentItem(2);
                         return true;
                     case R.id.bot_ho_so:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frame, hoSo_fragment).commit();
-//                        viewPager.setCurrentItem(3);
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.frame, hoSo_fragment).commit();
+                        viewPager.setCurrentItem(3);
                         return true;
                 }
                 return false;
             }
         });
-//        setViewPager();
+        setViewPager();
     }
 
     public void setViewPager() {

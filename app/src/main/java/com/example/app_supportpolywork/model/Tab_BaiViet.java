@@ -1,6 +1,8 @@
 package com.example.app_supportpolywork.model;
 
-public class Tab_BaiViet {
+import java.io.Serializable;
+
+public class Tab_BaiViet implements Serializable {
     String tenbaiviet;
 
     public Tab_BaiViet(String tenbaiviet) {

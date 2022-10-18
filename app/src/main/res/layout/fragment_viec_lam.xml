@@ -24,7 +24,7 @@
 
 <!--        android:textStyle="bold"/>-->
     <ScrollView
-        android:background="@drawable/bg6"
+        android:background="@drawable/bg4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <androidx.recyclerview.widget.RecyclerView

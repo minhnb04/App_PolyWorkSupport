@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ViecLam_Fragment extends Fragment implements Adapter_tab_baiviet.ItemClick  {
+public class ViecLam_Fragment extends Fragment   {
     RecyclerView recyclerView_BaiViet;
     List<Tab_BaiViet> list = new ArrayList<>();
     @Override
@@ -26,10 +26,10 @@ public class ViecLam_Fragment extends Fragment implements Adapter_tab_baiviet.It
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_viec_lam,container,false);
         recyclerView_BaiViet=view.findViewById(R.id.recyclerView_BaiViet);
+        builData();
         recyclerView_BaiViet.setHasFixedSize(true);
         recyclerView_BaiViet.setLayoutManager(new StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL));
-        Adapter_tab_baiviet adapter_tab_baiviet = new Adapter_tab_baiviet(this,list);
-        builData();
+        Adapter_tab_baiviet adapter_tab_baiviet = new Adapter_tab_baiviet(getContext(),list);
         recyclerView_BaiViet.setAdapter(adapter_tab_baiviet);
         return view;
     }
@@ -41,16 +41,17 @@ public class ViecLam_Fragment extends Fragment implements Adapter_tab_baiviet.It
     }
 
 
-    @Override
-    public void onclick(Tab_BaiViet tab_baiViet) {
-        Fragment fragment = ChiTietBaiViet_Fragment.newInstance(tab_baiViet.getTenbaiviet());
-        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame,fragment,"fragment_chi_tiet_bai_viet_");
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
-    public interface ISendata {
-        void sendata(Tab_BaiViet tab_baiViet);
-
-    }
+//    @Override
+//    public void onclick(Tab_BaiViet tab_baiViet) {
+//
+////        Fragment fragment = ChiTietBaiViet_Fragment.newInstance(tab_baiViet.getTenbaiviet());
+////        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+////        transaction.replace(R.id.frame,fragment,"fragment_chi_tiet_bai_viet_");
+////        transaction.addToBackStack(null);
+////        transaction.commit();
+//    }
+//    public interface ISendata {
+//        void sendata(Tab_BaiViet tab_baiViet);
+//
+//    }
 }

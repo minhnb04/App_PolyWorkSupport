@@ -1,5 +1,8 @@
 package com.example.app_supportpolywork.Adapter;
 
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,21 +13,23 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.app_supportpolywork.ChiTietBaiVietActivity;
 import com.example.app_supportpolywork.R;
 
 import com.example.app_supportpolywork.model.Tab_BaiViet;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class Adapter_tab_baiviet extends RecyclerView.Adapter<Adapter_tab_baiviet.ViewHolder_tap_baiviet> {
 
-    //    Context context;
+        Context context;
     List<Tab_BaiViet> list;
-    private ItemClick itemClick;
+//    private ItemClick itemClick;
 
-    public Adapter_tab_baiviet( ItemClick itemClick, List<Tab_BaiViet> list) {
-//        this.context = context;
-        this.itemClick=itemClick;
+    public Adapter_tab_baiviet( Context context, List<Tab_BaiViet> list) {
+        this.context = context;
+//        this.itemClick=itemClick;
         this.list = list;
     }
 
@@ -40,8 +45,12 @@ public class Adapter_tab_baiviet extends RecyclerView.Adapter<Adapter_tab_baivie
         Tab_BaiViet tab_baiViet = list.get(position);
         holder.itemTenTieuDe.setText(list.get(position).getTenbaiviet());
         holder.linearLayout_tabbaiviet.setOnClickListener(v -> {
-            itemClick.onclick(list.get(position));
-
+//            itemClick.onclick(list.get(position));
+            Intent intent = new Intent(context, ChiTietBaiVietActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("tap", (Serializable) tab_baiViet);
+            intent.putExtras(bundle);
+            context.startActivity(intent);
         });
     }
 
@@ -67,8 +76,5 @@ public class Adapter_tab_baiviet extends RecyclerView.Adapter<Adapter_tab_baivie
 
         }
     }
-    public interface ItemClick{
-        public void onclick(Tab_BaiViet tab_baiViet);
 
-    }
 }
