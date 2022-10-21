@@ -35,9 +35,9 @@ public class ViecLam_Fragment extends Fragment   {
     }
     private void builData(){
         list.add(new Tab_BaiViet("Nhân Viên Kinh Doanh - Tư Vấn Bán Hàng - Sales (Thu Nhập Lên Tới 15 Triệu/Tháng)"));
-        list.add(new Tab_BaiViet("Bai Viet 2"));
-        list.add(new Tab_BaiViet("Nhân Viên Kinh Doanh - Tư Vấn Bán Hàng - Sales (Thu Nhập Lên Tới 15 Triệu/Tháng)"));
-        list.add(new Tab_BaiViet("Bai Viet 4"));
+        list.add(new Tab_BaiViet("Nhân Viên Tư Vấn Tuyển Sinh Tại Hà Nội (10 - 20 Triệu)"));
+        list.add(new Tab_BaiViet("Kế Toán Sản Xuất Thu Nhập Tới 15M - Làm Việc Tại Khu Công Nghiệp Cầu Gáo - Đan Phượng - Hà Nội"));
+        list.add(new Tab_BaiViet("Trợ Lý Văn Phòng ( Admin ) - Thu Nhập Cao - Không Kinh Nghiệm Được Đào Tạo"));
     }
 
 

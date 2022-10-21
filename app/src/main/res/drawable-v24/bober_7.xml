@@ -9,9 +9,10 @@
                 />
             <corners android:radius="0dp">
             </corners>
-            <solid android:color="#80DFDEDE"></solid>
+            <solid android:color="#80FF9100"></solid>
 
         </shape>
     </item>
 
 </layer-list>
+<!--    #80DFDEDE-->
