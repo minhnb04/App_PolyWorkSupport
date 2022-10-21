@@ -21,14 +21,15 @@
             android:background="#FF9100"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
-            android:text="Poly_Work"
+            android:text="Skill"
             android:layout_gravity="center"
             android:layout_width="150dp"
             android:layout_height="wrap_content">
         </TextView>
+
         <EditText
-            android:id="@+id/edName"
-            android:hint="Name"
+            android:id="@+id/edSkillName"
+            android:hint="SkillName"
             android:padding="10dp"
             android:layout_margin="10dp"
             android:layout_marginTop="15dp"
@@ -36,8 +37,8 @@
             android:layout_height="wrap_content">
         </EditText>
         <EditText
-            android:id="@+id/edSL"
-            android:hint="Count"
+            android:id="@+id/edjudge"
+            android:hint="Judge"
             android:padding="10dp"
             android:layout_margin="10dp"
             android:layout_marginTop="15dp"
@@ -45,7 +46,14 @@
             android:layout_height="wrap_content">
         </EditText>
 
-
+        <EditText
+            android:id="@+id/edDescribeSkill"
+            android:hint="Describe"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
 </LinearLayout>
