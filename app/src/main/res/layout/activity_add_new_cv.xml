@@ -8,7 +8,7 @@
     tools:context=".Add_new_cv">
     <LinearLayout
         android:background="@drawable/bg9"
-        android:layout_margin="10dp"
+        android:layout_margin="1dp"
         android:padding="5dp"
         android:orientation="vertical"
         android:layout_width="match_parent"

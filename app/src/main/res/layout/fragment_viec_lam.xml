@@ -6,13 +6,13 @@
     android:orientation="vertical"
 >
 
-    <ViewFlipper
+<!--    <ViewFlipper-->
 
-        android:layout_margin="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="150dp">
+<!--        android:layout_margin="8dp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="150dp">-->
 
-    </ViewFlipper>
+<!--    </ViewFlipper>-->
 <!--    <TextView-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
@@ -24,7 +24,7 @@
 
 <!--        android:textStyle="bold"/>-->
     <ScrollView
-        android:background="@drawable/bg4"
+        android:background="@drawable/bg2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <androidx.recyclerview.widget.RecyclerView
