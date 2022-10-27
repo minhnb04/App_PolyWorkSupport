@@ -6,39 +6,38 @@
     android:orientation="vertical"
 >
 
-<!--    <ViewFlipper-->
-
-<!--        android:layout_margin="8dp"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="150dp">-->
-
-<!--    </ViewFlipper>-->
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:fontFamily="@font/acme"-->
-<!--        android:text="Bài đã thích"-->
-<!--        android:textAlignment="viewStart"-->
-<!--        android:textSize="34sp"-->
-<!--        android:layout_marginLeft="10dp"-->
-
-<!--        android:textStyle="bold"/>-->
     <ScrollView
         android:background="@drawable/bg2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView_BaiViet"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="true">
-        </androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.SearchView
+                app:iconifiedByDefault="false"
+                android:id="@+id/searchView"
+                android:background="@drawable/bober_6"
+                app:queryHint="Search ... "
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </androidx.appcompat.widget.SearchView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_BaiViet"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true">
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+
     </ScrollView>
 
 </LinearLayout>

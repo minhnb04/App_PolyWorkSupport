@@ -206,6 +206,7 @@
                 </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+
                         android:foreground="@drawable/effect"
                         android:clickable="true"
                         android:layout_margin="5dp"
@@ -213,8 +214,7 @@
                         app:cardCornerRadius="5dp"
                         android:layout_height="wrap_content">
                         <LinearLayout
-
-                            android:id="@+id/linearListTruyen"
+                            android:id="@+id/linearCV"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"

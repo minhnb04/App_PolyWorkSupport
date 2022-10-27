@@ -8,6 +8,7 @@
     android:layout_height="wrap_content">
     <LinearLayout
         android:paddingBottom="20dp"
+        android:padding="10dp"
         android:orientation="vertical"
         android:background="@drawable/bg_item_2"
         android:layout_width="match_parent"
@@ -21,14 +22,24 @@
             android:background="#FF9100"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
-            android:text="PersonalInfor"
+            android:text="Kĩ năng &amp; Kinh Nghiệm "
             android:layout_gravity="center"
-            android:layout_width="150dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
         </TextView>
+
         <EditText
-            android:id="@+id/edName"
-            android:hint="Name"
+            android:id="@+id/edTenkinang"
+            android:hint="Tên Kĩ Năng"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </EditText>
+        <EditText
+            android:id="@+id/edKinhnghiem"
+            android:hint="Kinh Nhiệm"
             android:padding="10dp"
             android:layout_margin="10dp"
             android:layout_marginTop="15dp"
@@ -37,50 +48,14 @@
         </EditText>
 
         <EditText
-            android:id="@+id/edPosition"
-            android:hint="Position"
+            android:id="@+id/edMotathem"
+            android:hint="Mô Tả Thêm"
             android:padding="10dp"
             android:layout_margin="10dp"
             android:layout_marginTop="15dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </EditText>
-        <EditText
-            android:id="@+id/edGender"
-            android:hint="Gender"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </EditText>
-        <EditText
-            android:id="@+id/edAddress"
-            android:hint="Address"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </EditText>
-        <EditText
-            android:id="@+id/edEmail"
-            android:hint="Email"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </EditText>
-        <EditText
-            android:id="@+id/edNumber"
-            android:hint="Number"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </EditText>
+            android:layout_height="wrap_content"/>
+
 
     </LinearLayout>
 

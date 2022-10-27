@@ -68,7 +68,7 @@
             android:layout_height="wrap_content">
         </TextView>
         <EditText
-            android:id="@+id/edName"
+
             android:hint="Name"
             android:padding="10dp"
             android:layout_margin="10dp"
@@ -78,7 +78,7 @@
         </EditText>
 
         <EditText
-            android:id="@+id/edPosition"
+
             android:hint="Position"
             android:padding="10dp"
             android:layout_margin="10dp"
@@ -87,7 +87,7 @@
             android:layout_height="wrap_content">
         </EditText>
         <EditText
-            android:id="@+id/edGender"
+
             android:hint="Gender"
             android:padding="10dp"
             android:layout_margin="10dp"
@@ -96,7 +96,7 @@
             android:layout_height="wrap_content">
         </EditText>
         <EditText
-            android:id="@+id/edAddress"
+
             android:hint="Address"
             android:padding="10dp"
             android:layout_margin="10dp"
@@ -105,7 +105,7 @@
             android:layout_height="wrap_content">
         </EditText>
         <EditText
-            android:id="@+id/edEmail"
+
             android:hint="Email"
             android:padding="10dp"
             android:layout_margin="10dp"
@@ -114,7 +114,7 @@
             android:layout_height="wrap_content">
         </EditText>
         <EditText
-            android:id="@+id/edNumber"
+
             android:hint="Number"
             android:padding="10dp"
             android:layout_margin="10dp"

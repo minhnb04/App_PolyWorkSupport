@@ -1,30 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/carview"
     android:layout_width="match_parent"
-    android:layout_height="210dp"
+    android:layout_height="wrap_content"
     android:layout_margin="3dp"
-    android:background="@drawable/bober_3"
+    app:cardCornerRadius="10dp"
     android:padding="5dp"
-
+    app:layout_scrollFlags="snap"
     >
 
     <LinearLayout
-        android:background="@drawable/bg3"
+        android:background="@drawable/bg11"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
             android:id="@+id/Linear_tabbaiviet"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp">
@@ -41,8 +39,8 @@
 
                         <com.makeramen.roundedimageview.RoundedImageView
                             android:id="@+id/imgBaiViet"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/b"
                             app:riv_corner_radius="10dp"></com.makeramen.roundedimageview.RoundedImageView>
@@ -51,110 +49,126 @@
                 </LinearLayout>
 
                 <TextView
+                    android:textAlignment="textStart"
                     android:id="@+id/itemTenTieuDe"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:fontFamily="@font/allerta"
                     android:text="Nhân Viên Kinh Doanh - Tư Vấn Bán Hàng - Sales (Thu Nhập Lên Tới 15 Triệu/Tháng)"
-                    android:textColor="@color/purple_500"
-                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="5dp"
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:src="@drawable/ic_baseline_attach_money_24"></ImageView>
 
                     <TextView
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
                         android:id="@+id/itemMucLuong"
-                        android:layout_width="150dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/allerta"
                         android:maxLines="2"
                         android:text="Luong: 1000 $"
-                        android:textSize="14dp" />
+                        android:textSize="16dp" />
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:src="@drawable/ic_baseline_access_time_24">
 
                     </ImageView>
 
                     <TextView
+                        android:layout_gravity="center"
                         android:id="@+id/itemHinhThuc"
-                        android:layout_width="150dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="2dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/allerta"
                         android:maxLines="2"
                         android:text="Hinh Thuc: Toan Thoi Gian"
-                        android:textSize="14dp" />
+                        android:textSize="16dp" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:layout_marginTop="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:layout_gravity="center_horizontal"
                     android:background="@drawable/bober_5"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
                         android:layout_marginLeft="-2dp"
                         android:src="@drawable/ic_baseline_boy_24">
 
                     </ImageView>
 
                     <TextView
+                        android:layout_gravity="center"
                         android:id="@+id/itemSoLuong"
-                        android:layout_width="150dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
+                        android:layout_marginLeft="10dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/allerta"
                         android:maxLines="2"
                         android:text="So Luong: 10 "
-                        android:textSize="14dp" />
+                        android:textSize="16dp" />
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:src="@drawable/ic_baseline_business_center_24">
 
                     </ImageView>
 
                     <TextView
+
                         android:id="@+id/itemCapBac"
-                        android:layout_width="150dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="1dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/allerta"
                         android:maxLines="2"
+                        android:layout_gravity="center"
                         android:text="Cap Bac: Nhan Vien"
-                        android:textSize="14dp" />
+                        android:textSize="16dp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -163,4 +177,4 @@
 
     </LinearLayout>
 
-</LinearLayout>
+</androidx.cardview.widget.CardView>

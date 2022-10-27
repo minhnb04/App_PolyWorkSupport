@@ -3,9 +3,12 @@ package com.example.app_supportpolywork.Adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -18,20 +21,26 @@ import com.example.app_supportpolywork.R;
 
 import com.example.app_supportpolywork.model.Tab_BaiViet;
 
+import java.io.FileFilter;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
-public class Adapter_tab_baiviet extends RecyclerView.Adapter<Adapter_tab_baiviet.ViewHolder_tap_baiviet> {
+public class Adapter_tab_baiviet extends RecyclerView.Adapter<Adapter_tab_baiviet.ViewHolder_tap_baiviet> implements Filterable {
 
         Context context;
     List<Tab_BaiViet> list;
+    List<Tab_BaiViet> listold;
 //    private ItemClick itemClick;
 
     public Adapter_tab_baiviet( Context context, List<Tab_BaiViet> list) {
         this.context = context;
 //        this.itemClick=itemClick;
+        this.listold=list;
         this.list = list;
     }
+
+
 
     @NonNull
     @Override
@@ -57,6 +66,41 @@ public class Adapter_tab_baiviet extends RecyclerView.Adapter<Adapter_tab_baivie
     @Override
     public int getItemCount() {
         return list.size();
+    }
+
+    @Override
+    public Filter getFilter() {
+
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                String search = constraint.toString();
+                if (search.isEmpty()) {
+                    list = listold;
+                } else {
+                    List<Tab_BaiViet> ls = new ArrayList<>();
+                    for (Tab_BaiViet tab_baiViet : listold) {
+                        if (tab_baiViet.getTenbaiviet().toLowerCase().contains(search.toLowerCase())) {
+                            ls.add(tab_baiViet);
+
+                        }
+                        list = ls;
+
+                    }
+                }
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = list;
+                return filterResults;
+
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+
+                    list= (List<Tab_BaiViet>) results.values;
+                    notifyDataSetChanged();
+            }
+        };
     }
 
 

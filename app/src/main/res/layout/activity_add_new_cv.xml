@@ -30,7 +30,7 @@
                 android:fontFamily="@font/baloo"
                 android:textColor="#95000000"
                 android:textSize="24dp"
-                android:text="Dien Thong Tin Phu Hop"
+                android:text="Điền Thông Tin CV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             </TextView>
@@ -53,7 +53,7 @@
                     android:fontFamily="@font/alatsi"
                     android:textColor="#050505"
                     android:textSize="24dp"
-                    android:text="personalInfor"
+                    android:text="Thông tin cá nhân"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                 </TextView>
@@ -79,7 +79,7 @@
                     android:fontFamily="@font/alatsi"
                     android:textColor="#050505"
                     android:textSize="24dp"
-                    android:text="education"
+                    android:text="Vị trí"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                 </TextView>
@@ -104,7 +104,7 @@
                     android:fontFamily="@font/alatsi"
                     android:textColor="#050505"
                     android:textSize="24dp"
-                    android:text="experience"
+                    android:text="Kĩ năng &amp; Kinh Nghiệm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                 </TextView>
@@ -120,7 +120,8 @@
                     >
             </RelativeLayout>
             <RelativeLayout
-
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
@@ -129,7 +130,7 @@
                     android:fontFamily="@font/alatsi"
                     android:textColor="#050505"
                     android:textSize="24dp"
-                    android:text="skill"
+                    android:text="Học vấn &amp; Chứng chỉ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                 </TextView>

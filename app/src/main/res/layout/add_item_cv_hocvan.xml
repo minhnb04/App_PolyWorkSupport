@@ -7,7 +7,6 @@
     android:padding="15dp"
     android:layout_height="wrap_content">
     <LinearLayout
-
         android:paddingBottom="20dp"
         android:orientation="vertical"
         android:background="@drawable/bg_item_2"
@@ -22,14 +21,14 @@
             android:background="#FF9100"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
-            android:text="Education"
+            android:text="Học vấn &amp; Chứng chỉ"
             android:layout_gravity="center"
-            android:layout_width="150dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
         </TextView>
         <EditText
-            android:id="@+id/edSchoolName"
-            android:hint="SchoolName"
+            android:id="@+id/edTentruong"
+            android:hint="Tên Trường Học"
             android:padding="10dp"
             android:layout_margin="10dp"
             android:layout_marginTop="15dp"
@@ -37,8 +36,8 @@
             android:layout_height="wrap_content">
         </EditText>
         <EditText
-            android:id="@+id/edexpertise"
-            android:hint="Expertise"
+            android:id="@+id/edChuyennganh"
+            android:hint="Chuyên Ngành"
             android:padding="10dp"
             android:layout_margin="10dp"
             android:layout_marginTop="15dp"
@@ -46,67 +45,50 @@
             android:layout_height="wrap_content">
         </EditText>
         <EditText
-            android:id="@+id/edStartTime"
-            android:hint="StartTime"
+            android:id="@+id/edChungchi"
+            android:hint="Chứng Chỉ"
             android:padding="10dp"
             android:layout_margin="10dp"
             android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </EditText>
+
         <EditText
-            android:id="@+id/edEndTime"
-            android:hint="EndTime"
+            android:id="@+id/edMotathem"
+            android:hint="Mô tả thêm"
             android:padding="10dp"
             android:layout_margin="10dp"
             android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </EditText>
-        <RadioGroup
-            android:layout_weight="3"
-            android:layout_gravity="center_vertical"
-            android:id="@+id/RadioGroup"
-            android:orientation="horizontal"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
             <TextView
-                android:layout_weight="1"
-                android:id="@+id/edIsStudying"
-                android:hint="IsStudying"
                 android:padding="10dp"
                 android:layout_margin="10dp"
                 android:layout_marginTop="15dp"
+                android:text="Image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
             </TextView>
-            <RadioButton
-                android:layout_weight="1"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnUpImageHocVan"
                 android:layout_gravity="center_vertical"
-                android:id="@+id/RbYes"
-                android:text="Yes"
+                android:background="@drawable/custom_btn"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:layout_margin="10dp"
+                android:text="Up Image"
+                android:layout_marginTop="15dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            </RadioButton>
-            <RadioButton
-                android:layout_weight="1"
-                android:layout_gravity="center_vertical"
-                android:id="@+id/RbNo"
-                android:text="No"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"></RadioButton>
+                android:layout_height="35dp">
 
-        </RadioGroup>
-        <EditText
-            android:id="@+id/edDescriibe"
-            android:hint="Descriibe"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </EditText>
-
+            </androidx.appcompat.widget.AppCompatButton>
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>
