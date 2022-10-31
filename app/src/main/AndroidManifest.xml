@@ -65,13 +65,14 @@
             android:exported="false"
             android:label="@string/title_activity_maps" />
         <activity
-            android:name=".DangKyActivity"
+            android:name=".RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".LogoActivity"
+            android:theme="@style/SplashScreen"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

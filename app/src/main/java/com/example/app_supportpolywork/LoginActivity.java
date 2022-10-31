@@ -17,7 +17,7 @@ public class LoginActivity extends AppCompatActivity {
         tvDangki=findViewById(R.id.TvDangKi);
         btnDangNhap=findViewById(R.id.btnDangNhap);
         tvDangki.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), DangKyActivity.class);
+            Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
             startActivity(intent);
         });
         btnDangNhap.setOnClickListener(v -> {

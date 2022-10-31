@@ -5,20 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 
 import com.example.app_supportpolywork.Adapter.Adapter_Main;
-import com.example.app_supportpolywork.Fragment.CV_Fragment;
-import com.example.app_supportpolywork.Fragment.HoSo_Fragment;
-import com.example.app_supportpolywork.Fragment.Trangchu_Fragment;
-import com.example.app_supportpolywork.Fragment.ViecLam_Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {

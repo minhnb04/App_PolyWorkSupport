@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="SplashScreen" parent="Theme.App_SupportPolyWork">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:statusBarColor">@color/white</item>
+    </style>
+
+    <style name="MyTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">@color/primary_color</item>
+        <item name="boxStrokeColor">@color/box_stroke_color</item>
+    </style>
+
+    <style name="MyTextInputEditText" parent="ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox.Dense">
+        <item name="android:textColor">@color/primary_color</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="PrimaryLayoutEdittext" parent="MyTextInputLayout">
+        <item name="android:textColorHint">@color/dark</item>
+        <item name="android:textColor">@color/dark</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="PrimaryButton">
+        <item name="android:background">@drawable/custom_btn</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="SmallTextView">
+        <item name="android:textColor">@color/dark</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="MediumTextView">
+        <item name="android:textColor">@color/dark</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="SpecialTextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/primary_color</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SpecialTextViewAsTitle">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/baloo</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/dark</item>
+    </style>
+    <style name="SpecialTextView2">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

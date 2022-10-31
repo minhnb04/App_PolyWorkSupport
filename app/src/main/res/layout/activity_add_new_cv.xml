@@ -3,11 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#AEC5C5C5"
+
     android:layout_height="match_parent"
     tools:context=".Add_new_cv">
     <LinearLayout
-        android:background="@drawable/bg9"
         android:layout_margin="1dp"
         android:padding="5dp"
         android:orientation="vertical"
@@ -21,14 +20,15 @@
             <ImageView
                 android:src="@drawable/ic_baseline_auto_fix_high_24"
                 android:layout_width="40dp"
-                android:layout_height="40dp">
+                android:layout_height="40dp"
+                app:tint="#000000">
             </ImageView>
             <TextView
+                android:textColor="@color/primary_color"
+                style="@style/SpecialTextViewAsTitle"
                 android:layout_marginLeft="8dp"
                 android:textStyle="bold"
                 android:textAlignment="center"
-                android:fontFamily="@font/baloo"
-                android:textColor="#95000000"
                 android:textSize="24dp"
                 android:text="Điền Thông Tin CV"
                 android:layout_width="match_parent"

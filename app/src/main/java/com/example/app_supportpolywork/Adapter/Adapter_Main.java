@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.example.app_supportpolywork.Fragment.HoSo_Fragment;
 import com.example.app_supportpolywork.Fragment.CV_Fragment;
-import com.example.app_supportpolywork.Fragment.Trangchu_Fragment;
+import com.example.app_supportpolywork.Fragment.Home_Fragment;
 import com.example.app_supportpolywork.Fragment.ViecLam_Fragment;
 
 
@@ -20,7 +20,7 @@ public class Adapter_Main extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return new Trangchu_Fragment();
+                return new Home_Fragment();
             case 1:
                 return new ViecLam_Fragment();
             case 2:
