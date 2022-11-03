@@ -198,7 +198,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="20dp"
-                            android:text="Tạo CV"
+                            android:text="Sửa CV"
                             android:textColor="#AB000000"
                             android:textSize="18dp"
                             android:textStyle="bold"></TextView>

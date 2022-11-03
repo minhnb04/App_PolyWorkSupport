@@ -50,10 +50,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:hint="Email "
+                android:id="@+id/edtEmail"
                 app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtEmail"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -65,10 +66,11 @@
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
                 android:hint="Mật Khẩu"
-                app:endIconMode="password_toggle">
+                android:id="@+id/edtMatKhau"
+                app:endIconMode="password_toggle"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtMatKhau"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword" />
@@ -80,12 +82,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
+                android:id="@+id/edtMatKhauCk"
                 android:hint=" Nhập lại mật khẩu"
                 app:endIconMode="password_toggle">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtMatKhauCk"
-                    style="@style/MyTextInputEditText"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword" />
@@ -97,11 +99,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
+                android:id="@+id/edtHoTen"
                 android:hint="Họ tên">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtHoTen"
-                    style="@style/MyTextInputEditText"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -113,18 +115,18 @@
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
                 android:hint="Số điện thoại"
+                android:id="@+id/edtSDT"
                 app:counterMaxLength="12">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtSDT"
-                    style="@style/MyTextInputEditText"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/btnDangNhap"
+                android:id="@+id/btnDangKy"
                 style="@style/PrimaryButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

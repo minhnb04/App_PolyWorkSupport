@@ -113,7 +113,7 @@ public class Add_new_cv extends AppCompatActivity {
 
     private void add2() {
         LayoutInflater inflater = LayoutInflater.from(this);
-        View v = inflater.inflate(R.layout.add_item_cv_hocvan, null);
+        View v = inflater.inflate(R.layout.add_item_cv_vitri, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         builder.setView(v);
@@ -142,7 +142,7 @@ public class Add_new_cv extends AppCompatActivity {
 
     private void add3() {
         LayoutInflater inflater = LayoutInflater.from(this);
-        View v = inflater.inflate(R.layout.add_item_cv_vitri, null);
+        View v = inflater.inflate(R.layout.add_item_cv_kinang, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         builder.setView(v);
@@ -171,7 +171,7 @@ public class Add_new_cv extends AppCompatActivity {
 
     private void add4() {
         LayoutInflater inflater = LayoutInflater.from(this);
-        View v = inflater.inflate(R.layout.add_item_cv_kinang, null);
+        View v = inflater.inflate(R.layout.add_item_cv_hocvan, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setView(v);
         builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
