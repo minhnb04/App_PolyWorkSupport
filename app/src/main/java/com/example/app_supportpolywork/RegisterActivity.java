@@ -27,6 +27,7 @@ public class RegisterActivity extends AppCompatActivity {
         edtSDT = findViewById(R.id.edtSDT);
         btnDK = findViewById(R.id.btnDangKy);
         btnDK.setOnClickListener(v -> {
+            //valifromdata
             if (!validateemail()|!validatename()|!validatepass()|!validatesdt()|!validatrepass()|!booleanvalidatapass()){
                 return;
             }else {
