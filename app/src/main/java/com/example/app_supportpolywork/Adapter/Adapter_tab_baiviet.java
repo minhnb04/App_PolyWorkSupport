@@ -96,7 +96,6 @@ public class Adapter_tab_baiviet extends RecyclerView.Adapter<Adapter_tab_baivie
 
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
-
                     list= (List<Tab_BaiViet>) results.values;
                     notifyDataSetChanged();
             }

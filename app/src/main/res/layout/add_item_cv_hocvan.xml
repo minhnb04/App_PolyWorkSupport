@@ -5,7 +5,7 @@
     android:layout_gravity="center"
     android:layout_margin="8dp"
     android:padding="15dp"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
     <LinearLayout
         android:paddingBottom="20dp"
         android:orientation="vertical"
@@ -27,6 +27,9 @@
             android:layout_height="wrap_content">
         </TextView>
         <EditText
+            android:singleLine="true"
+            android:maxLines="1"
+            style="@style/PrimaryLayoutEdittext"
             android:id="@+id/edTentruong"
             android:hint="Tên Trường Học"
             android:padding="10dp"
@@ -36,6 +39,9 @@
             android:layout_height="wrap_content">
         </EditText>
         <EditText
+            android:singleLine="true"
+            android:maxLines="1"
+            style="@style/PrimaryLayoutEdittext"
             android:id="@+id/edChuyennganh"
             android:hint="Chuyên Ngành"
             android:padding="10dp"
@@ -44,17 +50,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </EditText>
-        <EditText
-            android:id="@+id/edChungchi"
-            android:hint="Chứng Chỉ"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </EditText>
 
         <EditText
+            android:id="@+id/edChungchi"
+            style="@style/PrimaryLayoutEdittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="15dp"
+            android:hint="Chứng Chỉ"
+            android:maxLines="1"
+            android:padding="10dp"
+            android:singleLine="true"></EditText>
+
+        <EditText
+            android:maxLines="@integer/google_play_services_version"
+            style="@style/PrimaryLayoutEdittext"
             android:id="@+id/edMotathem"
             android:hint="Mô tả thêm"
             android:padding="10dp"

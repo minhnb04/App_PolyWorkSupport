@@ -28,6 +28,9 @@
             android:layout_height="wrap_content">
         </TextView>
         <EditText
+            android:singleLine="true"
+            android:maxLines="1"
+            style="@style/PrimaryLayoutEdittext"
             android:id="@+id/edVitri"
             android:hint="vị trí ứng tuyển"
             android:padding="10dp"
@@ -37,6 +40,9 @@
             android:layout_height="wrap_content">
         </EditText>
         <EditText
+            android:singleLine="true"
+            android:maxLines="1"
+            style="@style/PrimaryLayoutEdittext"
             android:id="@+id/edHinhthuc"
             android:hint="Hình Thức"
             android:padding="10dp"
@@ -45,9 +51,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </EditText>
-        <EditText
+        <EditText android:singleLine="true"
+            android:maxLines="1"
+            style="@style/PrimaryLayoutEdittext"
+            android:inputType="datetime"
             android:id="@+id/edStartTime"
-            android:hint="Thời gian bắt đầu"
+            android:hint="Thời gian "
             android:padding="10dp"
             android:layout_margin="10dp"
             android:layout_marginTop="15dp"

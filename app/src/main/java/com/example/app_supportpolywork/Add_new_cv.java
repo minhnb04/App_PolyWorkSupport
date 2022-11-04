@@ -27,7 +27,7 @@ import java.util.TimerTask;
 public class Add_new_cv extends AppCompatActivity {
     ImageButton btn_1, btn_2, btn_3, btn_4;
     Button btnUp;
-    int SELECT_IMAGE = 1;
+    int SELECT_IMAGE = 0;
     ImageView imageView;
 
     @Override
@@ -59,7 +59,7 @@ public class Add_new_cv extends AppCompatActivity {
         LayoutInflater inflater = LayoutInflater.from(this);
         View v = inflater.inflate(R.layout.add_item_cv_thongtincanhan, null);
         imageView = findViewById(R.id.img_detail_cv);
-        btnUp=findViewById(R.id.btnUpImagePer);
+         btnUp= v.findViewById(R.id.btnUpImagePer);
         EditText edTen = v.findViewById(R.id.edHoTen);
         EditText edNghe = v.findViewById(R.id.edNgheNghiep);
         EditText edGoiTinh = v.findViewById(R.id.edGioitinh);
@@ -69,16 +69,22 @@ public class Add_new_cv extends AppCompatActivity {
         EditText edNamSinh = v.findViewById(R.id.edNgaySinh);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setView(v);
+        btnUp.setOnClickListener(V -> {
+            Toast.makeText(getApplicationContext(), "Click", Toast.LENGTH_LONG).show();
+//                        Intent intent = new Intent(Intent.ACTION_PICK);
+//                        intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//                        startActivityForResult(intent,SELECT_IMAGE);
+            Intent intent = new Intent();
+            intent.setType("image/*");
+            intent.setAction(Intent.ACTION_GET_CONTENT);
+            startActivityForResult(Intent.createChooser(intent,"tile"),SELECT_IMAGE);
+            Log.e("imgSSSS",""+SELECT_IMAGE);
+        });
         builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 try {
-//                    btnUp.setOnClickListener(v -> {
-//                        Toast.makeText(getApplicationContext(), "Click", Toast.LENGTH_LONG).show();
-//                        Intent intent = new Intent(Intent.ACTION_PICK);
-//                        intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-//                        startActivityForResult(intent,SELECT_IMAGE);
-//                    });
+
                     ThongTinCaNhan_Add_CV_test modelTest = new ThongTinCaNhan_Add_CV_test(edTen.getText().toString()
                             , edNghe.getText().toString()
                             , edGoiTinh.getText().toString()
@@ -86,7 +92,7 @@ public class Add_new_cv extends AppCompatActivity {
                             , edEmail.getText().toString()
                             , Integer.parseInt(edSdt.getText().toString())
                             , edNamSinh.getText().toString()
-
+                            ,SELECT_IMAGE
                     );
                     Intent intent = new Intent(getApplicationContext(), CV_Detail.class);
                     Bundle bundle = new Bundle();
@@ -212,17 +218,18 @@ public class Add_new_cv extends AppCompatActivity {
             }
         }, 4000);
 
-
     }
-//
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if (requestCode == RESULT_OK) {
-//           if (requestCode == SELECT_IMAGE){
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == RESULT_OK) {
+           if (requestCode == SELECT_IMAGE){
+               Log.e("setImg",SELECT_IMAGE+"---"+data);
 //               imageView.setImageURI(data.getData());
-//           }
-//
-//        }
-//    }
+           }
+
+        }
+    }
+
 }

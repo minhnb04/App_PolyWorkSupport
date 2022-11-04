@@ -15,7 +15,7 @@ import java.util.List;
 
 public class Thong_Tin_Ca_Nhan_Activity extends AppCompatActivity {
     ImageView imageView ;
-    int SELECT_IMAGE=1;
+    int SELECT_IMAGE2=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +25,7 @@ public class Thong_Tin_Ca_Nhan_Activity extends AppCompatActivity {
             Intent intent = new Intent();
             intent.setType("image/*");
             intent.setAction(Intent.ACTION_GET_CONTENT);
-            startActivityForResult(Intent.createChooser(intent,"tile"),SELECT_IMAGE);
+            startActivityForResult(Intent.createChooser(intent,"tile"),SELECT_IMAGE2);
         });
     }
 

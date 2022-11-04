@@ -10,18 +10,18 @@ public class ThongTinCaNhan_Add_CV_test implements Serializable {
     private String email;
     private int sdt;
     private String namSinh;
-//    private int imgUser;
+    private int imgUser;
 
-//    public ThongTinCaNhan_Add_CV_test(String ten, String nghe, String goiTinh, String diaChi, String email, int sdt, String namSinh, int imgUser) {
-//        this.ten = ten;
-//        this.nghe = nghe;
-//        this.goiTinh = goiTinh;
-//        this.diaChi = diaChi;
-//        this.email = email;
-//        this.sdt = sdt;
-//        this.namSinh = namSinh;
-//        this.imgUser = imgUser;
-//    }
+    public ThongTinCaNhan_Add_CV_test(String ten, String nghe, String goiTinh, String diaChi, String email, int sdt, String namSinh, int imgUser) {
+        this.ten = ten;
+        this.nghe = nghe;
+        this.goiTinh = goiTinh;
+        this.diaChi = diaChi;
+        this.email = email;
+        this.sdt = sdt;
+        this.namSinh = namSinh;
+        this.imgUser = imgUser;
+    }
     public ThongTinCaNhan_Add_CV_test(String ten, String nghe, String goiTinh, String diaChi, String email, int sdt, String namSinh) {
         this.ten = ten;
         this.nghe = nghe;
