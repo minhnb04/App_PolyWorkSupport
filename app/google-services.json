@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "768413371818",
+    "firebase_url": "https://polyworksupport-default-rtdb.firebaseio.com",
+    "project_id": "polyworksupport",
+    "storage_bucket": "polyworksupport.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:768413371818:android:82188999237b177f4f2fd3",
+        "android_client_info": {
+          "package_name": "com.example.app_supportpolywork"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "768413371818-gmt88nd0cagr8boo654vf9jb95ehkb9e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcZgXeTGX2BRSYwpoGY-lP3gmnFR47Mbg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "768413371818-gmt88nd0cagr8boo654vf9jb95ehkb9e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
