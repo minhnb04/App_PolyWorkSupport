@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_login"
-    tools:context=".LoginActivity">
+    tools:context=".view.LoginActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -26,7 +26,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Tên đăng nhập"
+        android:hint="Email"
         app:endIconMode="clear_text"
         app:endIconTint="@color/dark"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,8 +35,7 @@
         app:startIconDrawable="@drawable/ic_person">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtUser"
-            android:text="admin"
+            android:id="@+id/edtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -60,8 +59,7 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtPass"
-            android:text="123"
+            android:id="@+id/edtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword" />
@@ -69,21 +67,38 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <android.widget.Button
-        android:id="@+id/btnDangNhap"
-        style="@style/PrimaryButton"
+    <TextView
+        android:id="@+id/tvError"
+        style="@style/SmallTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Đăng Nhập"
+        android:gravity="center"
+        android:text="Vui lòng kiểm tra lại tên đăng nhập hoặc mật khẩu"
+        android:textColor="#EF5350"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
 
+    <android.widget.Button
+        android:id="@+id/btnLogin"
+        style="@style/PrimaryButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="Đăng Nhập"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvError" />
+
     <TextView
-        android:id="@+id/TvQuenMatKhau"
+        android:id="@+id/tvForgetPassword"
         style="@style/SmallTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -91,7 +106,7 @@
         android:text="Quên Mật Khẩu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDangNhap" />
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
     <TextView
         android:id="@+id/textView2"
@@ -100,15 +115,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Không có tài khoản?"
-        app:layout_constraintEnd_toStartOf="@+id/TvDangKi"
+        app:layout_constraintEnd_toStartOf="@+id/tvRegister"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TvQuenMatKhau" />
+        app:layout_constraintTop_toBottomOf="@+id/tvForgetPassword" />
 
     <TextView
-        android:id="@+id/TvDangKi"
-        style="@style/SpecialTextView2"
+        android:id="@+id/tvRegister"
+        style="@style/SpecialTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

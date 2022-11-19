@@ -4,17 +4,16 @@
     android:id="@+id/carview"
     android:layout_width="wrap_content"
     android:layout_height="300dp"
-    android:layout_margin="3dp"
-    app:cardCornerRadius="10dp"
-    android:padding="5dp"
-    app:layout_scrollFlags="snap"
+    android:layout_marginBottom="16dp"
     android:focusable="true"
-    >
+    android:padding="5dp"
+    app:cardCornerRadius="10dp"
+    app:layout_scrollFlags="snap">
 
     <LinearLayout
-        android:background="@drawable/bg19"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/img_job_bg">
 
         <LinearLayout
             android:id="@+id/Linear_tabbaiviet"
@@ -24,9 +23,9 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_marginTop="-10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
                 android:padding="5dp">
 
                 <LinearLayout
@@ -40,24 +39,24 @@
                         android:orientation="vertical">
 
                         <com.makeramen.roundedimageview.RoundedImageView
-                            android:id="@+id/imgBaiViet"
+                            android:id="@+id/imvAvatar"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/b"
-                            app:riv_corner_radius="10dp"></com.makeramen.roundedimageview.RoundedImageView>
+                            android:src="@drawable/img_sample"
+                            app:riv_corner_radius="10dp" />
                     </LinearLayout>
 
                 </LinearLayout>
 
                 <TextView
-                    android:textAlignment="textStart"
-                    android:id="@+id/itemTenTieuDe"
+                    android:id="@+id/tvJobTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:fontFamily="@font/allerta"
                     android:text="Nhân Viên Kinh Doanh - Tư Vấn Bán Hàng - Sales (Thu Nhập Lên Tới 15 Triệu/Tháng)"
+                    android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -72,63 +71,63 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_gravity="center"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/ic_baseline_attach_money_24"></ImageView>
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_attack_money"></ImageView>
 
                     <TextView
-                        android:textColor="@color/black"
-                        android:layout_marginLeft="10dp"
-                        android:layout_gravity="center"
-                        android:id="@+id/itemMucLuong"
+                        android:id="@+id/tvJobSalary"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/allerta"
                         android:maxLines="2"
                         android:text="Luong: 1000 $"
+                        android:textColor="@color/black"
                         android:textSize="16dp" />
 
                     <ImageView
-                        android:layout_marginLeft="10dp"
-                        android:layout_gravity="center"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/ic_baseline_access_time_24">
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/ic_time">
 
                     </ImageView>
 
                     <TextView
-                        android:textColor="@color/black"
-                        android:layout_gravity="center"
-                        android:id="@+id/itemHinhThuc"
+                        android:id="@+id/tvJobForm"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/allerta"
                         android:maxLines="2"
                         android:text="Hinh Thuc: Toan Thoi Gian"
+                        android:textColor="@color/black"
                         android:textSize="16dp" />
                 </LinearLayout>
 
                 <LinearLayout
                     style="@style/SpecialTextView"
-                    android:layout_marginTop="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/bober_5"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/boder_of_job_item"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -136,47 +135,47 @@
                         android:layout_height="40dp"
                         android:layout_gravity="center"
                         android:layout_marginLeft="-2dp"
-                        android:src="@drawable/ic_baseline_boy_24">
+                        android:src="@drawable/ic_number_of_people">
 
                     </ImageView>
 
                     <TextView
-                        android:textColor="@color/black"
-
-                        android:layout_gravity="center"
                         android:id="@+id/itemSoLuong"
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center"
                         android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/allerta"
                         android:maxLines="2"
                         android:text="So Luong: 10 "
+                        android:textColor="@color/black"
                         android:textSize="16dp" />
 
                     <ImageView
-                        android:layout_marginLeft="10dp"
-                        android:layout_gravity="center"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/ic_baseline_business_center_24">
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/ic_business">
 
                     </ImageView>
 
                     <TextView
-                        android:textColor="@color/black"
-
                         android:id="@+id/itemCapBac"
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/allerta"
                         android:maxLines="2"
-                        android:layout_gravity="center"
                         android:text="Cap Bac: Nhan Vien"
+                        android:textColor="@color/black"
                         android:textSize="16dp" />
                 </LinearLayout>
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.app_supportpolywork.Fragment.HoSo_Fragment">
+    tools:context=".view.main_activity.profile.ProfileFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
-                android:background="@drawable/bg7"
+                android:background="@drawable/bg_profile_screen"
                 android:orientation="horizontal">
 
                 <com.makeramen.roundedimageview.RoundedImageView
@@ -40,7 +40,7 @@
                     android:layout_height="120dp"
                     android:padding="5dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/b"
+                    android:src="@drawable/img_sample"
                     app:riv_corner_radius="100dp"></com.makeramen.roundedimageview.RoundedImageView>
 
                 <LinearLayout
@@ -97,7 +97,7 @@
 
                 <TextView
                     android:layout_gravity="center"
-                    android:background="@drawable/bober_2"
+                    android:background="@drawable/boder_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -108,15 +108,14 @@
                 <androidx.cardview.widget.CardView
                     android:layout_margin="5dp"
                     app:cardCornerRadius="5dp"
-                    android:background="@drawable/bober_7"
-                    android:foreground="@drawable/effect"
+
                     android:clickable="true"
                     android:layout_width="match_parent"
                     android:outlineAmbientShadowColor="@color/black"
                     android:layout_height="wrap_content">
 
                     <LinearLayout
-                        android:foreground="@drawable/effect"
+
                                             android:clickable="true"
                                             android:id="@+id/linearThongtin"
                                             android:layout_width="match_parent"
@@ -126,7 +125,7 @@
                                             <ImageView
                                                 android:layout_width="40dp"
                                                 android:layout_height="40dp"
-                                                android:src="@drawable/ic_baseline_edit_note_24"></ImageView>
+                                                android:src="@drawable/ic_edit_profile"></ImageView>
 
                                             <TextView
                                                 android:layout_width="wrap_content"
@@ -142,7 +141,7 @@
                 <androidx.cardview.widget.CardView
                     android:layout_margin="5dp"
                     android:layout_width="match_parent"
-                    android:foreground="@drawable/effect"
+
                     android:clickable="true"
                     app:cardCornerRadius="5dp"
                     android:layout_height="wrap_content">
@@ -157,7 +156,7 @@
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/ic_outline_lock_24"></ImageView>
+                            android:src="@drawable/ic_lock"></ImageView>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -174,7 +173,7 @@
 
 
                 <androidx.cardview.widget.CardView
-                    android:foreground="@drawable/effect"
+
                     android:clickable="true"
                     android:layout_margin="5dp"
                     app:cardCornerRadius="5dp"
@@ -191,7 +190,7 @@
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/ic_outline_add_to_photos_24"></ImageView>
+                            android:src="@drawable/ic_edit_cv"></ImageView>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -207,7 +206,7 @@
 
                     <androidx.cardview.widget.CardView
 
-                        android:foreground="@drawable/effect"
+
                         android:clickable="true"
                         android:layout_margin="5dp"
                         android:layout_width="match_parent"
@@ -223,7 +222,7 @@
                             <ImageView
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:src="@drawable/ic_outline_library_books_24"></ImageView>
+                                android:src="@drawable/ic_my_cv"></ImageView>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -248,7 +247,7 @@
                     android:textSize="20sp"
                     android:textStyle="bold"></TextView>
                     <androidx.cardview.widget.CardView
-                        android:foreground="@drawable/effect"
+
                         android:clickable="true"
                         android:layout_margin="5dp"
                         app:cardCornerRadius="5dp"
@@ -265,7 +264,9 @@
                             <ImageView
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:src="@drawable/ic_outline_history_24"></ImageView>
+                                android:src="@drawable/ic_history">
+
+                            </ImageView>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -292,7 +293,7 @@
                     android:textSize="20sp"
                     android:textStyle="bold"></TextView>
             <androidx.cardview.widget.CardView
-                android:foreground="@drawable/effect"
+
                 android:clickable="true"
                 android:layout_margin="5dp"
                 app:cardCornerRadius="5dp"
@@ -309,7 +310,7 @@
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/ic_outline_notifications_active_24"></ImageView>
+                        android:src="@drawable/ic_notification"></ImageView>
 
                     <TextView
                         android:layout_width="wrap_content"

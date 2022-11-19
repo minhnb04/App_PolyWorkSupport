@@ -5,18 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Fragment.ChiTietBaiViet_Fragment">
+    tools:context=".view.fragment.JobDetailFragment">
     <LinearLayout
         android:layout_margin="5dp"
         android:orientation="horizontal"
-        android:background="@drawable/bober_4"
         android:layout_width="match_parent"
         android:layout_height="50dp">
         <ImageView
             android:padding="2dp"
             android:layout_gravity="center"
             android:layout_marginLeft="8dp"
-            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            android:src="@drawable/ic_arrow_back"
             android:layout_width="32dp"
             android:layout_height="32dp"></ImageView>
         <TextView
@@ -59,7 +58,7 @@
                         android:layout_width="120dp"
                         android:layout_height="120dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/b"
+                        android:src="@drawable/img_sample"
                         app:riv_corner_radius="10dp"></com.makeramen.roundedimageview.RoundedImageView>
                 </LinearLayout>
 
@@ -76,7 +75,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:background="@drawable/bg6"
+                android:background="@drawable/bg_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="440dp"
                 android:baselineAligned="false"
@@ -111,7 +110,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:src="@drawable/icon2"></ImageView>
+                                android:src="@drawable/ic_salary"></ImageView>
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -152,7 +151,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:src="@drawable/item3"></ImageView>
+                                android:src="@drawable/ic_work_form"></ImageView>
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -193,7 +192,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:src="@drawable/item1"></ImageView>
+                                android:src="@drawable/ic_work_place"></ImageView>
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -234,7 +233,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:src="@drawable/item4"></ImageView>
+                                android:src="@drawable/ic_experience"></ImageView>
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -275,7 +274,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:src="@drawable/gio_tinh"></ImageView>
+                                android:src="@drawable/ic_gender"></ImageView>
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -316,7 +315,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:src="@drawable/dia_diem"></ImageView>
+                                android:src="@drawable/ic_address"></ImageView>
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -401,7 +400,7 @@
                 android:layout_gravity="center"
                 android:padding="8dp"
                 android:textColor="@color/white"
-                android:background="@drawable/custom_btn"
+                android:background="@drawable/bg_origan_btn"
                 android:id="@+id/btnUngTuyen"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
