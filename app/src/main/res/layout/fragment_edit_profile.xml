@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="Chỉnh sửa thông tin"
+        app:titleCentered="true"
+        app:titleTextAppearance="@style/SpecialSmallTextViewAsTitle" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="220dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/imvAvatar"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/img_sample"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:riv_corner_radius="100dp" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignStart="@+id/imvAvatar"
+                    android:layout_alignEnd="@+id/imvAvatar"
+                    android:layout_alignParentBottom="true"
+                    android:src="@drawable/ic_camera"
+                    app:layout_constraintBottom_toBottomOf="@+id/imvAvatar"
+                    app:layout_constraintEnd_toEndOf="@+id/imvAvatar"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/txtTen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_margin="10dp"
+                android:background="#FF9100"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="Infor"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="15dp"
+                android:hint="Name"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/edtGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="15dp"
+                android:hint="Gender"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/edtAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="15dp"
+                android:hint="Address"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="15dp"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/edtPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="15dp"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:padding="10dp" />
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:minWidth="200dp"
+                android:text="Lưu"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

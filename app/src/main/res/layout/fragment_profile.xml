@@ -6,329 +6,212 @@
     android:layout_height="match_parent"
     tools:context=".view.main_activity.profile.ProfileFragment">
 
-    <ScrollView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_profile_screen"
+        android:orientation="horizontal"
+        android:paddingVertical="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
-            android:orientation="vertical"
-            android:padding="8dp"
+        <ImageView
+            android:id="@+id/imvAvatar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/img_sample"
+            app:layout_constraintBottom_toBottomOf="@+id/tvEmail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvName" />
+
+        <TextView
+            android:id="@+id/tvName"
+            style="@style/SpecialTextViewAsTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="User name"
+            app:layout_constraintBottom_toTopOf="@+id/tvPhoneNumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imvAvatar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvPhoneNumber"
+            style="@style/SpecialTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="0868358175"
+            android:textColor="@color/dark"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvEmail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imvAvatar"
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            style="@style/SpecialTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="email@gmail.com"
+            android:textColor="@color/dark"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintStart_toEndOf="@+id/imvAvatar"
+            app:layout_constraintTop_toBottomOf="@+id/tvPhoneNumber" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/view12"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/primary_color"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <TextView
+        android:id="@+id/tvEditTitle"
+        style="@style/SpecialTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="CHỈNH SỬA"
+        android:textColor="@color/dark"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/view12"
+        app:layout_constraintTop_toBottomOf="@+id/view12" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEditTitle">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnEditInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="5dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp">
 
             <LinearLayout
+                android:id="@+id/linearThongtin"
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
-                android:background="@drawable/bg_profile_screen"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:padding="5dp">
 
-                <com.makeramen.roundedimageview.RoundedImageView
-                    android:id="@+id/imgNguoiDung"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:padding="5dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/img_sample"
-                    app:riv_corner_radius="100dp"></com.makeramen.roundedimageview.RoundedImageView>
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_edit_profile" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="3dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tvTenNguoidung"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:padding="5dp"
-                        android:text="TEN NGUOI DUNG"
-                        android:textSize="18dp"
-                        android:textStyle="bold"></TextView>
-
-                    <TextView
-                        android:id="@+id/tvSDT"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:padding="5dp"
-                        android:text="0987654321"
-                        android:textSize="16dp"></TextView>
-
-                    <TextView
-                        android:id="@+id/tvEmail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:padding="5dp"
-                        android:text="Admin@gmail.com"
-                        android:textSize="16dp"></TextView>
-                    <!--                       <ImageView-->
-                    <!--                           android:layout_gravity="center_vertical"-->
-                    <!--                           android:layout_weight="1"-->
-                    <!--                           android:src="@drawable/baseline_chevron_right_24"-->
-                    <!--                           android:layout_width="10dp"-->
-                    <!--                           android:layout_height="50dp">-->
-
-                    <!--                       </ImageView>-->
-                </LinearLayout>
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:text="Thông tin cá nhân"
+                    android:textColor="#AB000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
             </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnChangePassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="5dp"
+            android:clickable="true"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+
+                android:id="@+id/linearDoiMk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_lock" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:text="Đổi Mật Khẩu"
+                    android:textColor="#AB000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="5dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-
-                android:orientation="vertical">
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:padding="5dp">
 
                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/boder_tv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:text="Writer"
-                    android:textColor="#000000"
-                    android:textSize="20sp"
-                    android:textStyle="bold"></TextView>
-                <androidx.cardview.widget.CardView
-                    android:layout_margin="5dp"
-                    app:cardCornerRadius="5dp"
-
-                    android:clickable="true"
-                    android:layout_width="match_parent"
-                    android:outlineAmbientShadowColor="@color/black"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-
-                                            android:clickable="true"
-                                            android:id="@+id/linearThongtin"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:orientation="horizontal"
-                                            android:padding="5dp">
-                                            <ImageView
-                                                android:layout_width="40dp"
-                                                android:layout_height="40dp"
-                                                android:src="@drawable/ic_edit_profile"></ImageView>
-
-                                            <TextView
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:layout_gravity="center_vertical"
-                                                android:layout_marginLeft="20dp"
-                                                android:text="Thông tin cá nhân"
-                                                android:textColor="#AB000000"
-                                                android:textSize="18dp"
-                                                android:textStyle="bold"></TextView>
-                                        </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-                    android:layout_margin="5dp"
-                    android:layout_width="match_parent"
-
-                    android:clickable="true"
-                    app:cardCornerRadius="5dp"
-                    android:layout_height="wrap_content">
-                    <LinearLayout
-
-                        android:id="@+id/linearDoiMk"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="5dp">
-
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/ic_lock"></ImageView>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
-                            android:text="Đổi Mật Khẩu"
-                            android:textColor="#AB000000"
-                            android:textSize="18dp"
-                            android:textStyle="bold"></TextView>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-
-
-                <androidx.cardview.widget.CardView
-
-                    android:clickable="true"
-                    android:layout_margin="5dp"
-                    app:cardCornerRadius="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <LinearLayout
-
-                        android:id="@+id/linearAdd"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="5dp">
-
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/ic_edit_cv"></ImageView>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="20dp"
-                            android:text="Sửa CV"
-                            android:textColor="#AB000000"
-                            android:textSize="18dp"
-                            android:textStyle="bold"></TextView>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-
-
-                        android:clickable="true"
-                        android:layout_margin="5dp"
-                        android:layout_width="match_parent"
-                        app:cardCornerRadius="5dp"
-                        android:layout_height="wrap_content">
-                        <LinearLayout
-                            android:id="@+id/linearCV"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:padding="5dp">
-
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/ic_my_cv"></ImageView>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginLeft="20dp"
-                                android:text="CV của tôi"
-                                android:textColor="#AB000000"
-                                android:textSize="18dp"
-                                android:textStyle="bold"></TextView>
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="Lịch Sử"
-                    android:textColor="#000000"
-                    android:textSize="20sp"
-                    android:textStyle="bold"></TextView>
-                    <androidx.cardview.widget.CardView
-
-                        android:clickable="true"
-                        android:layout_margin="5dp"
-                        app:cardCornerRadius="5dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <LinearLayout
-
-                            android:id="@+id/linaerDaXem"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:padding="5dp">
-
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/ic_history">
-
-                            </ImageView>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginLeft="20dp"
-                                android:text="CV đã nộp"
-                                android:textColor="#AB000000"
-                                android:textSize="18dp"
-                                android:textStyle="bold"></TextView>
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="Thống Báo"
-                    android:textColor="#000000"
-                    android:textSize="20sp"
-                    android:textStyle="bold"></TextView>
-            <androidx.cardview.widget.CardView
-
-                android:clickable="true"
-                android:layout_margin="5dp"
-                app:cardCornerRadius="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <LinearLayout
-
-                    android:id="@+id/linaerThongBao"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="5dp">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/ic_notification"></ImageView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="20dp"
-                        android:text="Thông báo của tôi"
-                        android:textColor="#AB000000"
-                        android:textSize="18dp"
-                        android:textStyle="bold"></TextView>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                    android:gravity="center"
+                    android:text="Đăng Xuất"
+                    android:textColor="#AB000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
 
 
             </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
+    </LinearLayout>
 
-        </LinearLayout>
-    </ScrollView>
-<!--    #00FFC400-->
 </androidx.constraintlayout.widget.ConstraintLayout>
