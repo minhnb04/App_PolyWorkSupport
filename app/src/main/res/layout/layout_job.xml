@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/root"
-    app:cardElevation="8dp"
-    app:cardCornerRadius="8dp"
     android:layout_marginHorizontal="16dp"
     android:layout_marginBottom="24dp"
-    android:background="@drawable/bg_card_view">
+    android:background="@drawable/bg_card_view"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -122,6 +122,7 @@
             app:layout_constraintTop_toTopOf="@id/imvNumberOfPeople" />
 
         <TextView
+            android:id="@+id/tvWorkPlace"
             style="@style/SmallTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -144,6 +145,7 @@
             app:layout_constraintTop_toBottomOf="@id/tvNumberOfPeople" />
 
         <TextView
+            android:id="@+id/tvExpiry"
             style="@style/SmallTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -152,6 +154,7 @@
             android:text="Còn 25 ngày để ứng tuyển"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.842"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/t1" />
 

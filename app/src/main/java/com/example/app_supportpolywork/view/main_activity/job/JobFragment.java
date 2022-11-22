@@ -8,13 +8,17 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavDirections;
 
+import com.example.app_supportpolywork.BaseFragment;
+import com.example.app_supportpolywork.R;
 import com.example.app_supportpolywork.data.dummy.JobDummy;
 import com.example.app_supportpolywork.data.model.Job;
 import com.example.app_supportpolywork.databinding.FragmentJobBinding;
+import com.example.app_supportpolywork.view.main_activity.MainActivity;
 
 
-public class JobFragment extends Fragment implements JobAdapter.JobAdapterListener {
+public class JobFragment extends BaseFragment implements JobAdapter.JobAdapterListener {
 
     private FragmentJobBinding mBinding;
     private JobAdapter mJobAdapter;
@@ -38,7 +42,6 @@ public class JobFragment extends Fragment implements JobAdapter.JobAdapterListen
         mJobAdapter.submitList(JobDummy.getJobList());
     }
 
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -47,6 +50,8 @@ public class JobFragment extends Fragment implements JobAdapter.JobAdapterListen
 
     @Override
     public void onClickJobItem(Job job) {
-
+        JobFragmentDirections.ActionJobFragmentToJobDetailFragment action =
+                JobFragmentDirections.actionJobFragmentToJobDetailFragment(job);
+        mNavController.navigate((NavDirections) action);
     }
 }
