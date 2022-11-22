@@ -16,11 +16,12 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.example.app_supportpolywork.BaseFragment;
 import com.example.app_supportpolywork.databinding.FragmentHomeBinding;
 import com.example.app_supportpolywork.util.CommonUtil;
 
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends BaseFragment {
 
     private FragmentHomeBinding mBinding;
     private final ActivityResultLauncher<String> mRequestPermissionLauncher =

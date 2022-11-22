@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragment.cv_set_fragment.PersonalInfoFragment">
+    tools:context=".view.main_activity.cv.create_cv_fragments.InfoFragment">
 
 
     <include
-        android:id="@+id/include"
+        android:id="@+id/toolbar"
         layout="@layout/layout_cv_set_fragment_toolbar" />
 
     <ScrollView
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,42 +30,51 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="24dp"
-                android:hint="Nhập tên trường">
+                android:hint="Nhập tên trường"
+                app:counterEnabled="true"
+                app:counterMaxLength="100">
 
                 <com.google.android.material.textfield.TextInputEditText
                     style="@style/MyTextInputEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLength="100" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/PrimaryLayoutEdittext"
                 android:id="@+id/edtMajor"
+                style="@style/PrimaryLayoutEdittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
-                android:hint="Nhập chuyên ngành">
+                android:hint="Nhập chuyên ngành"
+                app:counterEnabled="true"
+                app:counterMaxLength="70">
 
                 <com.google.android.material.textfield.TextInputEditText
                     style="@style/MyTextInputEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:maxLength="70" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/PrimaryLayoutEdittext"
                 android:id="@+id/edtDegreeType"
+                style="@style/PrimaryLayoutEdittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
-                android:hint="Nhập loại bằng">
+                android:hint="Nhập loại bằng"
+                app:counterEnabled="true"
+                app:counterMaxLength="100">
 
                 <com.google.android.material.textfield.TextInputEditText
                     style="@style/MyTextInputEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:maxLength="100" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -76,12 +85,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
-                android:hint="Tốt nghiệp loại">
+                android:hint="Tốt nghiệp loại"
+                app:counterEnabled="true"
+                app:counterMaxLength="50">
 
                 <com.google.android.material.textfield.TextInputEditText
                     style="@style/MyTextInputEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLength="50" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -91,12 +103,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
-                android:hint="Chọn thời gian bắt đầu học">
+                android:hint="Chọn thời gian bắt đầu học"
+                app:counterEnabled="true"
+                app:counterMaxLength="50">
 
                 <com.google.android.material.textfield.TextInputEditText
                     style="@style/MyTextInputEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLength="50" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -107,13 +122,16 @@
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:hint="Chọn thời gian kết thúc">
+                android:hint="Chọn thời gian kết thúc"
+                app:counterEnabled="true"
+                app:counterMaxLength="50">
 
                 <com.google.android.material.textfield.TextInputEditText
                     style="@style/MyTextInputEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="start"
+                    android:maxLength="50"
                     android:singleLine="false" />
             </com.google.android.material.textfield.TextInputLayout>
 

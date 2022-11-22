@@ -9,7 +9,7 @@
         android:icon="@drawable/ic_job"
         android:title="Việc làm" />
     <item
-        android:id="@+id/CVFragment"
+        android:id="@+id/cvFragment"
         android:icon="@drawable/ic_cv"
         android:title="CV" />
     <item

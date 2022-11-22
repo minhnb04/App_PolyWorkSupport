@@ -2,6 +2,7 @@ package com.example.app_supportpolywork.util;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -48,41 +49,40 @@ public class CommonUtil {
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
-    public static boolean validateEmail(String email) {
+    public static boolean validEmail(String email) {
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(email);
         return matcher.matches();
     }
 
-    public static boolean validatePassword(String password) {
+    public static boolean validPassword(String password) {
         Matcher matcher = VALID_PASSWORD_REGEX.matcher(password);
         return matcher.matches();
     }
 
-    public static boolean validateNumberPhone(String phoneNumber) {
+    public static boolean validNumberPhone(String phoneNumber) {
         Matcher matcher = VALID_PHONE_NUMBER_REGEX.matcher(phoneNumber);
         return matcher.matches();
     }
 
-    public static byte[] readFile(String file) throws IOException {
-        return readFile(new File(file));
+    /**
+     * This method converts dp unit to equivalent pixels, depending on device density.
+     *
+     * @param dp A value in dp (density independent pixels) unit. Which we need to convert into pixels
+     * @param context Context to get resources and device specific display metrics
+     * @return A float value to represent px equivalent to dp depending on device density
+     */
+    public static float convertDpToPixel(float dp, Context context){
+        return dp * ((float) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
     }
 
-    public static byte[] readFile(File file) throws IOException {
-        // Open file
-        RandomAccessFile f = new RandomAccessFile(file, "r");
-        try {
-            // Get and check length
-            long longlength = f.length();
-            int length = (int) longlength;
-            if (length != longlength)
-                throw new IOException("File size >= 2 GB");
-            // Read file and return data
-            byte[] data = new byte[length];
-            f.readFully(data);
-            return data;
-        } finally {
-            f.close();
-        }
+    /**
+     * This method converts device specific pixels to density independent pixels.
+     *
+     * @param px A value in px (pixels) unit. Which we need to convert into db
+     * @param context Context to get resources and device specific display metrics
+     * @return A float value to represent dp equivalent to px value
+     */
+    public static float convertPixelsToDp(float px, Context context){
+        return px / ((float) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
     }
-
 }

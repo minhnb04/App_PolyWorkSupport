@@ -86,7 +86,7 @@ public class JobDummy {
     public static List<Job> getJobList() {
         List<Job> jobs = new ArrayList<>();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             Job job = new Job();
             job.setAvatar(null);
             job.setId(i + "");
@@ -130,7 +130,7 @@ public class JobDummy {
                     "Đã có những dự án thành công lớn, có kinh nghiệm trong ngành thể thao… là lợi thế.\n" +
                     "Ứng viên đã từng làm việc tại vị trí tương đương tại các Agency lớn là một lợi thế");
             job.setTechnology(getRandomTechnology());
-
+            job.setExpiryApply("16:30 22/11/2022");
             jobs.add(job);
         }
         return jobs;

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".view.fragment.cv_set_fragment.PersonalInfoFragment">
+    tools:context=".view.main_activity.cv.create_cv_fragments.InfoFragment">
 
     <View
         android:id="@+id/root"
@@ -20,34 +20,33 @@
         style="@style/SpecialSmallTextViewAsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:text="Thông tin cá nhân"
         app:layout_constraintBottom_toBottomOf="@+id/root"
-        app:layout_constraintEnd_toStartOf="@+id/imvNext"
-        app:layout_constraintStart_toStartOf="@+id/root"
+        app:layout_constraintEnd_toEndOf="@+id/root"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/root" />
 
     <ImageView
-        android:id="@+id/imvNext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/ic_next"
-        app:layout_constraintBottom_toBottomOf="@+id/root"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/root"
-        app:tint="@color/primary_color" />
-
-    <ImageView
-        android:id="@+id/imvPrevious"
-        app:tint="@color/primary_color"
+        android:id="@+id/imvBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:src="@drawable/ic_previous"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/primary_color" />
+
+    <ImageView
+        android:id="@+id/imvSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/primary_color" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

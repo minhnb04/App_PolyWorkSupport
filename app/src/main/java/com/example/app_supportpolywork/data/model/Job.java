@@ -3,9 +3,10 @@ package com.example.app_supportpolywork.data.model;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Job {
+public class Job  implements Serializable {
     private String id;
     private String avatar;
     private String title;
@@ -23,7 +24,7 @@ public class Job {
     private String requirement;
     private String technology;
     private String position;
-    private long expiryApply;
+    private String expiryApply;
 
     public String getId() {
         return id;
@@ -161,19 +162,27 @@ public class Job {
         this.position = position;
     }
 
-    public long getExpiryApply() {
+    public String getExpiryApply() {
         return expiryApply;
     }
 
-    public void setExpiryApply(long expiryApply) {
+    public void setExpiryApply(String expiryApply) {
         this.expiryApply = expiryApply;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Job job = (Job) o;
+        return getStartSalary() == job.getStartSalary() && getEndSalary() == job.getEndSalary() && getStartNeededNumberOfPeople() == job.getStartNeededNumberOfPeople() && getEndNeededNumberOfPeople() == job.getEndNeededNumberOfPeople() && getExpiryApply() == job.getExpiryApply() && Objects.equals(getAvatar(), job.getAvatar()) && Objects.equals(getTitle(), job.getTitle()) && Objects.equals(getSalary(), job.getSalary()) && Objects.equals(getWorkForm(), job.getWorkForm()) && Objects.equals(getWorkPlace(), job.getWorkPlace()) && Objects.equals(getGender(), job.getGender()) && Objects.equals(getExperience(), job.getExperience()) && Objects.equals(getDescription(), job.getDescription()) && Objects.equals(getBenefits(), job.getBenefits()) && Objects.equals(getRequirement(), job.getRequirement()) && Objects.equals(getTechnology(), job.getTechnology()) && Objects.equals(getPosition(), job.getPosition());
+    }
 
     public enum WorkForm {
-        FULL_TIME("Full-time"), PART_TIME ("Part-time"), REMOTE("Remote");
+        FULL_TIME("Full-time"), PART_TIME("Part-time"), REMOTE("Remote");
 
         public String value;
+
         WorkForm(String s) {
             value = s;
         }
@@ -187,7 +196,7 @@ public class Job {
 
         @Override
         public boolean areContentsTheSame(@NonNull Job oldItem, @NonNull Job newItem) {
-            return oldItem == newItem;
+            return oldItem.equals(newItem);
         }
     };
 }

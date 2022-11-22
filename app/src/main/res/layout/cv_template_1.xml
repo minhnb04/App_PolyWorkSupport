@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/page"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:context=".view.main_activity.cv.CreateCVFragment">
+
+    <TextView
+        android:id="@+id/textView16"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="2013-01 - 2016-01"
+        android:textColor="#81D4FA"
+        android:textSize="6dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvExperienceTitle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvExperienceTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvExperienceTitle" />
+
+    <TextView
+        android:id="@+id/textView17"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="2013-01 - 2016-01"
+        android:textColor="#81D4FA"
+        android:textSize="6dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvMajor3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tvMajor3"
+        app:layout_constraintTop_toBottomOf="@+id/tvMajor3" />
+
+    <View
+        android:id="@+id/info"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="#64B5F6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imvAvatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/info"
+        app:layout_constraintStart_toStartOf="@+id/info"
+        app:layout_constraintTop_toTopOf="@+id/info"
+        app:srcCompat="@drawable/img_sample" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:text="NGUYỄN THỊ MAI"
+        android:textColor="#FFFFFF"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imvAvatar"
+        app:layout_constraintTop_toTopOf="@+id/info" />
+
+    <TextView
+        android:id="@+id/tvPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:text="Nhân Viên Kinh Doanh"
+        android:textColor="#FFFFFF"
+        android:textSize="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/info"
+        app:layout_constraintStart_toStartOf="@+id/tvName"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="12dp"
+        android:background="#64B5F6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:background="#64B5F6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <ImageView
+        android:id="@+id/imvGenderIcon"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvGender"
+        app:layout_constraintStart_toStartOf="@+id/imvAvatar"
+        app:layout_constraintTop_toTopOf="@+id/tvGender"
+        app:srcCompat="@drawable/ic_person"
+        app:tint="#64B5F6" />
+
+    <TextView
+        android:id="@+id/tvGender"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="4dp"
+        android:text="Nữ"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toEndOf="@+id/imvGenderIcon"
+        app:layout_constraintTop_toBottomOf="@+id/imvAvatar" />
+
+    <ImageView
+        android:id="@+id/imvAddressIcon"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        app:layout_constraintStart_toStartOf="@+id/imvGenderIcon"
+        app:layout_constraintTop_toTopOf="@+id/tvAddress"
+        app:srcCompat="@drawable/ic_location"
+        app:tint="#64B5F6" />
+
+    <TextView
+        android:id="@+id/tvAddress"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:lines="2"
+        android:text="Xom 8, Xuan Tuong, Thanh Chuong, Nghe An"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toEndOf="@+id/imvAddressIcon"
+        app:layout_constraintTop_toBottomOf="@+id/tvGender" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.66" />
+
+    <ImageView
+        android:id="@+id/imvCalendarIcon"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvBirthday"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/tvBirthday"
+        app:srcCompat="@drawable/ic_calendar"
+        app:tint="#64B5F6" />
+
+    <TextView
+        android:id="@+id/tvBirthday"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:text="01-11-2011"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toEndOf="@+id/imvCalendarIcon"
+        app:layout_constraintTop_toTopOf="@+id/tvGender" />
+
+    <ImageView
+        android:id="@+id/imvEmailIcon"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/tvEmail"
+        app:srcCompat="@drawable/ic_email"
+        app:tint="#64B5F6" />
+
+    <TextView
+        android:id="@+id/tvEmail"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:text="hung0868358@gmail.com"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toEndOf="@+id/imvEmailIcon"
+        app:layout_constraintTop_toBottomOf="@+id/tvBirthday" />
+
+    <ImageView
+        android:id="@+id/imvPhoneNumberIcon"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPhoneNumber"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/tvPhoneNumber"
+        app:srcCompat="@drawable/ic_phone"
+        app:tint="#64B5F6" />
+
+    <TextView
+        android:id="@+id/tvPhoneNumber"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:text="0868358175"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imvPhoneNumberIcon"
+        app:layout_constraintTop_toTopOf="@+id/tvBirthday"
+        tools:layout_editor_absoluteX="313dp"
+        tools:layout_editor_absoluteY="66dp" />
+
+    <TextView
+        android:id="@+id/tvObjectiveTitle"
+        style="@style/CVTextViewAsTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:text="MỤC TIÊU NGHỀ NGHIỆP"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <TextView
+        android:id="@+id/tvObjective"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:lines="6"
+        android:maxLength="250"
+        android:text="Lorem Ipsum is simply dummy te of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/tvObjectiveTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvObjectiveTitle" />
+
+    <View
+        android:id="@+id/view4"
+        style="@style/CVDecordLine"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvObjective" />
+
+    <View
+        android:id="@+id/view7"
+        style="@style/CVDecordLine"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSkill" />
+
+    <View
+        android:id="@+id/view8"
+        style="@style/CVDecordLine"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvActive" />
+
+    <View
+        android:id="@+id/view5"
+        style="@style/CVDecordLine"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/tvTypeDegree" />
+
+    <View
+        android:id="@+id/view6"
+        style="@style/CVDecordLine"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/tvMajor5" />
+
+    <TextView
+        android:id="@+id/tvEducationTitle"
+        style="@style/CVTextViewAsTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="12dp"
+        android:text="Học vấn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <TextView
+        android:id="@+id/tvEducationYear"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="2013-01 - 2016-01"
+        android:textColor="#81D4FA"
+        android:textSize="6dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvEducationTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvEducationTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvEducationTitle" />
+
+    <TextView
+        android:id="@+id/tvEducationSchool"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Đại Học Kinh Tế"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEducationTitle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvEducationTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvEducationYear" />
+
+    <TextView
+        android:id="@+id/tvEducationSchool2"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Đại Học Kinh Tế"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textView16"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView16"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <TextView
+        android:id="@+id/tvEducationSchool3"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Đại Học Kinh Tế"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textView17"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/tvCertification"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Đại Học Kinh Tế"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvCertificationTitle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvCertificationTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvCertificationTitle" />
+
+    <TextView
+        android:id="@+id/tvEducationSchool5"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Đại Học Kinh Tế"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvCertificationTitle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvCertificationTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvCertification" />
+
+    <TextView
+        android:id="@+id/tvEducationSchool6"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="16dp"
+        android:text="Đại Học Kinh Tế"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvEducationSchool5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvEducationSchool5"
+        app:layout_constraintTop_toBottomOf="@+id/tvEducationSchool5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvMajor"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Chuyên ngành: Quản trị kinh doanh"
+        app:layout_constraintEnd_toEndOf="@+id/tvEducationSchool"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvEducationSchool"
+        app:layout_constraintTop_toBottomOf="@+id/tvEducationSchool" />
+
+    <TextView
+        android:id="@+id/tvMajor2"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:text="Chuyên ngành: Quản trị kinh doanh"
+        app:layout_constraintEnd_toEndOf="@+id/tvEducationSchool2"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toStartOf="@+id/tvEducationSchool2"
+        app:layout_constraintTop_toBottomOf="@+id/tvEducationSchool2" />
+
+    <TextView
+        android:id="@+id/tvMajor4"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:text="Chuyên ngành: Quản trị kinh doanh"
+        app:layout_constraintEnd_toEndOf="@+id/tvEducationSchool3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvEducationSchool3"
+        app:layout_constraintTop_toBottomOf="@+id/tvEducationSchool3" />
+
+    <TextView
+        android:id="@+id/tvMajor3"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:lines="6"
+        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+        app:layout_constraintEnd_toEndOf="@+id/tvMajor2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvMajor2"
+        app:layout_constraintTop_toBottomOf="@+id/tvMajor2" />
+
+    <TextView
+        android:id="@+id/tvSkill"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:lines="10"
+        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+        app:layout_constraintEnd_toEndOf="@+id/tvExperienceTitle3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvExperienceTitle3"
+        app:layout_constraintTop_toBottomOf="@+id/tvExperienceTitle3" />
+
+    <TextView
+        android:id="@+id/tvActive"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:lines="8"
+        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+        app:layout_constraintEnd_toEndOf="@+id/tvExperienceTitle3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvExperienceTitle3"
+        app:layout_constraintTop_toBottomOf="@+id/tvActiveTitle" />
+
+    <TextView
+        android:id="@+id/tvIntersting"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:lines="4"
+        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+        app:layout_constraintEnd_toEndOf="@+id/tvExperienceTitle3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvExperienceTitle3"
+        app:layout_constraintTop_toBottomOf="@+id/tvInterestingTitle" />
+
+    <TextView
+        android:id="@+id/tvMajor5"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:lines="6"
+        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+        app:layout_constraintEnd_toEndOf="@+id/tvMajor4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tvMajor4"
+        app:layout_constraintTop_toBottomOf="@+id/tvMajor4" />
+
+    <TextView
+        android:id="@+id/tvDegree"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Bằng cấp: Cử Nhân đại học"
+        app:layout_constraintEnd_toEndOf="@+id/tvEducationTitle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvEducationTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvMajor" />
+
+    <TextView
+        android:id="@+id/tvTypeDegree"
+        style="@style/CVTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Tốt nghiệp loại: Khá"
+        app:layout_constraintEnd_toEndOf="@+id/tvEducationTitle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvEducationTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvDegree" />
+
+    <TextView
+        android:id="@+id/tvExperienceTitle"
+        style="@style/CVTextViewAsTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="12dp"
+        android:text="Kinh Nghiệm Làm Việc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+    <TextView
+        android:id="@+id/tvExperienceTitle3"
+        style="@style/CVTextViewAsTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="12dp"
+        android:text="Kỹ năng"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+    <TextView
+        android:id="@+id/tvActiveTitle"
+        style="@style/CVTextViewAsTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="12dp"
+        android:text="Hoạt động"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view7" />
+
+    <TextView
+        android:id="@+id/tvInterestingTitle"
+        style="@style/CVTextViewAsTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="12dp"
+        android:text="Sở thích"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view8" />
+
+    <TextView
+        android:id="@+id/tvCertificationTitle"
+        style="@style/CVTextViewAsTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="12dp"
+        android:text="Chứng Chỉ"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/view6" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
             return false;
         }
 
-        if (!CommonUtil.validateEmail(email)) {
+        if (!CommonUtil.validEmail(email)) {
             mBinding.edtEmail.setError("Vui lòng nhập email đúng định dạng.");
             return false;
         }
@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
             return false;
         }
 
-        if (!CommonUtil.validatePassword(password)) {
+        if (!CommonUtil.validPassword(password)) {
             mBinding.edtPassword.setError("Vui lòng nhập mật khẩu đúng định dạng.");
             return false;
         }
