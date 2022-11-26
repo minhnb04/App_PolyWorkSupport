@@ -67,10 +67,16 @@ public class UploadCvFragment extends BaseFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ((MainActivity) requireActivity()).closeBottomNav();
-
+        setupToolbar();
         receiveData();
         setupBtnUpload();
         setupUploadFile();
+    }
+
+    private void setupToolbar() {
+        mBinding.toolbar.setNavigationOnClickListener(v -> {
+            mNavController.popBackStack();
+        });
     }
 
     private void receiveData() {
