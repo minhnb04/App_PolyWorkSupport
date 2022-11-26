@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.app_supportpolywork.BaseFragment;
-import com.example.app_supportpolywork.data.manager.CVManager;
+import com.example.app_supportpolywork.data.manager.LocalCVManager;
 import com.example.app_supportpolywork.databinding.FragmentInterestingBinding;
 import com.example.app_supportpolywork.util.CommonUtil;
 
@@ -33,7 +33,7 @@ public class InterestingFragment extends BaseFragment {
     }
 
     private void fillContent() {
-        String interesting = CVManager.getInstance().getInteresting();
+        String interesting = LocalCVManager.getInstance().getInteresting();
         if (interesting != null) {
             mBinding.edtInteresting.getEditText().setText(interesting);
         }
@@ -53,7 +53,7 @@ public class InterestingFragment extends BaseFragment {
             mBinding.edtInteresting.setError("Vui lòng nhập các sở thích");
             return;
         }
-        CVManager.getInstance().setInteresting(interesting);
+        LocalCVManager.getInstance().setInteresting(interesting);
         mNavController.popBackStack();
     }
 

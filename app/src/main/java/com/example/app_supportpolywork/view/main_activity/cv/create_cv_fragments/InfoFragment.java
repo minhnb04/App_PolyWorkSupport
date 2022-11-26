@@ -26,7 +26,7 @@ import androidx.annotation.Nullable;
 
 import com.example.app_supportpolywork.BaseFragment;
 import com.example.app_supportpolywork.R;
-import com.example.app_supportpolywork.data.manager.CVManager;
+import com.example.app_supportpolywork.data.manager.LocalCVManager;
 import com.example.app_supportpolywork.data.model.cv_model.Info;
 import com.example.app_supportpolywork.databinding.FragmentInfoBinding;
 
@@ -65,7 +65,7 @@ public class InfoFragment extends BaseFragment {
     }
 
     private void fillContent() {
-        Info info = CVManager.getInstance().getInfo();
+        Info info = LocalCVManager.getInstance().getInfo();
         if (info != null) {
             mImageUri = info.getImage();
             mBinding.imvAvatar.setImageURI(mImageUri);
@@ -114,7 +114,7 @@ public class InfoFragment extends BaseFragment {
                 validateAddress(address)) {
 
             Info info = new Info(mImageUri, name, position, gender, address, email, phoneNumber, date);
-            CVManager.getInstance().setInfo(info);
+            LocalCVManager.getInstance().setInfo(info);
             mNavController.popBackStack();
         }
     }

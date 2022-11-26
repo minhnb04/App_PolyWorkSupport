@@ -1,6 +1,5 @@
 package com.example.app_supportpolywork.view.main_activity.cv;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.app_supportpolywork.BaseFragment;
-import com.example.app_supportpolywork.R;
 import com.example.app_supportpolywork.data.manager.CVTemplateManager;
 import com.example.app_supportpolywork.data.model.cv_model.CV;
 import com.example.app_supportpolywork.databinding.FragmentCvTemplateBinding;
@@ -39,7 +37,12 @@ public class CvTemplateFragment extends BaseFragment implements CvTemplateAdapte
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        setupToolbar();
         setupCVTemplates();
+    }
+
+    private void setupToolbar() {
+        mBinding.toolbar.setNavigationOnClickListener(v -> mNavController.popBackStack());
     }
 
     private void setupCVTemplates() {
@@ -62,6 +65,8 @@ public class CvTemplateFragment extends BaseFragment implements CvTemplateAdapte
 
     @Override
     public void onClickCvTemplateItem(CV cv) {
-        mNavController.navigate(R.id.action_cvTemplateFragment_to_createCVFragment);
+        mNavController.navigate(
+                CvTemplateFragmentDirections.actionCvTemplateFragmentToCreateCVFragment().setCvTemplate(cv.getTemplate())
+        );
     }
 }

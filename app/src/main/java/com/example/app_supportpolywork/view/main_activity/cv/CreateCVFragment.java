@@ -4,8 +4,6 @@ import static androidx.core.content.FileProvider.getUriForFile;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.ActivityNotFoundException;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -18,24 +16,28 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
+import com.example.app_supportpolywork.App;
 import com.example.app_supportpolywork.BaseFragment;
 import com.example.app_supportpolywork.R;
-import com.example.app_supportpolywork.data.manager.CVManager;
+import com.example.app_supportpolywork.data.manager.LocalCVManager;
+import com.example.app_supportpolywork.data.model.User;
 import com.example.app_supportpolywork.data.model.cv_model.Education;
 import com.example.app_supportpolywork.data.model.cv_model.Experience;
 import com.example.app_supportpolywork.data.model.cv_model.Info;
-import com.example.app_supportpolywork.databinding.FragmentCreateCvBinding;
+import com.example.app_supportpolywork.databinding.FragmentCreateCvRootBinding;
 import com.example.app_supportpolywork.util.CommonUtil;
-import com.example.app_supportpolywork.util.TaskListener;
-import com.example.app_supportpolywork.util.UploadImageUtil;
+import com.example.app_supportpolywork.util.ShareFileUtil;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -47,7 +49,7 @@ public class CreateCVFragment extends BaseFragment {
     private static final String TAG = "CreateCVFragment";
     private boolean mUpload;
 
-    private FragmentCreateCvBinding mBinding;
+    private FragmentCreateCvRootBinding mBinding;
     private final ActivityResultLauncher<String> requestPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                 if (isGranted) {
@@ -59,104 +61,183 @@ public class CreateCVFragment extends BaseFragment {
 
 
     private Bitmap bitmap;
-    private Uri contentUri;
+
+    // View of ViewStub (CV View)
+    private ConstraintLayout page;
+    private TextView tvExperienceTime;
+    private TextView tvExperienceTime2;
+    private View info;
+    private ImageView imvAvatar;
+    private TextView tvName;
+    private TextView tvPosition;
+    private TextView tvGender;
+    private TextView tvAddress;
+    private TextView tvBirthday;
+    private TextView tvEmail;
+    private TextView tvPhoneNumber;
+    private TextView tvObjectiveTitle;
+    private TextView tvObjective;
+    private TextView tvEducationTitle;
+    private TextView tvEducationYear;
+    private TextView tvEducationSchool;
+    private TextView tvExperienceCompany;
+    private TextView tvExperienceCompany2;
+    private TextView tvCertification;
+    private TextView tvMajor;
+    private TextView tvExperiencePosition;
+    private TextView tvExperiencePosition2;
+    private TextView tvExperienceDescription;
+    private TextView tvSkill;
+    private TextView tvActive;
+    private TextView tvIntersting;
+    private TextView tvExperienceDescription2;
+    private TextView tvDegree;
+    private TextView tvTypeDegree;
+    private TextView tvExperienceTitle;
+    private TextView tvSkillTitle;
+    private TextView tvActiveTitle;
+    private TextView tvInterestingTitle;
+    private TextView tvCertificationTitle;
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mBinding = FragmentCreateCvBinding.inflate(inflater);
+        mBinding = FragmentCreateCvRootBinding.inflate(inflater);
         return mBinding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         setupToolbar();
+        initCvView();
         fillPDFContent();
         setupPDFContent();
-
     }
 
-    @SuppressLint("SetTextI18n")
+
+    private void initCvView() {
+        mBinding.viewStub.setLayoutResource(
+                CreateCVFragmentArgs.fromBundle(requireArguments()).getCvTemplate()
+        );
+        View inflater = mBinding.viewStub.inflate();
+        page = inflater.findViewById(R.id.page);
+        tvExperienceTime = inflater.findViewById(R.id.tvExperienceTime);
+        tvExperienceTime2 = inflater.findViewById(R.id.tvExperienceTime2);
+        info = inflater.findViewById(R.id.info);
+        imvAvatar = inflater.findViewById(R.id.imvAvatar);
+        tvName = inflater.findViewById(R.id.tvName);
+        tvPosition = inflater.findViewById(R.id.tvPosition);
+        tvGender = inflater.findViewById(R.id.tvGender);
+        tvAddress = inflater.findViewById(R.id.tvAddress);
+        tvBirthday = inflater.findViewById(R.id.tvBirthday);
+        tvEmail = inflater.findViewById(R.id.tvEmail);
+        tvPhoneNumber = inflater.findViewById(R.id.tvPhoneNumber);
+        tvObjectiveTitle = inflater.findViewById(R.id.tvObjectiveTitle);
+        tvObjective = inflater.findViewById(R.id.tvObjective);
+        tvEducationTitle = inflater.findViewById(R.id.tvEducationTitle);
+        tvEducationYear = inflater.findViewById(R.id.tvEducationYear);
+        tvEducationSchool = inflater.findViewById(R.id.tvEducationSchool);
+        tvExperienceCompany = inflater.findViewById(R.id.tvExperienceCompany);
+        tvExperienceCompany2 = inflater.findViewById(R.id.tvExperienceCompany2);
+        tvCertification = inflater.findViewById(R.id.tvCertification);
+        tvMajor = inflater.findViewById(R.id.tvMajor);
+        tvExperiencePosition = inflater.findViewById(R.id.tvExperiencePosition);
+        tvExperiencePosition2 = inflater.findViewById(R.id.tvExperiencePosition2);
+        tvExperienceDescription = inflater.findViewById(R.id.tvExperienceDescription);
+        tvSkill = inflater.findViewById(R.id.tvSkill);
+        tvActive = inflater.findViewById(R.id.tvActive);
+        tvIntersting = inflater.findViewById(R.id.tvIntersting);
+        tvExperienceDescription2 = inflater.findViewById(R.id.tvExperienceDescription2);
+        tvDegree = inflater.findViewById(R.id.tvDegree);
+        tvTypeDegree = inflater.findViewById(R.id.tvTypeDegree);
+        tvExperienceTitle = inflater.findViewById(R.id.tvExperienceTitle);
+        tvSkillTitle = inflater.findViewById(R.id.tvSkillTitle);
+        tvActiveTitle = inflater.findViewById(R.id.tvActiveTitle);
+        tvInterestingTitle = inflater.findViewById(R.id.tvInterestingTitle);
+        tvCertificationTitle = inflater.findViewById(R.id.tvCertificationTitle);
+    }
+
+    @SuppressLint({"SetTextI18n", "NonConstantResourceId"})
     private void fillPDFContent() {
-        Info info = CVManager.getInstance().getInfo();
+        Info info = LocalCVManager.getInstance().getInfo();
         if (info != null) {
-            mBinding.imvAvatar.setImageURI(info.getImage());
-            mBinding.tvName.setText(info.getName());
-            mBinding.tvPosition.setText(info.getPosition());
-            mBinding.tvGender.setText(info.getGender());
-            mBinding.tvAddress.setText(info.getAddress());
-            mBinding.tvEmail.setText(info.getEmail());
-            mBinding.tvPhoneNumber.setText(info.getPhoneNumber());
-            mBinding.tvBirthday.setText(info.getDate());
+            imvAvatar.setImageURI(info.getImage());
+            tvName.setText(info.getName());
+            tvPosition.setText(info.getPosition());
+            tvGender.setText(info.getGender());
+            tvAddress.setText(info.getAddress());
+            tvEmail.setText(info.getEmail());
+            tvPhoneNumber.setText(info.getPhoneNumber());
+            tvBirthday.setText(info.getDate());
         }
 
 
-        String objective = CVManager.getInstance().getObjective();
+        String objective = LocalCVManager.getInstance().getObjective();
         if (objective != null) {
-            mBinding.tvObjective.setText(objective);
+            tvObjective.setText(objective);
         }
 
-        String skill = CVManager.getInstance().getSkill();
+        String skill = LocalCVManager.getInstance().getSkill();
         if (skill != null) {
-            mBinding.tvSkill.setText(skill);
+            tvSkill.setText(skill);
         }
 
-        String active = CVManager.getInstance().getActive();
+        String active = LocalCVManager.getInstance().getActive();
         if (active != null) {
-            mBinding.tvActive.setText(active);
+            tvActive.setText(active);
         }
 
-        String interesting = CVManager.getInstance().getInteresting();
+        String interesting = LocalCVManager.getInstance().getInteresting();
         if (interesting != null) {
-            mBinding.tvIntersting.setText(interesting);
+            tvIntersting.setText(interesting);
         }
 
-        String certification = CVManager.getInstance().getCertification();
+        String certification = LocalCVManager.getInstance().getCertification();
         if (certification != null) {
-            mBinding.tvCertification.setText(certification);
+            tvCertification.setText(certification);
         }
 
-        Education education = CVManager.getInstance().getEducation();
+        Education education = LocalCVManager.getInstance().getEducation();
         if (education != null) {
-            mBinding.tvEducationSchool.setText(education.getUniversityName());
-            mBinding.tvEducationYear.setText(education.getStartTime() + " - " + education.getEndTime());
-            mBinding.tvMajor.setText("Chuyên ngành: " + education.getMajor());
-            mBinding.tvDegree.setText("Bằng cấp: " + education.getDegreeType());
-            mBinding.tvTypeDegree.setText("Tốt nghiệp loại: " + education.getDegreeRank());
+            tvEducationSchool.setText(education.getUniversityName());
+            tvEducationYear.setText(education.getStartTime() + " - " + education.getEndTime());
+            tvMajor.setText("Chuyên ngành: " + education.getMajor());
+            tvDegree.setText("Bằng cấp: " + education.getDegreeType());
+            tvTypeDegree.setText("Tốt nghiệp loại: " + education.getDegreeRank());
         }
 
-        List<Experience> experiences = CVManager.getInstance().getExperiences();
+        List<Experience> experiences = LocalCVManager.getInstance().getExperiences();
         if (experiences != null) {
             if (experiences.size() == 1) {
                 Experience experience1 = experiences.get(0);
                 if (experience1 != null) {
-                    mBinding.tvExperienceCompany.setText(experience1.getCompanyName());
-                    mBinding.tvExperienceTime.setText(experience1.getStartTime() + " - " + experience1.getEndTime());
-                    mBinding.tvExperiencePosition.setText(experience1.getTitle());
-                    mBinding.tvExperienceDescription.setText(experience1.getDescription());
+                    tvExperienceCompany.setText(experience1.getCompanyName());
+                    tvExperienceTime.setText(experience1.getStartTime() + " - " + experience1.getEndTime());
+                    tvExperiencePosition.setText(experience1.getTitle());
+                    tvExperienceDescription.setText(experience1.getDescription());
                 }
 
-                mBinding.tvExperienceCompany2.setText("");
-                mBinding.tvExperienceTime2.setText("");
-                mBinding.tvExperiencePosition2.setText("");
-                mBinding.tvExperienceDescription2.setText("");
+                tvExperienceCompany2.setText("");
+                tvExperienceTime2.setText("");
+                tvExperiencePosition2.setText("");
+                tvExperienceDescription2.setText("");
             } else if (experiences.size() == 2) {
                 Experience experience1 = experiences.get(0);
                 if (experience1 != null) {
-                    mBinding.tvExperienceCompany.setText(experience1.getCompanyName());
-                    mBinding.tvExperienceTime.setText(experience1.getStartTime() + " - " + experience1.getEndTime());
-                    mBinding.tvExperiencePosition.setText(experience1.getTitle());
-                    mBinding.tvExperienceDescription.setText(experience1.getDescription());
+                    tvExperienceCompany.setText(experience1.getCompanyName());
+                    tvExperienceTime.setText(experience1.getStartTime() + " - " + experience1.getEndTime());
+                    tvExperiencePosition.setText(experience1.getTitle());
+                    tvExperienceDescription.setText(experience1.getDescription());
                 }
 
                 Experience experience2 = experiences.get(1);
                 if (experience2 != null) {
-                    mBinding.tvExperienceCompany2.setText(experience2.getCompanyName());
-                    mBinding.tvExperienceTime2.setText(experience2.getStartTime() + " - " + experience2.getEndTime());
-                    mBinding.tvExperiencePosition2.setText(experience2.getTitle());
-                    mBinding.tvExperienceDescription2.setText(experience2.getDescription());
+                    tvExperienceCompany2.setText(experience2.getCompanyName());
+                    tvExperienceTime2.setText(experience2.getStartTime() + " - " + experience2.getEndTime());
+                    tvExperiencePosition2.setText(experience2.getTitle());
+                    tvExperienceDescription2.setText(experience2.getDescription());
                 }
             }
 
@@ -175,49 +256,49 @@ public class CreateCVFragment extends BaseFragment {
     }
 
     private void setupCertification() {
-        mBinding.tvCertificationTitle.setOnClickListener(v -> {
+        tvCertificationTitle.setOnClickListener(v -> {
             mNavController.navigate(R.id.action_createCVFragment_to_certificate);
         });
     }
 
     private void setupActive() {
-        mBinding.tvActiveTitle.setOnClickListener(v -> {
+        tvActiveTitle.setOnClickListener(v -> {
             mNavController.navigate(R.id.action_createCVFragment_to_activeFragment);
         });
     }
 
     private void setupEducation() {
-        mBinding.tvEducationTitle.setOnClickListener(v -> {
+        tvEducationTitle.setOnClickListener(v -> {
             mNavController.navigate(R.id.action_createCVFragment_to_educationFragment);
         });
     }
 
     private void setupExperience() {
-        mBinding.tvExperienceTitle.setOnClickListener(v -> {
+        tvExperienceTitle.setOnClickListener(v -> {
             mNavController.navigate(R.id.action_createCVFragment_to_experienceFragment);
         });
     }
 
     private void setupInteresting() {
-        mBinding.tvInterestingTitle.setOnClickListener(v -> {
+        tvInterestingTitle.setOnClickListener(v -> {
             mNavController.navigate(R.id.action_createCVFragment_to_interestingFragment);
         });
     }
 
     private void setupSkill() {
-        mBinding.tvSkillTitle.setOnClickListener(v -> {
+        tvSkillTitle.setOnClickListener(v -> {
             mNavController.navigate(R.id.action_createCVFragment_to_skillFragment);
         });
     }
 
     private void setupObjective() {
-        mBinding.tvObjectiveTitle.setOnClickListener(v -> {
+        tvObjectiveTitle.setOnClickListener(v -> {
             mNavController.navigate(R.id.action_createCVFragment_to_objectiveFragment);
         });
     }
 
     private void setupInfo() {
-        mBinding.info.setOnClickListener(v -> {
+        info.setOnClickListener(v -> {
             mNavController.navigate(R.id.action_createCVFragment_to_personalInfoFragment);
         });
     }
@@ -242,14 +323,19 @@ public class CreateCVFragment extends BaseFragment {
 
     private void startCreatePDF() {
         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) ==
-                    PackageManager.PERMISSION_GRANTED) {
-                createPdf(mUpload);
-            } else {
-                requestPermissionLauncher.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-            }
+                PackageManager.PERMISSION_GRANTED) {
+            createPdf(mUpload);
+        } else {
+            requestPermissionLauncher.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        }
     }
 
     private void createPdf(boolean upload) {
+        String fileName = System.currentTimeMillis() + ".pdf";
+        User user = ShareFileUtil.getUser(requireContext());
+        if (user != null) {
+            fileName = user.getUserName() + "_" + System.currentTimeMillis() + ".pdf";
+        }
         bitmap = loadBitmapFromView();
 
         int pageHeight = 1120;
@@ -268,42 +354,37 @@ public class CreateCVFragment extends BaseFragment {
         pdfDocument.finishPage(page);
 
         File dir = requireContext().getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS);
-        File newFile = new File(dir, System.currentTimeMillis() + ".pdf");
+        File newFile = new File(dir, fileName);
 
         Log.i(TAG, "createPdf: " + newFile.getAbsolutePath());
+        boolean isSuccess = true;
 
         try {
             pdfDocument.writeTo(new FileOutputStream(newFile));
         } catch (IOException ioException) {
-            ioException.printStackTrace();
-            Toast.makeText(requireContext(), "Something ", Toast.LENGTH_SHORT).show();
+            isSuccess = false;
+            Toast.makeText(requireContext(), App.ERROR_MESSAGE, Toast.LENGTH_SHORT).show();
         }
 
         pdfDocument.close();
-        if(upload) {
-            contentUri = getUriForFile(requireContext(), "com.example.app_supportpolywork.fileprovider", newFile);
-            Log.i(TAG, "createPdf: " + contentUri.toString());
-            UploadImageUtil.uploadImage(contentUri, new TaskListener() {
-                @Override
-                public void onSuccess(Object o) {
-                    String url = (String) o;
-                    Toast.makeText(requireContext(), "Upload thành công " + url, Toast.LENGTH_SHORT).show();
-                }
 
-                @Override
-                public void onError(Exception e) {
-                    Toast.makeText(requireContext(), "Đã có lỗi xảy ra: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            });
-        } else {
-            Toast.makeText(requireContext(), "Tải xuống máy thành công", Toast.LENGTH_SHORT).show();
+        if (isSuccess) {
+            if (upload) {
+                Uri contentUri = getUriForFile(requireContext(), "com.example.app_supportpolywork.fileprovider", newFile);
+                mNavController.navigate(
+                        CreateCVFragmentDirections.actionCreateCVFragmentToUploadCvFragment().setUri(contentUri)
+                );
+            } else {
+                Toast.makeText(requireContext(), "Tải xuống máy thành công", Toast.LENGTH_SHORT).show();
+            }
         }
+
     }
 
     private Bitmap loadBitmapFromView() {
-        bitmap = Bitmap.createBitmap(mBinding.page.getWidth(), mBinding.page.getHeight(), Bitmap.Config.ARGB_8888);
+        bitmap = Bitmap.createBitmap(page.getWidth(), page.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
-        mBinding.page.draw(canvas);
+        page.draw(canvas);
         return bitmap;
     }
 

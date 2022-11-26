@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.app_supportpolywork.BaseFragment;
-import com.example.app_supportpolywork.data.manager.CVManager;
+import com.example.app_supportpolywork.data.manager.LocalCVManager;
 import com.example.app_supportpolywork.data.model.cv_model.Education;
 import com.example.app_supportpolywork.databinding.FragmentEducationBinding;
 
@@ -34,7 +34,7 @@ public class EducationFragment extends BaseFragment {
     }
 
     private void fillContent() {
-        Education education = CVManager.getInstance().getEducation();
+        Education education = LocalCVManager.getInstance().getEducation();
         if (education != null) {
             mBinding.edtUnisersityName.getEditText().setText(education.getUniversityName());
             mBinding.edtDegreeRank.getEditText().setText(education.getDegreeRank());
@@ -67,7 +67,7 @@ public class EducationFragment extends BaseFragment {
                 validateEndTime(endTime)) {
 
             Education education = new Education(universityName, major, degreeRank, degreeType, startTime, endTime);
-            CVManager.getInstance().setEducation(education);
+            LocalCVManager.getInstance().setEducation(education);
             mNavController.popBackStack();
         }
     }

@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_jobFragment_to_jobDetailFragment"
             app:destination="@id/jobDetailFragment" />
+        <action
+            android:id="@+id/action_jobFragment_to_jobSearchingFragment"
+            app:destination="@id/jobSearchingFragment" />
     </fragment>
     <fragment
         android:id="@+id/cvFragment"
@@ -86,7 +89,7 @@
         android:id="@+id/createCVFragment"
         android:name="com.example.app_supportpolywork.view.main_activity.cv.CreateCVFragment"
         android:label="Create CV Fragment"
-        tools:layout="@layout/fragment_create_cv">
+        tools:layout="@layout/cv_template_layout_1">
         <action
             android:id="@+id/action_createCVFragment_to_personalInfoFragment"
             app:destination="@id/personalInfoFragment" />
@@ -115,6 +118,9 @@
         <action
             android:id="@+id/action_createCVFragment_to_activeFragment"
             app:destination="@id/activeFragment" />
+        <action
+            android:id="@+id/action_createCVFragment_to_uploadCvFragment"
+            app:destination="@id/uploadCvFragment" />
     </fragment>
     <fragment
         android:id="@+id/personalInfoFragment"
@@ -161,7 +167,44 @@
         android:id="@+id/uploadCvFragment"
         android:name="com.example.app_supportpolywork.view.main_activity.cv.UploadCvFragment"
         android:label="fragment_upload_cv"
-        tools:layout="@layout/fragment_upload_cv" />
+        tools:layout="@layout/fragment_upload_cv" >
+        <argument
+            android:name="uri"
+            app:argType="android.net.Uri"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/jobSearchingFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.job.JobSearchingFragment"
+        android:label="fragment_job_searching"
+        tools:layout="@layout/fragment_job_searching" >
+        <action
+            android:id="@+id/action_jobSearchingFragment_to_jobFilterFragment"
+            app:destination="@id/jobFilterFragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="filter"
+            app:argType="com.example.app_supportpolywork.data.model.support_model.Filter"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/jobFilterFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.job.JobFilterFragment"
+        android:label="fragment_job_filter"
+        tools:layout="@layout/fragment_job_filter" >
+        <action
+            android:id="@+id/action_jobFilterFragment_to_jobSearchingFragment2"
+            app:destination="@id/jobSearchingFragment"
+            app:popUpTo="@id/jobSearchingFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="filter"
+            app:argType="com.example.app_supportpolywork.data.model.support_model.Filter"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
 
 
 </navigation>

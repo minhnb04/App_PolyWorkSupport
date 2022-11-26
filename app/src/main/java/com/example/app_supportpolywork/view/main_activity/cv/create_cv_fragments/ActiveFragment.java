@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.app_supportpolywork.BaseFragment;
-import com.example.app_supportpolywork.data.manager.CVManager;
+import com.example.app_supportpolywork.data.manager.LocalCVManager;
 import com.example.app_supportpolywork.databinding.FragmentActiveBinding;
 import com.example.app_supportpolywork.util.CommonUtil;
 
@@ -32,7 +32,7 @@ public class ActiveFragment extends BaseFragment {
     }
 
     private void fillContent() {
-        String active = CVManager.getInstance().getActive();
+        String active = LocalCVManager.getInstance().getActive();
         if (active != null) {
             mBinding.edtActive.getEditText().setText(active);
         }
@@ -52,7 +52,7 @@ public class ActiveFragment extends BaseFragment {
             mBinding.edtActive.setError("Vui lòng nhập các hoạt động của bạn");
             return;
         }
-        CVManager.getInstance().setActive(active);
+        LocalCVManager.getInstance().setActive(active);
         mNavController.popBackStack();
     }
 

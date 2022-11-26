@@ -4,15 +4,13 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.app_supportpolywork.BaseFragment;
-import com.example.app_supportpolywork.R;
-import com.example.app_supportpolywork.data.manager.CVManager;
+import com.example.app_supportpolywork.data.manager.LocalCVManager;
 import com.example.app_supportpolywork.databinding.FragmentCertificationBinding;
 import com.example.app_supportpolywork.util.CommonUtil;
 
@@ -35,7 +33,7 @@ public class CertificationFragment extends BaseFragment {
     }
 
     private void fillContent() {
-        String certification = CVManager.getInstance().getCertification();
+        String certification = LocalCVManager.getInstance().getCertification();
         if(certification != null) {
             mBinding.edtCertification.getEditText().setText(certification);
         }
@@ -55,7 +53,7 @@ public class CertificationFragment extends BaseFragment {
             mBinding.edtCertification.setError("Vui lòng nhập các chứng chỉ");
             return;
         }
-        CVManager.getInstance().setCertification(certification);
+        LocalCVManager.getInstance().setCertification(certification);
         mNavController.popBackStack();
     }
 

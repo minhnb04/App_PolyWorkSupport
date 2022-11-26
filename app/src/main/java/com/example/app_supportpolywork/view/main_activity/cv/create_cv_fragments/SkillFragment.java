@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.app_supportpolywork.BaseFragment;
-import com.example.app_supportpolywork.data.manager.CVManager;
+import com.example.app_supportpolywork.data.manager.LocalCVManager;
 import com.example.app_supportpolywork.databinding.FragmentSkillBinding;
 import com.example.app_supportpolywork.util.CommonUtil;
 
@@ -31,7 +31,7 @@ public class SkillFragment extends BaseFragment {
     }
 
     private void fillContent() {
-        String skill = CVManager.getInstance().getSkill();
+        String skill = LocalCVManager.getInstance().getSkill();
         if (skill != null) {
             mBinding.edtSkill.getEditText().setText(skill);
         }
@@ -51,7 +51,7 @@ public class SkillFragment extends BaseFragment {
             mBinding.edtSkill.setError("Vui lòng nhập các kĩ năng của bạn");
             return;
         }
-        CVManager.getInstance().setSkill(skill);
+        LocalCVManager.getInstance().setSkill(skill);
         mNavController.popBackStack();
     }
 

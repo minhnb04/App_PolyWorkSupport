@@ -15,7 +15,7 @@ import androidx.annotation.Nullable;
 
 import com.example.app_supportpolywork.BaseFragment;
 import com.example.app_supportpolywork.R;
-import com.example.app_supportpolywork.data.manager.CVManager;
+import com.example.app_supportpolywork.data.manager.LocalCVManager;
 import com.example.app_supportpolywork.data.model.cv_model.Experience;
 import com.example.app_supportpolywork.databinding.FragmentExperienceBinding;
 import com.google.android.material.textfield.TextInputLayout;
@@ -44,7 +44,7 @@ public class ExperienceFragment extends BaseFragment {
     }
 
     private void fillContent() {
-        List<Experience> experiences = CVManager.getInstance().getExperiences();
+        List<Experience> experiences = LocalCVManager.getInstance().getExperiences();
         if(experiences != null) {
             for (int i = 0; i < experiences.size(); i++) {
                 View view = LayoutInflater.from(requireContext()).inflate(R.layout.layout_experience, mBinding.layout, false);
@@ -196,7 +196,7 @@ public class ExperienceFragment extends BaseFragment {
     private void saveExperience() {
         List<Experience> experiences = getContentExperienceField();
         if (experiences != null) {
-            CVManager.getInstance().setExperiences(experiences);
+            LocalCVManager.getInstance().setExperiences(experiences);
             mNavController.popBackStack();
         }
     }
