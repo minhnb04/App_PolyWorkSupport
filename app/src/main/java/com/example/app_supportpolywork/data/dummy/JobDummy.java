@@ -1,9 +1,9 @@
 package com.example.app_supportpolywork.data.dummy;
 
-import com.example.app_supportpolywork.data.model.Gender;
+import com.example.app_supportpolywork.data.model.support_model.Gender;
 import com.example.app_supportpolywork.data.model.Job;
-import com.example.app_supportpolywork.data.model.Position;
-import com.example.app_supportpolywork.data.model.Technology;
+import com.example.app_supportpolywork.data.model.support_model.Position;
+import com.example.app_supportpolywork.data.model.support_model.Technology;
 
 import java.util.ArrayList;
 import java.util.List;

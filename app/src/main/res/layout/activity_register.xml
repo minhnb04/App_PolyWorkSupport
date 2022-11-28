@@ -44,15 +44,12 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/edtEmail"
+                android:id="@+id/edtUserName"
                 style="@style/PrimaryLayoutEdittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:hint="Email "
-                app:helperTextEnabled="true"
-                app:helperTextTextColor="#EF5350"
-                app:endIconMode="clear_text">
+                android:hint="Tên đăng nhập">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -66,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
-                android:hint="Mật Khẩu"
+                android:hint="Mật khẩu"
                 app:endIconMode="password_toggle">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -92,7 +89,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/edtName"
+                android:id="@+id/edtFullName"
                 style="@style/PrimaryLayoutEdittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -106,19 +103,18 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/edtPhoneNumber"
+                android:id="@+id/edtEmail"
                 style="@style/PrimaryLayoutEdittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
-                android:hint="Số điện thoại"
-                app:counterMaxLength="12">
+                android:hint="Email">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number" />
+                    android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
@@ -129,6 +125,18 @@
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
                 android:text="Đăng Ký" />
+
+            <TextView
+                android:id="@+id/tvError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="2"
+                android:textColor="@color/red"
+                android:visibility="gone" />
 
             <LinearLayout
                 android:layout_width="wrap_content"

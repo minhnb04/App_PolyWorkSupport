@@ -24,7 +24,7 @@ import com.example.app_supportpolywork.util.TaskListener;
 import java.util.List;
 
 
-public class CvFragment extends BaseFragment {
+public class CvFragment extends BaseFragment implements CvItemAdapter.OnClickCVItemListener {
 
     private FragmentCvBinding mBinding;
 
@@ -39,6 +39,7 @@ public class CvFragment extends BaseFragment {
         @Override
         public void onSuccess(Object o) {
             List<CV> cvList = (List<CV>) o;
+            mCvItemAdapter.submitList(cvList);
         }
 
         @Override
@@ -46,6 +47,8 @@ public class CvFragment extends BaseFragment {
             makeToast(requireContext(), e.getMessage());
         }
     };
+
+    private CvItemAdapter mCvItemAdapter;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -112,6 +115,8 @@ public class CvFragment extends BaseFragment {
     }
 
     private void setupCvs() {
+        mCvItemAdapter = new CvItemAdapter(this);
+        mBinding.rcvCV.setAdapter(mCvItemAdapter);
         User user = ShareFileUtil.getUser(requireContext());
         CVManager.getInstance().getCVListOfUser(user.getId(), mGetCVListTask);
     }
@@ -120,5 +125,20 @@ public class CvFragment extends BaseFragment {
     public void onDestroyView() {
         super.onDestroyView();
         mBinding = null;
+    }
+
+    @Override
+    public void onEditItem(CV cv) {
+
+    }
+
+    @Override
+    public void onDeleteItem(CV cv) {
+
+    }
+
+    @Override
+    public void onClickItem(CV cv) {
+
     }
 }

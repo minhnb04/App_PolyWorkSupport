@@ -6,17 +6,17 @@ import com.example.app_supportpolywork.data.model.cv_model.Info;
 
 import java.util.List;
 
-public class CVManager {
-    private static CVManager instance;
+public class LocalCVManager {
+    private static LocalCVManager instance;
 
-    private CVManager() {
+    private LocalCVManager() {
 
     }
 
-    public static CVManager getInstance() {
-        synchronized (CVManager.class) {
+    public static LocalCVManager getInstance() {
+        synchronized (LocalCVManager.class) {
             if (instance == null) {
-                instance = new CVManager();
+                instance = new LocalCVManager();
                 return instance;
             }
         }
@@ -96,6 +96,8 @@ public class CVManager {
     public void setExperiences(List<Experience> experiences) {
         mExperiences = experiences;
     }
+
+
 
 
 

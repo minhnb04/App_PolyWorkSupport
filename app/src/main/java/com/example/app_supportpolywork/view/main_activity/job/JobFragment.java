@@ -33,7 +33,14 @@ public class JobFragment extends BaseFragment implements JobAdapter.JobAdapterLi
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        ((MainActivity) requireActivity()).openBottomNav();
         setupJobs();
+        setupSearchJobs();
+    }
+
+    private void setupSearchJobs() {
+        mBinding.edtSearchText.setOnClickListener(v ->
+                mNavController.navigate(R.id.action_jobFragment_to_jobSearchingFragment));
     }
 
     private void setupJobs() {

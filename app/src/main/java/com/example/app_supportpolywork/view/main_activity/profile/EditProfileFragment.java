@@ -20,13 +20,29 @@ import androidx.annotation.Nullable;
 import com.example.app_supportpolywork.BaseFragment;
 import com.example.app_supportpolywork.R;
 import com.example.app_supportpolywork.data.model.User;
+import com.example.app_supportpolywork.data.network.UserManager;
 import com.example.app_supportpolywork.databinding.FragmentEditProfileBinding;
-import com.example.app_supportpolywork.util.CommonUtil;
+import com.example.app_supportpolywork.util.ShareFileUtil;
+import com.example.app_supportpolywork.util.TaskListener;
 
 public class EditProfileFragment extends BaseFragment {
 
     private FragmentEditProfileBinding mBinding;
     private String mGender = "Nam";
+
+    private final TaskListener mOnChangeInfoTask = new TaskListener() {
+        @Override
+        public void onSuccess(Object o) {
+            mProgressDialog.dismiss();
+            makeToast(requireContext(), o.toString());
+        }
+
+        @Override
+        public void onError(Exception e) {
+            mProgressDialog.dismiss();
+            makeToast(requireContext(), e.getMessage());
+        }
+    };
 
     @Nullable
     @Override
@@ -75,7 +91,7 @@ public class EditProfileFragment extends BaseFragment {
     private void setupUserInfo() {
         User user = getUser();
         if (user != null) {
-            mBinding.edtName.setText(user.getName());
+            mBinding.edtName.setText(user.getFullName());
             mBinding.edtAddress.setText(user.getAddress());
             mBinding.edtEmail.setText(user.getEmail());
             mBinding.edtGender.setText(user.getGender());
@@ -84,7 +100,7 @@ public class EditProfileFragment extends BaseFragment {
     }
 
     private User getUser() {
-        return new User("0", "lam@gmail.com", "Bùi Thanh Lâm", "0868358175", "Ba Đình, Hà Nội", "Nam");
+        return ShareFileUtil.getUser(requireContext());
     }
 
     private void setupBackBtn() {
@@ -105,7 +121,7 @@ public class EditProfileFragment extends BaseFragment {
             if (validateName(name) &&
                     validateEmail(email) &&
                     validateAddress(address) &&
-                    validatePhoneNumber(phoneNumber) &&
+//                    validatePhoneNumber(phoneNumber) &&
                     validateGender(gender)) {
 
                 updateUser(name, email, address, phoneNumber, gender);
@@ -129,7 +145,7 @@ public class EditProfileFragment extends BaseFragment {
             return false;
         }
 
-        if(!validNumberPhone(phoneNumber)) {
+        if (!validNumberPhone(phoneNumber)) {
             makeToast(requireContext(), "Vui lòng nhập số điện thoại đúng định dạng");
             return false;
         }
@@ -150,7 +166,7 @@ public class EditProfileFragment extends BaseFragment {
             return false;
         }
 
-        if(!validEmail(email)) {
+        if (!validEmail(email)) {
             makeToast(requireContext(), "Vui lòng nhập email đúng định dạng");
             return false;
         }
@@ -165,13 +181,19 @@ public class EditProfileFragment extends BaseFragment {
         return true;
     }
 
-    private void updateUser(String name, String email, String address, String phoneNumber, String gender) {
+    private void updateUser(String fullName, String email, String address, String phoneNumber, String gender) {
         mProgressDialog.setMessage("Cập nhật thông tin ...");
         mProgressDialog.show();
-
+        UserManager.getInstance().changeProfile(
+                fullName,
+                email,
+                address,
+                gender,
+                getUser().getId(),
+                mOnChangeInfoTask
+        );
 
     }
-
 
     @Override
     public void onDestroyView() {

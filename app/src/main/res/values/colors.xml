@@ -8,4 +8,8 @@
     <color name="dark">#595959</color>
     <color name="green">#4CAF50</color>
     <color name="blue">#42A5F5</color>
+
+    <color name="light">#B0B0B0</color>
+    <color name="red">#F44336</color>
+    <color name="yellow">#FFA726</color>
 </resources>

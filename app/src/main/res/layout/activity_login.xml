@@ -26,7 +26,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Email"
+        android:hint="Tên đăng nhập"
         app:endIconMode="clear_text"
         app:endIconTint="@color/dark"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,7 +35,7 @@
         app:startIconDrawable="@drawable/ic_person">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtEmail"
+            android:id="@+id/edtUserName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -77,11 +77,11 @@
         android:layout_marginEnd="16dp"
         android:gravity="center"
         android:text="Vui lòng kiểm tra lại tên đăng nhập hoặc mật khẩu"
-        android:textColor="#EF5350"
+        android:textColor="@color/red"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
     <android.widget.Button
         android:id="@+id/btnLogin"
@@ -95,18 +95,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvError" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
 
     <TextView
         android:id="@+id/tvForgetPassword"
         style="@style/SmallTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:text="Quên Mật Khẩu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/tvError" />
 
     <TextView
         android:id="@+id/textView2"

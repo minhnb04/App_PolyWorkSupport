@@ -1,12 +1,16 @@
 package com.example.app_supportpolywork.view;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.app_supportpolywork.data.network.UserManager;
 import com.example.app_supportpolywork.databinding.ActivityRegisterBinding;
 import com.example.app_supportpolywork.util.CommonUtil;
+import com.example.app_supportpolywork.util.TaskListener;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -19,7 +23,15 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(mBinding.getRoot());
 
         setupBtnRegister();
+        setupLoginNow();
+    }
 
+    private void setupLoginNow() {
+        mBinding.tvLogin.setOnClickListener(v -> {
+            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finishAffinity();
+        });
     }
 
     private void setupBtnRegister() {
@@ -27,19 +39,20 @@ public class RegisterActivity extends AppCompatActivity {
             CommonUtil.hideKeyboard(RegisterActivity.this);
             clearRuins();
 
-            String email = CommonUtil.getStringFromEdt(mBinding.edtEmail);
+            String userName = CommonUtil.getStringFromEdt(mBinding.edtUserName);
             String password = CommonUtil.getStringFromEdt(mBinding.edtPassword);
             String checkerPassword = CommonUtil.getStringFromEdt(mBinding.edtCheckerPassword);
-            String name = CommonUtil.getStringFromEdt(mBinding.edtName);
-            String phoneNumber = CommonUtil.getStringFromEdt(mBinding.edtPhoneNumber);
+            String fullName = CommonUtil.getStringFromEdt(mBinding.edtFullName);
+            String email = CommonUtil.getStringFromEdt(mBinding.edtEmail);
 
-            if (validateEmail(email)
+
+            if (validateUserName(userName)
                     && validatePassword(password)
                     && validateCheckerPassword(password, checkerPassword)
-                    && validateName(name)
-                    && validatePhoneNumber(phoneNumber)
+                    && validateName(fullName)
+                    && validateEmail(email)
             ) {
-                register(email, password, name, phoneNumber);
+                register(userName, password, fullName, email);
             }
 
         });
@@ -49,14 +62,33 @@ public class RegisterActivity extends AppCompatActivity {
         mBinding.edtEmail.setError(null);
         mBinding.edtPassword.setError(null);
         mBinding.edtCheckerPassword.setError(null);
-        mBinding.edtName.setError(null);
-        mBinding.edtPhoneNumber.setError(null);
+        mBinding.edtFullName.setError(null);
+        mBinding.edtUserName.setError(null);
+        mBinding.tvError.setVisibility(View.GONE);
+        mBinding.tvError.setText("");
     }
 
-    private void register(String email, String password, String name, String phoneNumber) {
+    private void register(String userName, String password, String fullName, String email) {
         ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Đang đăng ký ...");
         progressDialog.show();
+        UserManager.getInstance().register(userName, password, fullName, email, new TaskListener() {
+            @Override
+            public void onSuccess(Object o) {
+                progressDialog.dismiss();
+                CommonUtil.makeToast(RegisterActivity.this, "Đăng kí thành công");
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                finishAffinity();
+            }
+
+            @Override
+            public void onError(Exception e) {
+                progressDialog.dismiss();
+                mBinding.tvError.setVisibility(View.VISIBLE);
+                mBinding.tvError.setText(e.getMessage());
+            }
+        });
+
 
     }
 
@@ -66,19 +98,18 @@ public class RegisterActivity extends AppCompatActivity {
         mBinding = null;
     }
 
-    public boolean validateEmail(String email) {
-        if (email.isEmpty()) {
-            mBinding.edtEmail.setError("Vui lòng nhập email của bạn.");
+    private boolean validateUserName(String userName) {
+        if (userName.isEmpty()) {
+            mBinding.edtUserName.setError("Vui lòng nhập tên đăng nhập");
             return false;
         }
 
-        if (!CommonUtil.validEmail(email)) {
-            mBinding.edtEmail.setError("Vui lòng nhập email đúng định dạng.");
+        if (userName.length() <= 6) {
+            mBinding.edtUserName.setError("Tên đăng nhập cần lớn hơn 6 kí tự");
             return false;
         }
         return true;
     }
-
 
     public boolean validatePassword(String password) {
         if (password.isEmpty()) {
@@ -87,7 +118,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
         if (!CommonUtil.validPassword(password)) {
-            mBinding.edtPassword.setError("Vui lòng nhập mật khẩu đúng định dạng.");
+            mBinding.edtPassword.setError("Vui lòng nhập mật khẩu cần có 8 kí tự trở lên (có số, chữ in hoa, kí tự đặc biệt)");
             return false;
         }
         return true;
@@ -109,24 +140,24 @@ public class RegisterActivity extends AppCompatActivity {
 
     public boolean validateName(String name) {
         if (name.isEmpty()) {
-            mBinding.edtName.setError("Hãy nhập tên của bạn.");
-            return false;
-        }
-
-        return true;
-    }
-
-    public boolean validatePhoneNumber(String phoneNumber) {
-        if (phoneNumber.isEmpty()) {
-            mBinding.edtPhoneNumber.setError("Hãy nhập số điện thoại của bạn.");
-            return false;
-        }
-
-        if (!CommonUtil.validNumberPhone(phoneNumber)) {
-            mBinding.edtPhoneNumber.setError("Vui lòng nhập số điện thoại đúng định dạng.");
+            mBinding.edtFullName.setError("Hãy nhập họ và tên của bạn.");
             return false;
         }
         return true;
     }
+
+    public boolean validateEmail(String email) {
+        if (email.isEmpty()) {
+            mBinding.edtEmail.setError("Vui lòng nhập email của bạn.");
+            return false;
+        }
+
+        if (!CommonUtil.validEmail(email)) {
+            mBinding.edtEmail.setError("Vui lòng nhập email đúng định dạng.");
+            return false;
+        }
+        return true;
+    }
+
 
 }

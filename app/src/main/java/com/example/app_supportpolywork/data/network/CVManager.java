@@ -1,24 +1,24 @@
-package com.example.app_supportpolywork.data.manager;
+package com.example.app_supportpolywork.data.network;
 
 import androidx.annotation.NonNull;
 
+import com.example.app_supportpolywork.App;
 import com.example.app_supportpolywork.data.model.CV;
-import com.example.app_supportpolywork.data.network.Network;
 import com.example.app_supportpolywork.util.TaskListener;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 
 public class CVManager {
+
     private static CVManager instance;
 
     private CVManager() {
@@ -33,61 +33,47 @@ public class CVManager {
         return instance;
     }
 
-    public void postCV(CV cv, TaskListener listener) {
-        Call<ResponseBody> call = Network.mService.postCV(cv);
-        call.enqueue(new Callback<ResponseBody>() {
+    public void postCV(String title, String image, String userId, TaskListener listener) {
+        MyCallback<ResponseBody> myCallback = new MyCallback<ResponseBody>(listener) {
             @Override
             public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
-                if (response.body() != null) {
-                    try {
-                        JSONObject jsonObject = new JSONObject(response.body().string());
-                        int statusCode = jsonObject.getInt("StatusCode");
-                        String message = jsonObject.getString("Message");
-                        if (statusCode == 200) {
-                            listener.onSuccess(message);
-                        } else {
-                            listener.onError(new Exception(message));
-                        }
-                    } catch (JSONException | IOException e) {
-                        e.printStackTrace();
-                    }
-                } else {
-                    listener.onError(new Exception(response.message()));
-                }
+                String message = getMessage(response);
+                if (message != null) listener.onSuccess(message);
             }
-
-            @Override
-            public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
-                listener.onError(new Exception(t.getMessage()));
-            }
-        });
+        };
+        Call<ResponseBody> call = Network.mService.postCV(title, image, userId);
+        call.enqueue(myCallback);
     }
 
     public void getCVListOfUser(String userId, TaskListener listener) {
-        Call<ResponseBody> cvListOfUser = Network.mService.getCVListOfUser(userId);
-        cvListOfUser.enqueue(new Callback<ResponseBody>() {
+        MyCallback<ResponseBody> myCallback = new MyCallback<ResponseBody>(listener) {
             @Override
             public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
-                if(response.body() == null) {
-                    listener.onError(new Exception(response.message()));
-                    return;
-                }
-
+                JSONArray data = getDataJSONArray(response);
+                if (data == null) return;
                 try {
-                    JSONObject jsonObject = new JSONObject(response.body().string());
-                    int statusCode = jsonObject.getInt("")
-                } catch (JSONException | IOException e) {
-                    listener.onError(new Exception("Đã xảy ra lỗi hệ thống"));
+                    listener.onSuccess(getCVListFromJsonObject(data));
+                } catch (JSONException e) {
+                    listener.onError(new Exception(App.ERROR_MESSAGE));
                 }
-
-
             }
+        };
+        Call<ResponseBody> cvListOfUser = Network.mService.getCVListOfUser(userId);
+        cvListOfUser.enqueue(myCallback);
+    }
 
-            @Override
-            public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
-
-            }
-        });
+    private List<CV> getCVListFromJsonObject(JSONArray jsonArray) throws JSONException {
+        List<CV> result = new ArrayList<>();
+        int size = jsonArray.length();
+        for (int i = 0; i < size; i++) {
+            JSONObject obj = jsonArray.getJSONObject(i);
+            CV cv = new CV();
+            cv.setId(obj.getString(Network.ID_KEY));
+            cv.setTitle(obj.getString("document_name"));
+            cv.setImage(obj.getString("document_link"));
+            result.add(cv);
+        }
+        return result;
     }
 
 

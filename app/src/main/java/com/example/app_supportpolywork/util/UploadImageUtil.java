@@ -10,7 +10,7 @@ public class UploadImageUtil {
 
     public static void uploadImage(Uri file, TaskListener listener) {
         FirebaseStorage mStorage = FirebaseStorage.getInstance();
-        StorageReference mCvRef = mStorage.getReference().child("cv");
+        StorageReference mCvRef = mStorage.getReference().child("cv/" + System.currentTimeMillis()+ ".pdf");
         UploadTask uploadTask = mCvRef.putFile(file);
         uploadTask.continueWithTask(task -> {
             if (!task.isSuccessful()) {

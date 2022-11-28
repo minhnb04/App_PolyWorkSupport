@@ -32,6 +32,7 @@
             android:background="@drawable/bg_card_view"
             android:drawableStart="@drawable/ic_search"
             android:drawablePadding="8dp"
+            android:focusable="false"
             android:hint="Từ khóa bạn đang tìm kiếm"
             android:paddingHorizontal="12dp" />
     </LinearLayout>
