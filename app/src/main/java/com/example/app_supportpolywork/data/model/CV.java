@@ -1,8 +1,9 @@
 package com.example.app_supportpolywork.data.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class CV {
+public class CV implements Serializable {
     private String id;
     private String title;
     private String image;

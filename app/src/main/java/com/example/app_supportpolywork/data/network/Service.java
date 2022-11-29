@@ -3,6 +3,7 @@ package com.example.app_supportpolywork.data.network;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -50,6 +51,19 @@ public interface Service {
 
     @GET("/api/documentCV/findByUser/{userId}")
     Call<ResponseBody> getCVListOfUser(@Path("userId") String userId);
+
+    @FormUrlEncoded
+    @PUT("/api/documentCV/{cvId}")
+    Call<ResponseBody> updateCV(
+            @Field("document_name") String title,
+            @Path("cvId") String userId
+    );
+
+
+    @DELETE("/api/documentCV/{cvId}")
+    Call<ResponseBody> deleteCV(
+            @Path("cvId") String userId
+    );
 
 
 }

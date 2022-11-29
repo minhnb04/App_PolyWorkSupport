@@ -62,6 +62,32 @@ public class CVManager {
         cvListOfUser.enqueue(myCallback);
     }
 
+    public void updateCV(CV cv, TaskListener listener) {
+        MyCallback<ResponseBody> myCallback = new MyCallback<ResponseBody>(listener) {
+            @Override
+            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
+                String message = getMessage(response);
+                if (message == null) return;
+                listener.onSuccess(message);
+            }
+        };
+        Call<ResponseBody> updateCV = Network.mService.updateCV(cv.getTitle(), cv.getId());
+        updateCV.enqueue(myCallback);
+    }
+
+    public void deleteCV(CV mCV, TaskListener listener) {
+        MyCallback<ResponseBody> myCallback = new MyCallback<ResponseBody>(listener) {
+            @Override
+            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
+                String message = getMessage(response);
+                if (message == null) return;
+                listener.onSuccess(message);
+            }
+        };
+        Call<ResponseBody> deleteCV = Network.mService.deleteCV(mCV.getId());
+        deleteCV.enqueue(myCallback);
+    }
+
     private List<CV> getCVListFromJsonObject(JSONArray jsonArray) throws JSONException {
         List<CV> result = new ArrayList<>();
         int size = jsonArray.length();

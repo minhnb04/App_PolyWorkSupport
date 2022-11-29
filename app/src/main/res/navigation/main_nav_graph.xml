@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_cvFragment_to_uploadCvFragment"
             app:destination="@id/uploadCvFragment" />
+        <action
+            android:id="@+id/action_cvFragment_to_cvItemFragment"
+            app:destination="@id/cvItemFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -204,6 +207,15 @@
             app:argType="com.example.app_supportpolywork.data.model.support_model.Filter"
             app:nullable="true"
             android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/cvItemFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.cv.CvItemFragment"
+        android:label="fragment_cv_item"
+        tools:layout="@layout/fragment_cv_item" >
+        <argument
+            android:name="CV"
+            app:argType="com.example.app_supportpolywork.data.model.CV" />
     </fragment>
 
 

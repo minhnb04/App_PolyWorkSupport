@@ -20,6 +20,7 @@ import com.example.app_supportpolywork.data.network.CVManager;
 import com.example.app_supportpolywork.databinding.FragmentCvBinding;
 import com.example.app_supportpolywork.util.ShareFileUtil;
 import com.example.app_supportpolywork.util.TaskListener;
+import com.example.app_supportpolywork.view.main_activity.MainActivity;
 
 import java.util.List;
 
@@ -122,23 +123,21 @@ public class CvFragment extends BaseFragment implements CvItemAdapter.OnClickCVI
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+        ((MainActivity) requireActivity()).openBottomNav();
+    }
+
+    @Override
     public void onDestroyView() {
         super.onDestroyView();
         mBinding = null;
     }
 
     @Override
-    public void onEditItem(CV cv) {
-
-    }
-
-    @Override
-    public void onDeleteItem(CV cv) {
-
-    }
-
-    @Override
     public void onClickItem(CV cv) {
-
+        mNavController.navigate(
+                CvFragmentDirections.actionCvFragmentToCvItemFragment(cv)
+        );
     }
 }

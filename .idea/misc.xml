@@ -8,12 +8,16 @@
         <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/activity_login.xml" value="0.176" />
         <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/activity_register.xml" value="0.2625" />
         <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/cv_template_1.xml" value="0.2625" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/cv_template_layout_1.xml" value="0.2421875" />
         <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/fragment_create_cv.xml" value="0.152" />
         <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/fragment_create_cv_root.xml" value="0.2625" />
         <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/fragment_cv.xml" value="0.2625" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/fragment_cv_item.xml" value="0.264" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/fragment_cv_template.xml" value="0.2625" />
         <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/fragment_upload_cv.xml" value="0.2625" />
         <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/layout_cv_item.xml" value="0.264" />
         <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/layout_cv_template.xml" value="0.2625" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/layout_edit_cv_item.xml" value="0.26145833333333335" />
         <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/xml/network_security_config.xml" value="0.2625" />
         <entry key="app/src/main/res/drawable/bg_bottom_border.xml" value="0.317" />
         <entry key="app/src/main/res/drawable/boder_tv.xml" value="0.269" />
