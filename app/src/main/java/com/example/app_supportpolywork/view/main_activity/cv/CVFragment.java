@@ -45,7 +45,7 @@ public class CvFragment extends BaseFragment implements CvItemAdapter.OnClickCVI
 
         @Override
         public void onError(Exception e) {
-            makeToast(requireContext(), e.getMessage());
+//            makeToast(requireContext(), e.getMessage());
         }
     };
 

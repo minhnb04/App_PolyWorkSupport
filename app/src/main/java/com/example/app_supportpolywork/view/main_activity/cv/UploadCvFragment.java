@@ -90,6 +90,7 @@ public class UploadCvFragment extends BaseFragment {
     private void setupUploadFile() {
         mBinding.upload.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+            intent.addCategory(Intent.CATEGORY_OPENABLE);
             intent.setType("application/pdf");
             mGetContent.launch(intent);
         });

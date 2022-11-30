@@ -80,5 +80,9 @@ public interface Service {
             @Path("cvId") String userId
     );
 
+    @GET("/api/documentCV/{cvId}")
+    Call<ResponseBody> getCV(@Path("cvId") String userId);
+
+
 
 }

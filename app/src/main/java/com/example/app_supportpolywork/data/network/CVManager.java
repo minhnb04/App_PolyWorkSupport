@@ -102,5 +102,30 @@ public class CVManager {
         return result;
     }
 
+    public void getCV(String cvId, TaskListener listener) {
+        MyCallback<ResponseBody> myCallback = new MyCallback<ResponseBody>(listener) {
+            @Override
+            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
+                JSONObject data = getDataJSONObject(response);
+                if (data == null) return;
+                try {
+                    listener.onSuccess(getCVFromJsonObject(data));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        Call<ResponseBody> deleteCV = Network.mService.getCV(cvId);
+        deleteCV.enqueue(myCallback);
+    }
+
+    private Object getCVFromJsonObject(JSONObject obj) throws JSONException {
+        CV cv = new CV();
+        cv.setId(obj.getString(Network.ID_KEY));
+        cv.setTitle(obj.getString("document_name"));
+        cv.setImage(obj.getString("document_link"));
+        return cv;
+    }
+
 
 }

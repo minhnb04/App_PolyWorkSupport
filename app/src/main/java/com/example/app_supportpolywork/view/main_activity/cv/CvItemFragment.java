@@ -35,7 +35,19 @@ public class CvItemFragment extends BaseFragment {
     private final TaskListener mTaskUpdateCV = new TaskListener() {
         @Override
         public void onSuccess(Object o) {
-            updateCVDialog.dismiss();
+            CVManager.getInstance().getCV(mCV.getId(), new TaskListener() {
+                @Override
+                public void onSuccess(Object o) {
+                    updateCVDialog.dismiss();
+                    mCV = (CV) o;
+                    mBinding.tvCvTitle.setText(mCV.getTitle());
+                }
+
+                @Override
+                public void onError(Exception e) {
+                    CommonUtil.makeToast(requireContext(), e.getMessage());
+                }
+            });
         }
 
         @Override
