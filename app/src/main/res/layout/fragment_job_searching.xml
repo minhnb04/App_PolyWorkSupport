@@ -33,7 +33,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@null"
+            android:enabled="false"
+            android:hint="Nhập từ khóa ..."
             android:paddingHorizontal="12dp"
+            android:saveEnabled="false"
             android:singleLine="true" />
 
         <ImageView
@@ -92,10 +95,26 @@
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:visibility="visible"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layout_filter_content" />
+
+    <TextView
+        android:id="@+id/tvHint"
+        style="@style/SpecialSmallTextViewAsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:gravity="center"
+        android:text="Không tìm thấy công việc phù hợp với yêu cầu!"
+        android:textColor="@color/dark"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/rcvJobs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/rcvJobs"
+        app:layout_constraintTop_toTopOf="@+id/rcvJobs" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

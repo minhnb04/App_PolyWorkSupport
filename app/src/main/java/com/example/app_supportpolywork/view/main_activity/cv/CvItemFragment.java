@@ -153,16 +153,15 @@ public class CvItemFragment extends BaseFragment {
     }
 
     private void loadImageFromNetwork(PDFView pdfView, String _url) {
+        mBinding.progressCircular.setVisibility(View.VISIBLE);
         new Thread(() -> {
-            requireActivity().runOnUiThread(() -> mBinding.progressCircular.setVisibility(View.VISIBLE));
-
             InputStream inputStream = null;
 
             try {
                 inputStream = new URL(_url).openConnection().getInputStream();
             } catch (IOException e) {
                 e.printStackTrace();
-                requireActivity().runOnUiThread(() -> mBinding.progressCircular.setVisibility(View.GONE));
+                mBinding.progressCircular.post(() -> mBinding.progressCircular.setVisibility(View.GONE));
             }
 
             InputStream finalInputStream = inputStream;
