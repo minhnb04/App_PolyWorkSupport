@@ -32,4 +32,16 @@ public class ShareFileUtil {
         editor.apply();
     }
 
+    public static String getToken(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(USER_FILE_KEY, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(TOKEN_KEY, "");
+    }
+
+    public static void clear(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(USER_FILE_KEY, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+    }
+
 }

@@ -41,8 +41,17 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mBinding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(mBinding.getRoot());
+        setupAutoLogin();
         setupBtnLogin();
         setupTvRegister();
+    }
+
+    private void setupAutoLogin() {
+        String token = ShareFileUtil.getToken(this);
+        if(!token.isEmpty()) {
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            finish();
+        }
     }
 
     private void setupBtnLogin() {

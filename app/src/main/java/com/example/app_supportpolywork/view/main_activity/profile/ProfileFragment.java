@@ -2,6 +2,7 @@ package com.example.app_supportpolywork.view.main_activity.profile;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,9 +14,9 @@ import androidx.annotation.Nullable;
 import com.example.app_supportpolywork.BaseFragment;
 import com.example.app_supportpolywork.R;
 import com.example.app_supportpolywork.data.model.User;
-import com.example.app_supportpolywork.data.network.UserManager;
 import com.example.app_supportpolywork.databinding.FragmentProfileBinding;
 import com.example.app_supportpolywork.util.ShareFileUtil;
+import com.example.app_supportpolywork.view.LoginActivity;
 import com.squareup.picasso.Picasso;
 
 
@@ -41,7 +42,7 @@ public class ProfileFragment extends BaseFragment {
 
     private void setupUserInfo() {
         User user = ShareFileUtil.getUser(requireContext());
-        if(user != null) {
+        if (user != null) {
             Picasso.get()
                     .load(user.getImage())
                     .placeholder(R.drawable.img_sample)
@@ -50,7 +51,7 @@ public class ProfileFragment extends BaseFragment {
 
             mBinding.tvName.setText(user.getUserName());
             mBinding.tvEmail.setText(user.getEmail());
-            if(user.getPhoneNumber() != null) {
+            if (user.getPhoneNumber() != null) {
                 mBinding.tvPhoneNumber.setText(user.getPhoneNumber());
             }
         }
@@ -73,7 +74,9 @@ public class ProfileFragment extends BaseFragment {
     }
 
     private void logout(DialogInterface dialog) {
-
+        ShareFileUtil.clear(requireContext());
+        startActivity(new Intent(requireContext(), LoginActivity.class));
+        requireActivity().finish();
     }
 
     private void setupChangePasswordBtn() {
