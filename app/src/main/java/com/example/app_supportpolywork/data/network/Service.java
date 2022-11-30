@@ -83,6 +83,16 @@ public interface Service {
     @GET("/api/documentCV/{cvId}")
     Call<ResponseBody> getCV(@Path("cvId") String userId);
 
+    @GET("/api/job")
+    Call<ResponseBody> getJob();
+
+    @FormUrlEncoded
+    @POST("/api/userJob")
+    Call<ResponseBody> applyJob(
+            @Field("user_id") String userId,
+            @Field("cv_id") String cvId,
+            @Field("job_id") String jobId
+    );
 
 
 }

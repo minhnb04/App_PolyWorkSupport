@@ -12,11 +12,9 @@ public class Job  implements Serializable {
     private String title;
     private long startSalary;
     private long endSalary;
-    private String salary;
     private String workForm;
     private String workPlace;
-    private int startNeededNumberOfPeople;
-    private int endNeededNumberOfPeople;
+    private String slot;
     private String gender;
     private String experience;
     private String description;
@@ -66,13 +64,6 @@ public class Job  implements Serializable {
         this.endSalary = endSalary;
     }
 
-    public String getSalary() {
-        return salary;
-    }
-
-    public void setSalary(String salary) {
-        this.salary = salary;
-    }
 
     public String getWorkForm() {
         return workForm;
@@ -88,22 +79,6 @@ public class Job  implements Serializable {
 
     public void setWorkPlace(String workPlace) {
         this.workPlace = workPlace;
-    }
-
-    public int getStartNeededNumberOfPeople() {
-        return startNeededNumberOfPeople;
-    }
-
-    public void setStartNeededNumberOfPeople(int startNeededNumberOfPeople) {
-        this.startNeededNumberOfPeople = startNeededNumberOfPeople;
-    }
-
-    public int getEndNeededNumberOfPeople() {
-        return endNeededNumberOfPeople;
-    }
-
-    public void setEndNeededNumberOfPeople(int endNeededNumberOfPeople) {
-        this.endNeededNumberOfPeople = endNeededNumberOfPeople;
     }
 
     public String getGender() {
@@ -170,12 +145,20 @@ public class Job  implements Serializable {
         this.expiryApply = expiryApply;
     }
 
+    public String getSlot() {
+        return slot;
+    }
+
+    public void setSlot(String slot) {
+        this.slot = slot;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Job job = (Job) o;
-        return getStartSalary() == job.getStartSalary() && getEndSalary() == job.getEndSalary() && getStartNeededNumberOfPeople() == job.getStartNeededNumberOfPeople() && getEndNeededNumberOfPeople() == job.getEndNeededNumberOfPeople() && getExpiryApply() == job.getExpiryApply() && Objects.equals(getAvatar(), job.getAvatar()) && Objects.equals(getTitle(), job.getTitle()) && Objects.equals(getSalary(), job.getSalary()) && Objects.equals(getWorkForm(), job.getWorkForm()) && Objects.equals(getWorkPlace(), job.getWorkPlace()) && Objects.equals(getGender(), job.getGender()) && Objects.equals(getExperience(), job.getExperience()) && Objects.equals(getDescription(), job.getDescription()) && Objects.equals(getBenefits(), job.getBenefits()) && Objects.equals(getRequirement(), job.getRequirement()) && Objects.equals(getTechnology(), job.getTechnology()) && Objects.equals(getPosition(), job.getPosition());
+        return getStartSalary() == job.getStartSalary() && getEndSalary() == job.getEndSalary() && Objects.equals(getExpiryApply(), job.getExpiryApply()) && Objects.equals(getAvatar(), job.getAvatar()) && Objects.equals(getTitle(), job.getTitle())  && Objects.equals(getWorkForm(), job.getWorkForm()) && Objects.equals(getWorkPlace(), job.getWorkPlace()) && Objects.equals(getGender(), job.getGender()) && Objects.equals(getExperience(), job.getExperience()) && Objects.equals(getDescription(), job.getDescription()) && Objects.equals(getBenefits(), job.getBenefits()) && Objects.equals(getRequirement(), job.getRequirement()) && Objects.equals(getTechnology(), job.getTechnology()) && Objects.equals(getPosition(), job.getPosition());
     }
 
     public enum WorkForm {

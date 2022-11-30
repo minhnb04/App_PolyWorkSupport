@@ -18,7 +18,7 @@ public class AdapterUtil {
 
     public static String getJobExpiry(String expiry) {
         @SuppressLint("SimpleDateFormat")
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm dd/MM/yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss'Z'");
         try {
             Date date = simpleDateFormat.parse(expiry);
             if (date != null) {
@@ -41,6 +41,17 @@ public class AdapterUtil {
 
     public static String getNeededPeople(int startNeededNumberOfPeople, int endNeededNumberOfPeople) {
         return startNeededNumberOfPeople + " - " + endNeededNumberOfPeople + " người";
+    }
+
+    public static String getGenderFromCode2(int gender) {
+        switch (gender) {
+            case 0:
+                return "Nữ";
+            case 1:
+                return "Nam";
+            default:
+                return "Không yêu cầu";
+        }
     }
 
     public static String getGenderFromCode(int gender) {

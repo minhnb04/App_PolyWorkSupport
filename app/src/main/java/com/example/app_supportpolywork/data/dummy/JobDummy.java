@@ -83,58 +83,58 @@ public class JobDummy {
         return technologies.get(random.nextInt(technologies.size())).value;
     }
 
-    public static List<Job> getJobList() {
-        List<Job> jobs = new ArrayList<>();
-
-        for (int i = 0; i < 20; i++) {
-            Job job = new Job();
-            job.setAvatar(null);
-            job.setId(i + "");
-            job.setTitle(getRandomTitle());
-            job.setStartSalary(1_000_000 * (random.nextInt(10) + 1));
-            job.setEndSalary(1_000_000 * (random.nextInt(50) + 10));
-            job.setWorkPlace(getRandomWorkPlace());
-            job.setWorkForm(getRandomWorkForm());
-            job.setStartNeededNumberOfPeople(random.nextInt(5) + 1);
-            job.setEndNeededNumberOfPeople(random.nextInt(20) + 5);
-            job.setGender(getRandomGender());
-            job.setPosition(getRandomPosition());
-            job.setExperience("1 năm kinh nghiệm");
-            job.setDescription("Lĩnh vực: Báo Thể Thao - Chuyên tin tức bóng đá, cung cấp data lịch thi đấu, tỷ số trực tuyến, bảng xếp hạng...\n" +
-                    "\n" +
-                    "Công ty thành lập dự án mới nên cần lập 1 SEO Team, ưu tiên SEO Leader chọn địa điểm mở văn phòng mới để thuận tiện làm việc.\n" +
-                    "\n" +
-                    "Chịu trách nhiệm tổng thể cho các dự án SEO\n" +
-                    "Cùng BGĐ tuyển dụng các vị trí còn lại như Content và nhân viên SEO\n" +
-                    "Tìm hiểu, nghiên cứu, phân tích xu hướng thị trường, hiểu và nắm được các sản phẩm/dịch vụ của Công ty cũng như đối thủ để từ đó xây dựng và lập kế hoạch và phát triển hệ thống SEO hiệu quả\n" +
-                    "Quản lý chi phí của chiến dịch dựa vào ngân sách và dự tính chi phí hàng tháng của phòng SEO\n" +
-                    "Nắm bắt và cập nhật kịp thời xu hướng mới nhất và áp dụng vào SEO\n" +
-                    "Quản lý, phân công, giám sát, đào tạo đội ngũ phòng SEO. Team có 3-4 nhân sự chuyên làm SEO.\n" +
-                    "Thực hiện báo cáo phân tích, tổng hợp kết quả SEO, đề xuất các giải pháp, chiến lược SEO mới, nâng cao hiệu quả công việc.\n" +
-                    "Lập kế hoạch triển khai dự án SEO.\n" +
-                    "Thực hiện các công việc khác theo sự phân công của cấp trên.\n" +
-                    "Làm việc từ T2 – T7 (T7 làm nửa ngày, nghỉ Chủ Nhật)");
-
-            job.setBenefits("Lương 20 - 30tr tùy năng lực (thu nhập tối thiểu từ 50tr/tháng trở lên)\n" +
-                    "Thưởng KPI khi đạt thành tích và thưởng duy trì hàng tháng khi giữ được thành tích\n" +
-                    "Thưởng sinh nhật, thưởng Tết tối thiểu 2 tháng lương - tối đa không giới hạn\n" +
-                    "Văn phòng rộng rãi, trang thiết bị hiện đại, hỗ trợ chi phí ăn trưa và nước uống hàng ngày\n" +
-                    "Review xét duyệt tăng lương theo quý, năm.\n" +
-                    "Nghỉ phép 12 ngày/năm\n" +
-                    "Được hướng dẫn, đào tạo để phát triển nghề nghiệp lâu dài.\n" +
-                    "Tham gia các chương trình training, team building, du lịch cùng công ty 2 lần/năm (trong nước & nước ngoài)");
-            job.setRequirement("Có kinh nghiệm làm việc ở vị trí tương đương tối thiểu 2 năm.\n" +
-                    "Giao tiếp tốt\n" +
-                    "Kỹ năng phân tích và tổng hợp\n" +
-                    "Kỹ năng quản lý nhóm\n" +
-                    "Đã có những dự án thành công lớn, có kinh nghiệm trong ngành thể thao… là lợi thế.\n" +
-                    "Ứng viên đã từng làm việc tại vị trí tương đương tại các Agency lớn là một lợi thế");
-            job.setTechnology(getRandomTechnology());
-            job.setExpiryApply("16:30 22/11/2022");
-            jobs.add(job);
-        }
-        return jobs;
-    }
+//    public static List<Job> getJobList() {
+//        List<Job> jobs = new ArrayList<>();
+//
+//        for (int i = 0; i < 20; i++) {
+//            Job job = new Job();
+//            job.setAvatar(null);
+//            job.setId(i + "");
+//            job.setTitle(getRandomTitle());
+//            job.setStartSalary(1_000_000 * (random.nextInt(10) + 1));
+//            job.setEndSalary(1_000_000 * (random.nextInt(50) + 10));
+//            job.setWorkPlace(getRandomWorkPlace());
+//            job.setWorkForm(getRandomWorkForm());
+//            job.setStartNeededNumberOfPeople(random.nextInt(5) + 1);
+//            job.setEndNeededNumberOfPeople(random.nextInt(20) + 5);
+//            job.setGender(getRandomGender());
+//            job.setPosition(getRandomPosition());
+//            job.setExperience("1 năm kinh nghiệm");
+//            job.setDescription("Lĩnh vực: Báo Thể Thao - Chuyên tin tức bóng đá, cung cấp data lịch thi đấu, tỷ số trực tuyến, bảng xếp hạng...\n" +
+//                    "\n" +
+//                    "Công ty thành lập dự án mới nên cần lập 1 SEO Team, ưu tiên SEO Leader chọn địa điểm mở văn phòng mới để thuận tiện làm việc.\n" +
+//                    "\n" +
+//                    "Chịu trách nhiệm tổng thể cho các dự án SEO\n" +
+//                    "Cùng BGĐ tuyển dụng các vị trí còn lại như Content và nhân viên SEO\n" +
+//                    "Tìm hiểu, nghiên cứu, phân tích xu hướng thị trường, hiểu và nắm được các sản phẩm/dịch vụ của Công ty cũng như đối thủ để từ đó xây dựng và lập kế hoạch và phát triển hệ thống SEO hiệu quả\n" +
+//                    "Quản lý chi phí của chiến dịch dựa vào ngân sách và dự tính chi phí hàng tháng của phòng SEO\n" +
+//                    "Nắm bắt và cập nhật kịp thời xu hướng mới nhất và áp dụng vào SEO\n" +
+//                    "Quản lý, phân công, giám sát, đào tạo đội ngũ phòng SEO. Team có 3-4 nhân sự chuyên làm SEO.\n" +
+//                    "Thực hiện báo cáo phân tích, tổng hợp kết quả SEO, đề xuất các giải pháp, chiến lược SEO mới, nâng cao hiệu quả công việc.\n" +
+//                    "Lập kế hoạch triển khai dự án SEO.\n" +
+//                    "Thực hiện các công việc khác theo sự phân công của cấp trên.\n" +
+//                    "Làm việc từ T2 – T7 (T7 làm nửa ngày, nghỉ Chủ Nhật)");
+//
+//            job.setBenefits("Lương 20 - 30tr tùy năng lực (thu nhập tối thiểu từ 50tr/tháng trở lên)\n" +
+//                    "Thưởng KPI khi đạt thành tích và thưởng duy trì hàng tháng khi giữ được thành tích\n" +
+//                    "Thưởng sinh nhật, thưởng Tết tối thiểu 2 tháng lương - tối đa không giới hạn\n" +
+//                    "Văn phòng rộng rãi, trang thiết bị hiện đại, hỗ trợ chi phí ăn trưa và nước uống hàng ngày\n" +
+//                    "Review xét duyệt tăng lương theo quý, năm.\n" +
+//                    "Nghỉ phép 12 ngày/năm\n" +
+//                    "Được hướng dẫn, đào tạo để phát triển nghề nghiệp lâu dài.\n" +
+//                    "Tham gia các chương trình training, team building, du lịch cùng công ty 2 lần/năm (trong nước & nước ngoài)");
+//            job.setRequirement("Có kinh nghiệm làm việc ở vị trí tương đương tối thiểu 2 năm.\n" +
+//                    "Giao tiếp tốt\n" +
+//                    "Kỹ năng phân tích và tổng hợp\n" +
+//                    "Kỹ năng quản lý nhóm\n" +
+//                    "Đã có những dự án thành công lớn, có kinh nghiệm trong ngành thể thao… là lợi thế.\n" +
+//                    "Ứng viên đã từng làm việc tại vị trí tương đương tại các Agency lớn là một lợi thế");
+//            job.setTechnology(getRandomTechnology());
+//            job.setExpiryApply("16:30 22/11/2022");
+//            jobs.add(job);
+//        }
+//        return jobs;
+//    }
 
 
 }

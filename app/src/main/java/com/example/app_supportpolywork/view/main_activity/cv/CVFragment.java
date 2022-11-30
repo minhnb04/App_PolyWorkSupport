@@ -1,7 +1,5 @@
 package com.example.app_supportpolywork.view.main_activity.cv;
 
-import static com.example.app_supportpolywork.util.CommonUtil.makeToast;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;

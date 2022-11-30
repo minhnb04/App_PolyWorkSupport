@@ -41,7 +41,7 @@ public class JobAdapter extends ListAdapter<Job, JobAdapter.JobViewHolder> {
 
             holder.mBinding.tvJobTitle.setText(job.getTitle());
             holder.mBinding.tvSalary.setText(getJobSalary(job.getStartSalary(), job.getEndSalary()));
-            holder.mBinding.tvNumberOfPeople.setText(getNeededPeople(job.getStartNeededNumberOfPeople(), job.getEndNeededNumberOfPeople()));
+            holder.mBinding.tvNumberOfPeople.setText(job.getSlot());
             holder.mBinding.tvWorkPlace.setText(job.getWorkPlace());
             holder.mBinding.tvWorkForm.setText(job.getWorkForm());
             holder.mBinding.tvExpiry.setText(getJobExpiry(job.getExpiryApply()));
