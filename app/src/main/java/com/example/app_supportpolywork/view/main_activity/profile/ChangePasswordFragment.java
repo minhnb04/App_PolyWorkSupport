@@ -2,6 +2,7 @@ package com.example.app_supportpolywork.view.main_activity.profile;
 
 import static com.example.app_supportpolywork.util.CommonUtil.getStringFromEdt;
 import static com.example.app_supportpolywork.util.CommonUtil.hideKeyboard;
+import static com.example.app_supportpolywork.util.CommonUtil.makeToast;
 import static com.example.app_supportpolywork.util.CommonUtil.validPassword;
 
 import android.os.Bundle;
@@ -13,7 +14,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.app_supportpolywork.BaseFragment;
+import com.example.app_supportpolywork.data.model.User;
+import com.example.app_supportpolywork.data.network.UserManager;
 import com.example.app_supportpolywork.databinding.FragmentChangePasswordBinding;
+import com.example.app_supportpolywork.util.ShareFileUtil;
+import com.example.app_supportpolywork.util.TaskListener;
 
 
 public class ChangePasswordFragment extends BaseFragment {
@@ -64,8 +69,21 @@ public class ChangePasswordFragment extends BaseFragment {
     private void changePassword(String oldPassword, String newPassword) {
         mProgressDialog.setMessage("Đang đổi mật khẩu ...");
         mProgressDialog.show();
+        User user = ShareFileUtil.getUser(requireContext());
+        UserManager.getInstance().changePassword(oldPassword, newPassword, user.getUserName(), user.getId(), new TaskListener() {
+            @Override
+            public void onSuccess(Object o) {
+                mProgressDialog.dismiss();
+                mNavController.popBackStack();
+                makeToast(requireContext(), "Đổi mật khẩu thành công");
+            }
 
-
+            @Override
+            public void onError(Exception e) {
+                mProgressDialog.dismiss();
+                makeToast(requireContext(), "Vui lòng kiểm tra lại thông tin mật khẩu");
+            }
+        });
     }
 
     private boolean validateCheckerPassword(String checkerPassword, String newPassword) {
