@@ -57,6 +57,8 @@
     </style>
 
     <style name="SpecialTextView">
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
         <item name="android:textSize">17sp</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textStyle">bold</item>

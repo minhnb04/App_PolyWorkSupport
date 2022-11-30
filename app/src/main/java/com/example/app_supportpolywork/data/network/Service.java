@@ -1,8 +1,11 @@
 package com.example.app_supportpolywork.data.network;
 
 
+import com.example.app_supportpolywork.data.model.User;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -31,15 +34,27 @@ public interface Service {
             @Field("password") String password
     );
 
-    @FormUrlEncoded
+
     @PUT("api/account/{userId}")
     Call<ResponseBody> changeInfo(
-            @Field("full_name") String fullName,
-            @Field("email") String email,
-            @Field("address") String address,
-            @Field("gender") int gender,
+            @Body User user,
             @Path("userId") String userId
     );
+
+    @GET("api/account/{userId}")
+    Call<ResponseBody> infoUser(
+            @Path("userId") String userId
+    );
+
+    @FormUrlEncoded
+    @POST("api/account/{userId}")
+    Call<ResponseBody> changePassword(
+            @Field("user_name") String userName,
+            @Field("password") String password,
+            @Field("new_password") String newPassword,
+            @Path("userId") String userId
+    );
+
 
     @FormUrlEncoded
     @POST("/api/documentCV/")

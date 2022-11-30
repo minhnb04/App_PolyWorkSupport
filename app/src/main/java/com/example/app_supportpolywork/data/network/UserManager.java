@@ -4,6 +4,7 @@ package com.example.app_supportpolywork.data.network;
 import androidx.annotation.NonNull;
 import androidx.core.util.Pair;
 
+import com.example.app_supportpolywork.App;
 import com.example.app_supportpolywork.data.model.User;
 import com.example.app_supportpolywork.util.TaskListener;
 
@@ -62,7 +63,7 @@ public class UserManager {
         call.enqueue(myCallback);
     }
 
-    public void changeProfile(String fullName, String email, String address, String gender, String userId, TaskListener listener) {
+    public void changeProfile(User user, TaskListener listener) {
         MyCallback<ResponseBody> myCallback = new MyCallback<ResponseBody>(listener) {
             @Override
             public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
@@ -72,13 +73,7 @@ public class UserManager {
                 }
             }
         };
-        Call<ResponseBody> call = Network.mService.changeInfo(
-                fullName,
-                email,
-                address,
-                getCodeFromGender(gender),
-                userId
-        );
+        Call<ResponseBody> call = Network.mService.changeInfo(user, user.getId());
         call.enqueue(myCallback);
     }
 
@@ -88,28 +83,54 @@ public class UserManager {
         user.setUserName(jsonObject.getString("user_name"));
         user.setEmail(jsonObject.getString("email"));
         user.setFullName(jsonObject.getString("full_name"));
+
+        if (jsonObject.has("image")) {
+            user.setImage(jsonObject.getString("image"));
+        }
+        if (jsonObject.has("phone")) {
+            user.setPhoneNumber(jsonObject.getString("phone"));
+
+        }
+        if (jsonObject.has("address")) {
+            user.setAddress(jsonObject.getString("address"));
+        }
+
+        if (jsonObject.has("gender")) {
+            user.setGender(jsonObject.getInt("gender"));
+        }
         return user;
     }
 
-    private String getGenderFromCode(int gender) {
-        switch (gender) {
-            case 0:
-                return "Nữ";
-            case 1:
-                return "Nam";
-            default:
-                return "Khác";
-        }
+    public void getInfo(String id, TaskListener listener) {
+        MyCallback<ResponseBody> myCallback = new MyCallback<ResponseBody>(listener) {
+            @Override
+            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
+                JSONObject data = getDataJSONObject(response);
+                if (data == null) return;
+                try {
+                    User user = getUserFromJSONObject(data);
+                    listener.onSuccess(user);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    listener.onError(new Exception(App.ERROR_MESSAGE));
+                }
+            }
+        };
+        Call<ResponseBody> call = Network.mService.infoUser(id);
+        call.enqueue(myCallback);
     }
 
-    private int getCodeFromGender(String gender) {
-        switch (gender) {
-            case "Nữ":
-                return 0;
-            case "Nam":
-                return 1;
-            default:
-                return -1;
-        }
+
+    public void changePassword(String oldPassword, String newPassword, String userName, String userId, TaskListener listener) {
+        MyCallback<ResponseBody> myCallback = new MyCallback<ResponseBody>(listener) {
+            @Override
+            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
+                JSONObject data = getDataJSONObject(response);
+                if (data == null) return;
+                listener.onSuccess(data);
+            }
+        };
+        Call<ResponseBody> call = Network.mService.changePassword(userName, oldPassword, newPassword, userId);
+        call.enqueue(myCallback);
     }
 }

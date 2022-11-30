@@ -33,6 +33,7 @@
                 <com.makeramen.roundedimageview.RoundedImageView
                     android:id="@+id/imvAvatar"
                     android:layout_width="200dp"
+                    android:scaleType="centerCrop"
                     android:layout_height="200dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
@@ -79,6 +80,10 @@
                 android:padding="10dp" />
 
             <EditText
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:id="@+id/edtGender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

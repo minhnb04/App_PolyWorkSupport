@@ -12,7 +12,11 @@ import androidx.annotation.Nullable;
 
 import com.example.app_supportpolywork.BaseFragment;
 import com.example.app_supportpolywork.R;
+import com.example.app_supportpolywork.data.model.User;
+import com.example.app_supportpolywork.data.network.UserManager;
 import com.example.app_supportpolywork.databinding.FragmentProfileBinding;
+import com.example.app_supportpolywork.util.ShareFileUtil;
+import com.squareup.picasso.Picasso;
 
 
 public class ProfileFragment extends BaseFragment {
@@ -29,9 +33,27 @@ public class ProfileFragment extends BaseFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        setupUserInfo();
         setupEditInfoBtn();
         setupChangePasswordBtn();
         setupLogoutBtn();
+    }
+
+    private void setupUserInfo() {
+        User user = ShareFileUtil.getUser(requireContext());
+        if(user != null) {
+            Picasso.get()
+                    .load(user.getImage())
+                    .placeholder(R.drawable.img_sample)
+                    .error(R.drawable.img_sample)
+                    .into(mBinding.imvAvatar);
+
+            mBinding.tvName.setText(user.getUserName());
+            mBinding.tvEmail.setText(user.getEmail());
+            if(user.getPhoneNumber() != null) {
+                mBinding.tvPhoneNumber.setText(user.getPhoneNumber());
+            }
+        }
     }
 
     private void setupLogoutBtn() {

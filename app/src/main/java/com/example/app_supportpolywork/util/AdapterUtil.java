@@ -42,4 +42,30 @@ public class AdapterUtil {
     public static String getNeededPeople(int startNeededNumberOfPeople, int endNeededNumberOfPeople) {
         return startNeededNumberOfPeople + " - " + endNeededNumberOfPeople + " người";
     }
+
+    public static String getGenderFromCode(int gender) {
+        switch (gender) {
+            case 0:
+                return "Nữ";
+            case 1:
+                return "Nam";
+            case -2:
+                return "";
+            default:
+                return "Khác";
+        }
+    }
+
+    public static int getCodeFromGender(String gender) {
+        switch (gender) {
+            case "Nữ":
+                return 0;
+            case "Nam":
+                return 1;
+            case "Khác":
+                return -1;
+            default:
+                return -2;
+        }
+    }
 }

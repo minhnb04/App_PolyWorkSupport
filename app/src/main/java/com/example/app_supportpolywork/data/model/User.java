@@ -16,31 +16,39 @@ public class User {
     @SerializedName("full_name")
     private String fullName;
 
-    @SerializedName("phone_number")
+    @SerializedName("phone")
     private String phoneNumber;
 
     @SerializedName("address")
     private String address;
 
     @SerializedName("gender")
-    private String gender;
+    private int gender = -1;
 
-    @SerializedName("role_code")
-    private String roleCode;
-
-
+    @SerializedName("image")
+    private String image;
 
 
     public User() {
     }
 
-    public User(String id, String email, String fullName, String phoneNumber, String address, String gender) {
+    public User(String id, String userName, String email, String fullName, String phoneNumber, String address, int gender, String image) {
         this.id = id;
+        this.userName = userName;
         this.email = email;
         this.fullName = fullName;
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.gender = gender;
+        this.image = image;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getId() {
@@ -83,11 +91,11 @@ public class User {
         this.address = address;
     }
 
-    public String getGender() {
+    public int getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(int gender) {
         this.gender = gender;
     }
 
@@ -97,13 +105,5 @@ public class User {
 
     public void setUserName(String userName) {
         this.userName = userName;
-    }
-
-    public String getRoleCode() {
-        return roleCode;
-    }
-
-    public void setRoleCode(String roleCode) {
-        this.roleCode = roleCode;
     }
 }
