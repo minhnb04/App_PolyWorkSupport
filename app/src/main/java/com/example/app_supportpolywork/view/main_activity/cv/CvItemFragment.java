@@ -161,15 +161,23 @@ public class CvItemFragment extends BaseFragment {
                 inputStream = new URL(_url).openConnection().getInputStream();
             } catch (IOException e) {
                 e.printStackTrace();
-                mBinding.progressCircular.post(() -> mBinding.progressCircular.setVisibility(View.GONE));
+                try {
+                    mBinding.progressCircular.post(() -> mBinding.progressCircular.setVisibility(View.GONE));
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
             }
 
-            InputStream finalInputStream = inputStream;
-            pdfView.post(() -> {
-                pdfView.fromStream(finalInputStream).load();
-                mBinding.progressCircular.setVisibility(View.GONE);
-            });
 
+            try {
+                InputStream finalInputStream = inputStream;
+                pdfView.post(() -> {
+                    pdfView.fromStream(finalInputStream).load();
+                    mBinding.progressCircular.setVisibility(View.GONE);
+                });
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }).start();
     }
 }

@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_marginTop="15dp"
-                android:hint="Name"
+                android:hint="Tên"
                 android:padding="10dp" />
 
             <EditText
@@ -89,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_marginTop="15dp"
-                android:hint="Gender"
+                android:hint="Giới tính"
                 android:padding="10dp" />
 
             <EditText
@@ -98,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_marginTop="15dp"
-                android:hint="Address"
+                android:hint="Địa chỉ"
                 android:padding="10dp" />
 
             <EditText
@@ -117,7 +117,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_marginTop="15dp"
-                android:hint="Phone Number"
+                android:hint="Số điện thoại"
                 android:inputType="phone"
                 android:padding="10dp" />
 
