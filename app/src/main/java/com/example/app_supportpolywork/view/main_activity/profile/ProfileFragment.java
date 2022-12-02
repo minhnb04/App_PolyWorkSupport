@@ -53,6 +53,8 @@ public class ProfileFragment extends BaseFragment {
             mBinding.tvEmail.setText(user.getEmail());
             if (user.getPhoneNumber() != null) {
                 mBinding.tvPhoneNumber.setText(user.getPhoneNumber());
+            } else {
+                mBinding.tvPhoneNumber.setVisibility(View.GONE);
             }
         }
     }
