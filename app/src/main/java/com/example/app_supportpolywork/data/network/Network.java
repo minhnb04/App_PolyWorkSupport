@@ -13,7 +13,7 @@ public class Network {
     public final static String ID_KEY = "_id";
     public final static String AUTHORIZATION_KEY = "Authorization";
 
-    private static final String BASE_URL = "http://192.168.0.101:9000/";
+    private static final String BASE_URL = "http://192.168.43.140:9000/";
 
     private static final OkHttpClient mClient = new OkHttpClient.Builder()
             .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))

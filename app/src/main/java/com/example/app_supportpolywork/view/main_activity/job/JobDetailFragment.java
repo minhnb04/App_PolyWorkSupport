@@ -29,6 +29,7 @@ import com.example.app_supportpolywork.view.main_activity.MainActivity;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -83,35 +84,40 @@ public class JobDetailFragment extends BaseFragment implements CvItemAdapter.OnC
             @Override
             public void onSuccess(Object o) {
                 mCvList = (List<CV>) o;
-                View view = getLayoutInflater().inflate(R.layout.layout_bottom_sheet_cv_list, null);
-                mBottomSheetDialog = new BottomSheetDialog(requireContext(), R.style.BottomSheetDialogTheme);
-                mBottomSheetDialog.setContentView(view);
-
-                mRecycleCVList = mBottomSheetDialog.findViewById(R.id.rcvCV);
-                mCvItemAdapter = new CvItemAdapter(JobDetailFragment.this);
-                mCvItemAdapter.submitList(mCvList);
-                mRecycleCVList.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
-                mRecycleCVList.setAdapter(mCvItemAdapter);
-
-                btnApply = mBottomSheetDialog.findViewById(R.id.btnApply);
-                btnApply.setOnClickListener(v -> {
-                    if (mSelectedCV == null) {
-                        CommonUtil.makeToast(requireContext(), "Vui lòng chọn CV để ứng tuyển");
-                        return;
-                    }
-                    JobManager.getInstance().applyJob(
-                            ShareFileUtil.getUser(requireContext()).getId(),
-                            mSelectedCV.getId(),
-                            mCurrentJob.getId(),
-                            mApplyCvTask
-                    );
-                });
+                createBottomSheet();
             }
 
             @Override
             public void onError(Exception e) {
-
+                mCvList = new ArrayList<>();
+               createBottomSheet();
             }
+        });
+    }
+
+    private void  createBottomSheet() {
+        View view = getLayoutInflater().inflate(R.layout.layout_bottom_sheet_cv_list, null);
+        mBottomSheetDialog = new BottomSheetDialog(requireContext(), R.style.BottomSheetDialogTheme);
+        mBottomSheetDialog.setContentView(view);
+
+        mRecycleCVList = mBottomSheetDialog.findViewById(R.id.rcvCV);
+        mCvItemAdapter = new CvItemAdapter(JobDetailFragment.this);
+        mCvItemAdapter.submitList(mCvList);
+        mRecycleCVList.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
+        mRecycleCVList.setAdapter(mCvItemAdapter);
+
+        btnApply = mBottomSheetDialog.findViewById(R.id.btnApply);
+        btnApply.setOnClickListener(v -> {
+            if (mSelectedCV == null) {
+                CommonUtil.makeToast(requireContext(), "Vui lòng chọn CV để ứng tuyển");
+                return;
+            }
+            JobManager.getInstance().applyJob(
+                    ShareFileUtil.getUser(requireContext()).getId(),
+                    mSelectedCV.getId(),
+                    mCurrentJob.getId(),
+                    mApplyCvTask
+            );
         });
     }
 
