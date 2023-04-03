@@ -124,11 +124,10 @@
         <TextView
             android:id="@+id/tvWorkPlace"
             style="@style/SmallTextView"
-            android:layout_width="0dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:ellipsize="end"
-            android:lines="1"
             android:text="Vinh, Nghệ An"
             app:layout_constraintBottom_toBottomOf="@+id/imvWorkPlace"
             app:layout_constraintStart_toEndOf="@+id/imvWorkPlace"
@@ -145,6 +144,7 @@
             app:layout_constraintTop_toBottomOf="@id/tvNumberOfPeople" />
 
         <TextView
+
             android:id="@+id/tvExpiry"
             style="@style/SmallTextView"
             android:layout_width="match_parent"

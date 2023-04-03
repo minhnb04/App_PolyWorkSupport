@@ -111,6 +111,10 @@ public class UploadCvFragment extends BaseFragment {
                 makeToast(requireContext(), "Vui lòng đăng nhập để tải CV của bạn");
                 return;
             }
+            if(mPDFUri== null){
+                makeToast(requireContext(), "Vui lòng  tải file");
+                return;
+            }
 
             mProgressDialog.setMessage("Đang tải CV lên ...");
             mProgressDialog.show();

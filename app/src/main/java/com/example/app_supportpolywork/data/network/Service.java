@@ -61,7 +61,8 @@ public interface Service {
     Call<ResponseBody> postCV(
             @Field("document_name") String title,
             @Field("document_link") String image,
-            @Field("user_id") String userId
+            @Field("user_id") String userId,
+            @Field("status") int status
     );
 
     @GET("/api/documentCV/findByUser/{userId}")

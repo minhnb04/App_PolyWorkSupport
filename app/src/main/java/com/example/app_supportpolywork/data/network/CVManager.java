@@ -41,7 +41,7 @@ public class CVManager {
                 if (message != null) listener.onSuccess(message);
             }
         };
-        Call<ResponseBody> call = Network.mService.postCV(title, image, userId);
+        Call<ResponseBody> call = Network.mService.postCV(title, image, userId,0);
         call.enqueue(myCallback);
     }
 
@@ -51,13 +51,17 @@ public class CVManager {
             public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
                 JSONArray data = getDataJSONArray(response);
                 if (data == null) return;
+
                 try {
                     listener.onSuccess(getCVListFromJsonObject(data));
                 } catch (JSONException e) {
                     listener.onError(new Exception(App.ERROR_MESSAGE));
                 }
             }
+
         };
+
+
         Call<ResponseBody> cvListOfUser = Network.mService.getCVListOfUser(userId);
         cvListOfUser.enqueue(myCallback);
     }

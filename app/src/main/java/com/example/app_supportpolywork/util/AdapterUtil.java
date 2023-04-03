@@ -2,8 +2,6 @@ package com.example.app_supportpolywork.util;
 
 import android.annotation.SuppressLint;
 
-import com.example.app_supportpolywork.data.model.User;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -18,9 +16,11 @@ public class AdapterUtil {
 
     public static String getJobExpiry(String expiry) {
         @SuppressLint("SimpleDateFormat")
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss'Z'");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss'Z'");
         try {
             Date date = simpleDateFormat.parse(expiry);
+
             if (date != null) {
                 long time = date.getTime() - System.currentTimeMillis();
                 int numberOfDate = (int) (time / (1000 * 60 * 60 * 24));

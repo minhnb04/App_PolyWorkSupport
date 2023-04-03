@@ -97,13 +97,10 @@ public class CvItemFragment extends BaseFragment {
                     .setView(R.layout.layout_edit_cv_item)
                     .setCancelable(false)
                     .create();
-
             updateCVDialog.show();
-
             TextInputLayout edtCVTitle = updateCVDialog.findViewById(R.id.edtCvTitle);
             Button btnOK = updateCVDialog.findViewById(R.id.btnOK);
             Button btnCancel = updateCVDialog.findViewById(R.id.btnCancel);
-
             btnCancel.setOnClickListener(v1 -> updateCVDialog.dismiss());
             btnOK.setOnClickListener(btnO -> {
                 String title = CommonUtil.getStringFromEdt(edtCVTitle);
@@ -117,7 +114,6 @@ public class CvItemFragment extends BaseFragment {
 
         });
     }
-
     private void setupDeleteBtn() {
         mBinding.imvDelete.setOnClickListener(v -> {
             deleteCVDialog = new AlertDialog.Builder(requireContext())

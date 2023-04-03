@@ -7,8 +7,17 @@ public class CV implements Serializable {
     private String id;
     private String title;
     private String image;
+    private int status;
 
     public CV() {
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     public CV(String title, String image) {

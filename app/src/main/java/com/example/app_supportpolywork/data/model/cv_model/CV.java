@@ -12,6 +12,7 @@ public class CV {
     private String name;
     private CVType cvType;
 
+
     public CV(int id, int template, int avatar, String name, CVType cvType) {
         this.id = id;
         this.template = template;
