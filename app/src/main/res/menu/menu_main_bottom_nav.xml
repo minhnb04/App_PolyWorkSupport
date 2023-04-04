@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="Thông tin" />
+    <item
+        android:id="@+id/jobFragment"
+        android:icon="@drawable/ic_job"
+        android:title="Việc làm" />
+    <item
+        android:id="@+id/cvFragment"
+        android:icon="@drawable/ic_cv"
+        android:title="CV" />
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_person"
+        android:title="Hồ sơ" />
+</menu>

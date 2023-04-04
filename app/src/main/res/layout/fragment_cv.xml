@@ -1,30 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_margin="8dp"
-        android:orientation="vertical"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
+            android:id="@+id/textView3"
+            style="@style/SpecialTextViewAsTitle"
+            android:layout_width="154dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/acme"
-            android:text="Tạo CV"
-            android:layout_marginLeft="10dp"
-            android:textSize="34sp"
-            android:textStyle="bold"></TextView>
+            android:layout_marginStart="16dp"
+            android:text="Quản lý CV"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-      <androidx.recyclerview.widget.RecyclerView
-          android:layout_gravity="center"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:id="@+id/rclchude"/>
+        <View
+            android:id="@+id/view9"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/primary_color"
+            app:layout_constraintEnd_toEndOf="@+id/textView3"
+            app:layout_constraintStart_toStartOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvCV"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAddCv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:clickable="true"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnNewCv"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="invisible"
+        app:backgroundTint="@color/green"
+        app:fabCustomSize="45dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnUploadCv"
+        app:layout_constraintEnd_toEndOf="@+id/btnUploadCv"
+        app:layout_constraintStart_toStartOf="@+id/btnUploadCv"
+        app:srcCompat="@drawable/ic_add"
+        app:tint="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnUploadCv"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="invisible"
+        app:backgroundTint="@color/blue"
+        app:fabCustomSize="45dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddCv"
+        app:layout_constraintEnd_toEndOf="@+id/btnAddCv"
+        app:layout_constraintStart_toStartOf="@+id/btnAddCv"
+        app:srcCompat="@drawable/ic_upload"
+        app:tint="@color/white" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

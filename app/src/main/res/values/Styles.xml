@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="SplashScreen" parent="Theme.App_SupportPolyWork">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:statusBarColor">@color/white</item>
+    </style>
+
+    <style name="MyTextInputEditText" parent="ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox.Dense">
+        <item name="android:textColor">@color/dark</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="PrimaryLayoutEdittext" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">@color/dark</item>
+        <item name="android:textColor">@color/dark</item>
+        <item name="android:maxLines">1</item>
+        <item name="boxStrokeColor">@color/box_stroke_color</item>
+    </style>
+
+    <style name="PrimaryButton">
+        <item name="android:background">@drawable/bg_origan_btn</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="SmallTextView">
+        <item name="android:textColor">@color/dark</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="MediumTextView">
+        <item name="android:textColor">@color/dark</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="LargeTextView">
+        <item name="android:textColor">@color/dark</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+
+    <style name="SpecialTextViewAsTitle">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/baloo</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/dark</item>
+    </style>
+
+    <style name="SpecialSmallTextViewAsTitle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/baloo</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/primary_color</item>
+    </style>
+
+    <style name="SpecialTextView">
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CVTextView">
+        <item name="android:textSize">8dp</item>
+        <item name="android:textColor">@color/dark</item>
+    </style>
+
+    <style name="CVTextViewAsTitle">
+        <item name="android:textColor">#64B5F6</item>
+        <item name="android:textSize">10dp</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="CVDecordLine">
+        <item name="android:background">#64B5F6</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">2dp</item>
+    </style>
+
+    <style name="home_text_view_title">
+        <item name="android:textColor">@color/dark</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+</resources>

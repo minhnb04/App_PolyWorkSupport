@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/jobFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.job.JobFragment"
+        android:label="JobFragment"
+        tools:layout="@layout/fragment_job">
+        <action
+            android:id="@+id/action_jobFragment_to_jobDetailFragment"
+            app:destination="@id/jobDetailFragment" />
+        <action
+            android:id="@+id/action_jobFragment_to_jobSearchingFragment"
+            app:destination="@id/jobSearchingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cvFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.cv.CvFragment"
+        android:label="CVFragment"
+        tools:layout="@layout/fragment_cv">
+        <action
+            android:id="@+id/action_cvFragment_to_cvTemplateFragment"
+            app:destination="@id/cvTemplateFragment"
+            app:enterAnim="@anim/fade_in_in"
+            app:exitAnim="@anim/fade_in_out"
+            app:popEnterAnim="@anim/fade_out_in"
+            app:popExitAnim="@anim/fade_out_out" />
+        <action
+            android:id="@+id/action_cvFragment_to_uploadCvFragment"
+            app:destination="@id/uploadCvFragment" />
+        <action
+            android:id="@+id/action_cvFragment_to_cvItemFragment"
+            app:destination="@id/cvItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/jobDetailFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.job.JobDetailFragment"
+        android:label="fragment_job_detail"
+        tools:layout="@layout/fragment_job_detail">
+        <argument
+            android:name="job"
+            app:argType="com.example.app_supportpolywork.data.model.Job" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cvTemplateFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.cv.CvTemplateFragment"
+        android:label="Cv Template"
+        tools:layout="@layout/fragment_cv_template">
+        <action
+            android:id="@+id/action_cvTemplateFragment_to_createCVFragment"
+            app:destination="@id/createCVFragment"
+            app:enterAnim="@anim/fade_in_in"
+            app:exitAnim="@anim/fade_in_out"
+            app:popEnterAnim="@anim/fade_out_in"
+            app:popExitAnim="@anim/fade_out_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.profile.EditProfileFragment"
+        android:label="Edit Profile Fragment"
+        tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.profile.ChangePasswordFragment"
+        android:label="fragment_change_password"
+        tools:layout="@layout/fragment_change_password" />
+
+    <fragment
+        android:id="@+id/createCVFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.cv.CreateCVFragment"
+        android:label="Create CV Fragment"
+        tools:layout="@layout/cv_template_layout_1">
+        <action
+            android:id="@+id/action_createCVFragment_to_personalInfoFragment"
+            app:destination="@id/personalInfoFragment" />
+        <action
+            android:id="@+id/action_createCVFragment_to_educationFragment"
+            app:destination="@id/educationFragment" />
+        <action
+            android:id="@+id/action_createCVFragment_to_experienceFragment"
+            app:destination="@id/experienceFragment" />
+        <action
+            android:id="@+id/action_createCVFragment_to_objectiveFragment"
+            app:destination="@id/objectiveFragment" />
+        <argument
+            android:name="cv_template"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_createCVFragment_to_skillFragment"
+            app:destination="@id/skillFragment" />
+        <action
+            android:id="@+id/action_createCVFragment_to_interestingFragment"
+            app:destination="@id/interestingFragment" />
+        <action
+            android:id="@+id/action_createCVFragment_to_certificate"
+            app:destination="@id/certificate" />
+        <action
+            android:id="@+id/action_createCVFragment_to_activeFragment"
+            app:destination="@id/activeFragment" />
+        <action
+            android:id="@+id/action_createCVFragment_to_uploadCvFragment"
+            app:destination="@id/uploadCvFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/personalInfoFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.cv.create_cv_fragments.InfoFragment"
+        android:label="fragment_personal_info"
+        tools:layout="@layout/fragment_info" />
+    <fragment
+        android:id="@+id/educationFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.cv.create_cv_fragments.EducationFragment"
+        android:label="EducationFragment"
+        tools:layout="@layout/fragment_education" />
+    <fragment
+        android:id="@+id/experienceFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.cv.create_cv_fragments.ExperienceFragment"
+        android:label="fragment_experience"
+        tools:layout="@layout/fragment_experience" />
+    <fragment
+        android:id="@+id/objectiveFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.cv.create_cv_fragments.ObjectiveFragment"
+        android:label="fragment_objective"
+        tools:layout="@layout/fragment_objective" />
+    <fragment
+        android:id="@+id/skillFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.cv.create_cv_fragments.SkillFragment"
+        android:label="SkillFragment"
+        tools:layout="@layout/fragment_skill" />
+    <fragment
+        android:id="@+id/interestingFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.cv.create_cv_fragments.InterestingFragment"
+        android:label="InterestingFragment"
+        tools:layout="@layout/fragment_interesting" />
+    <fragment
+        android:id="@+id/activeFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.cv.create_cv_fragments.ActiveFragment"
+        android:label="ActiveFragment"
+        tools:layout="@layout/fragment_active" />
+
+    <fragment
+        android:id="@+id/certificate"
+        android:name="com.example.app_supportpolywork.view.main_activity.cv.create_cv_fragments.CertificationFragment"
+        android:label="Certificate"
+        tools:layout="@layout/fragment_certification" />
+    <fragment
+        android:id="@+id/uploadCvFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.cv.UploadCvFragment"
+        android:label="fragment_upload_cv"
+        tools:layout="@layout/fragment_upload_cv" >
+        <argument
+            android:name="uri"
+            app:argType="android.net.Uri"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/jobSearchingFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.job.JobSearchingFragment"
+        android:label="fragment_job_searching"
+        tools:layout="@layout/fragment_job_searching" >
+        <action
+            android:id="@+id/action_jobSearchingFragment_to_jobFilterFragment"
+            app:destination="@id/jobFilterFragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="filter"
+            app:argType="com.example.app_supportpolywork.data.model.support_model.Filter"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_jobSearchingFragment_to_jobDetailFragment"
+            app:destination="@id/jobDetailFragment"
+            app:launchSingleTop="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/jobFilterFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.job.JobFilterFragment"
+        android:label="fragment_job_filter"
+        tools:layout="@layout/fragment_job_filter" >
+        <action
+            android:id="@+id/action_jobFilterFragment_to_jobSearchingFragment2"
+            app:destination="@id/jobSearchingFragment"
+            app:popUpTo="@id/jobSearchingFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="filter"
+            app:argType="com.example.app_supportpolywork.data.model.support_model.Filter"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/cvItemFragment"
+        android:name="com.example.app_supportpolywork.view.main_activity.cv.CvItemFragment"
+        android:label="fragment_cv_item"
+        tools:layout="@layout/fragment_cv_item" >
+        <argument
+            android:name="CV"
+            app:argType="com.example.app_supportpolywork.data.model.CV" />
+    </fragment>
+
+
+</navigation>

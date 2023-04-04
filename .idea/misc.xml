@@ -3,43 +3,39 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Admin/AndroidProject/app/src/main/res/font/acme.xml" value="0.19907407407407407" />
-        <entry key="..\:/Users/Admin/AndroidProject/app/src/main/res/font/alatsi.xml" value="0.19907407407407407" />
-        <entry key="..\:/Users/Admin/AndroidProject/app/src/main/res/font/aleo_light.xml" value="0.19907407407407407" />
-        <entry key="..\:/Users/Admin/AndroidProject/app/src/main/res/font/allan.xml" value="0.19907407407407407" />
-        <entry key="..\:/Users/Admin/AndroidProject/app/src/main/res/font/allerta.xml" value="0.19907407407407407" />
-        <entry key="..\:/Users/Admin/AndroidProject/app/src/main/res/font/baloo.xml" value="0.19907407407407407" />
-        <entry key="..\:/Users/Admin/AndroidProject/app/src/main/res/layout/activity_dang_ki.xml" value="0.1933876811594203" />
-        <entry key="..\:/Users/Admin/AndroidProject/app/src/main/res/layout/activity_login.xml" value="0.2" />
-        <entry key="..\:/Users/Admin/AndroidProject/app/src/main/res/layout/activity_logo.xml" value="0.1933876811594203" />
-        <entry key="..\:/Users/Admin/AndroidProject/app/src/main/res/layout/activity_main.xml" value="0.1933876811594203" />
-        <entry key="..\:/Users/Admin/AndroidProject/app/src/main/res/layout/activity_seach.xml" value="0.1933876811594203" />
-        <entry key="..\:/Users/Admin/AndroidProject/app/src/main/res/layout/fragment_ca_nhan.xml" value="0.1933876811594203" />
-        <entry key="..\:/Users/Admin/AndroidProject/app/src/main/res/layout/fragment_trangchu.xml" value="0.1933876811594203" />
-        <entry key="..\:/Users/Admin/AndroidProject/app/src/main/res/layout/fragment_yeu_thich.xml" value="0.1933876811594203" />
-        <entry key="..\:/Users/Admin/AndroidProject/app/src/main/res/layout/item_chude.xml" value="0.1933876811594203" />
-        <entry key="..\:/Users/Admin/AndroidProject/app/src/main/res/layout/item_tab_bai_viet.xml" value="0.1933876811594203" />
-        <entry key="..\:/Users/Admin/AndroidProject/app/src/main/res/menu/item_bottom.xml" value="0.21041666666666667" />
-        <entry key="..\:/Users/Admin/SupportPolyWork/app/src/main/res/drawable-v24/bober_3.xml" value="0.1125" />
-        <entry key="..\:/Users/Admin/SupportPolyWork/app/src/main/res/drawable-v24/ic_launcher_background.xml" value="0.1125" />
-        <entry key="..\:/Users/Admin/SupportPolyWork/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1125" />
-        <entry key="..\:/Users/Admin/SupportPolyWork/app/src/main/res/drawable/logo_bg.xml" value="0.1125" />
-        <entry key="..\:/Users/Admin/SupportPolyWork/app/src/main/res/layout/activity_dang_ki.xml" value="0.20833333333333334" />
-        <entry key="..\:/Users/Admin/SupportPolyWork/app/src/main/res/layout/activity_dang_ky.xml" value="0.10233029381965553" />
-        <entry key="..\:/Users/Admin/SupportPolyWork/app/src/main/res/layout/activity_login.xml" value="0.20833333333333334" />
-        <entry key="..\:/Users/Admin/SupportPolyWork/app/src/main/res/layout/activity_logo.xml" value="0.2" />
-        <entry key="..\:/Users/Admin/SupportPolyWork/app/src/main/res/layout/activity_main.xml" value="0.20833333333333334" />
-        <entry key="..\:/Users/Admin/SupportPolyWork/app/src/main/res/layout/activity_seach.xml" value="0.20833333333333334" />
-        <entry key="..\:/Users/Admin/SupportPolyWork/app/src/main/res/layout/fragment_ca_nhan.xml" value="0.20833333333333334" />
-        <entry key="..\:/Users/Admin/SupportPolyWork/app/src/main/res/layout/fragment_cv.xml" value="0.264" />
-        <entry key="..\:/Users/Admin/SupportPolyWork/app/src/main/res/layout/fragment_ho_so.xml" value="0.2" />
-        <entry key="..\:/Users/Admin/SupportPolyWork/app/src/main/res/layout/fragment_kham_pha.xml" value="0.1" />
-        <entry key="..\:/Users/Admin/SupportPolyWork/app/src/main/res/layout/fragment_trangchu.xml" value="0.1" />
-        <entry key="..\:/Users/Admin/SupportPolyWork/app/src/main/res/layout/fragment_yeu_thich.xml" value="0.20833333333333334" />
-        <entry key="..\:/Users/Admin/SupportPolyWork/app/src/main/res/layout/item_chude.xml" value="0.20833333333333334" />
-        <entry key="..\:/Users/Admin/SupportPolyWork/app/src/main/res/layout/item_tab_bai_viet.xml" value="0.20833333333333334" />
-        <entry key="..\:/Users/Admin/SupportPolyWork/app/src/main/res/menu/item_bottom.xml" value="0.21041666666666667" />
-        <entry key="..\:/Users/Admin/SupportPolyWork/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1125" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/drawable/bg_boder.xml" value="0.244" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/drawable/bg_boder_2.xml" value="0.2335" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/drawable/bg_boder_solid_top.xml" value="0.2335" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout-h700dp/cv_template_layout_1.xml" value="0.2625" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout-h700dp/fragment_create_cv.xml" value="0.4" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/activity_forget_password.xml" value="0.2625" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/activity_login.xml" value="0.176" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/activity_register.xml" value="0.2625" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/cv_template_1.xml" value="0.2625" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/cv_template_layout_1.xml" value="0.2421875" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/fragment_change_password.xml" value="0.23802083333333332" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/fragment_create_cv.xml" value="0.152" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/fragment_create_cv_root.xml" value="0.2625" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/fragment_cv.xml" value="0.2625" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/fragment_cv_item.xml" value="0.264" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/fragment_cv_template.xml" value="0.2625" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/fragment_edit_profile.xml" value="0.2625" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/fragment_job_detail.xml" value="0.23802083333333332" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/fragment_job_searching.xml" value="0.264" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/fragment_profile.xml" value="0.4" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/fragment_upload_cv.xml" value="0.2625" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/layout_bottom_sheet_cv_list.xml" value="0.264" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/layout_cv_item.xml" value="0.4" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/layout_cv_item_2.xml" value="0.536" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/layout_cv_template.xml" value="0.2625" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/layout/layout_edit_cv_item.xml" value="0.26145833333333335" />
+        <entry key="..\:/Users/Nguyen Doan Hung/Desktop/App_PolyWorkSupport/app/src/main/res/xml/network_security_config.xml" value="0.2625" />
+        <entry key="app/src/main/res/drawable/bg_bottom_border.xml" value="0.317" />
+        <entry key="app/src/main/res/drawable/boder_tv.xml" value="0.269" />
+        <entry key="app/src/main/res/layout/fragment_job.xml" value="0.3109375" />
+        <entry key="app/src/main/res/layout/fragment_job_filter.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_job_searching.xml" value="0.3109375" />
+        <entry key="app/src/main/res/layout/layout_filter_field.xml" value="0.3098958333333333" />
       </map>
     </option>
   </component>

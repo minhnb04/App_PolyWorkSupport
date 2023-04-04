@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_dimens">0dp</dimen>
+    <dimen name="line_dimens">1dp</dimen>
+    <dimen name="below_small_dimens">4dp</dimen>
+    <dimen name="small_dimens">8dp</dimen>
+    <dimen name="above_small_dimens">10dp</dimen>
+    <dimen name="below_medium_dimens">12dp</dimen>
+    <dimen name="below_medium_dimens_2">14dp</dimen>
+    <dimen name="medium_dimens">16dp</dimen>
+    <dimen name="above_medium_dimens">18dp</dimen>
+    <dimen name="above_medium_dimens_2">20dp</dimen>
+    <dimen name="below_large_dimens">24dp</dimen>
+    <dimen name="large_dimens">30dp</dimen>
+    <dimen name="above_large_dimens">36dp</dimen>
+    <dimen name="below_extreme_dimens">40dp</dimen>
+    <dimen name="extreme_dimens">48dp</dimen>
+    <dimen name="above_extreme_dimens">54dp</dimen>
+
+
+    <dimen name="below_small_text_dimens">10sp</dimen>
+    <dimen name="small_text_dimens">12sp</dimen>
+    <dimen name="above_small_text_dimens">14sp</dimen>
+    <dimen name="below_medium_text_dimens">16sp</dimen>
+    <dimen name="medium_text_dimens">18sp</dimen>
+    <dimen name="above_medium_text_dimens">20sp</dimen>
+    <dimen name="below_large_text_dimens">24sp</dimen>
+    <dimen name="large_text_dimens">26sp</dimen>
+    <dimen name="above_large_text_dimens">30sp</dimen>
+
+</resources>
